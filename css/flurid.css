@@ -1,0 +1,216 @@
+/*	flurid - the fluid grid | @update 02/01/2010	| @version 0.1				*/
+
+/*	=========================================================================	
+	containers
+	=========================================================================	*/
+
+/*	denotes the use of a grid system											*/
+	.grid {
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+	}
+
+/*	set up our widths as columns												*/
+	.grid .one_twelfth, .grid .one_tenth, .grid .one_eighth, .grid .one_sixth,
+	.grid .one_fifth, .grid .one_fourth, .grid .one_third, .grid .one_half,
+	.grid .half, .grid .two_twelfths, .grid .two_tenths, .grid .two_eighths,
+	.grid .two_sixths, .grid .two_fifths, .grid .two_fourths, .grid .two_thirds,
+	.grid .three_twelfths, .grid .three_tenths, .grid .three_eighths,
+	.grid .three_sixths, .grid .three_fifths, .grid .three_fourths,
+	.grid .four_twelfths, .grid .four_tenths, .grid .four_eighths,
+	.grid .four_sixths, .grid .four_fifths, .grid .five_twelfths,
+	.grid .five_tenths, .grid .five_eighths, .grid .five_sixths,
+	.grid .six_twelfths, .grid .six_tenths, .grid .six_eighths,
+	.grid .seven_twelfths, .grid .seven_tenths, .grid .seven_eighths,
+	.grid .eight_twelfths, .grid .eight_tenths, .grid .nine_twelfths,
+	.grid .nine_tenths, .grid .ten_twelfths, .grid .eleven_twelfths,
+	.grid .full_width, .grid .full {
+		margin: 0;
+		padding: 0;
+		float: left;
+		position: relative;
+	}
+
+/*	=========================================================================	
+	columns
+	=========================================================================	*/
+
+	.grid .one_twelfth { width: 8.333333%; }
+	.grid .one_tenth { width: 10%; }
+	.grid .one_eighth { width: 12.5%; }
+	.grid .one_sixth, .grid .two_twelfths  { width: 16.666666%; }
+	.grid .one_fifth, .grid .two_tenths { width: 20%; }
+	.grid .one_fourth, .grid .two_eighths, .grid .three_twelfths { width: 25%; }
+	.grid .three_tenths { width: 30%; }
+	.grid .one_third, .grid .two_sixths, .grid .four_twelfths { width: 33.333333%; }
+	.grid .three_eighths { width: 37.5%; }
+	.grid .two_fifths, .grid .four_tenths { width: 40%; }
+	.grid .five_twelfths { width: 41.666666%; }
+	.grid .half, .grid .one_half, .grid .six_twelfths, .grid .four_eighths,
+	.grid .five_tenths, .grid .three_sixths, .grid .two_fourths { width: 50%; }
+	.grid .seven_twelfths { width: 58.333333; }
+	.grid .three_fifths, .grid .six_tenths { width: 60%; }
+	.grid .five_eighths { width: 62.5%; }
+	.grid .seven_tenths { width: 70%; }
+	.grid .two_thirds, .grid .four_sixths,
+	.grid .eight_twelfths { width: 66.666666%; }
+	.grid .three_fourths, .grid .six_eighths, .grid .nine_twelfths { width: 75%; }
+	.grid .four_fifths, .grid .eight_tenths { width: 80%; }
+	.grid .ten_twelfths, .grid .five_sixths { width: 83.333333%; }
+	.grid .seven_eighths { width: 87.5%; }
+	.grid .nine_tenths { width: 90%; }
+	.grid .eleven_twelfths {width: 91.666666%;}
+	.grid .full, .grid .full_width { width: 100%; }
+
+/* TODO: add eighths */
+/*	=========================================================================	
+	prefix
+	=========================================================================	*/
+
+	.grid .prefix_one_twelfth { padding-left: 8.333333%; }
+	.grid .prefix_one_tenth { padding-left: 10%; }
+	.grid .prefix_one_sixth, .grid .prefix_two_twelfths  { padding-left: 16.666666%; }
+	.grid .prefix_one_fifth, .grid .prefix_two_tenths { padding-left: 20%; }
+	.grid .prefix_one_fourth, .grid .prefix_three_twelfths { padding-left: 25%; }
+	.grid .prefix_three_tenths { padding-left: 30%; }
+	.grid .prefix_one_third, .grid .prefix_two_sixths, .grid .prefix_four_twelfths { padding-left: 33.333333%; }
+	.grid .prefix_two_fifths, .grid .prefix_four_tenths { padding-left: 40%; }
+	.grid .prefix_five_twelfths { padding-left: 41.666666%; }
+	.grid .prefix_half, .grid .prefix_one_half, .grid .prefix_six_twelfths,
+	.grid .prefix_five_tenths, .grid .prefix_three_sixths, .grid .prefix_two_fourths { padding-left: 50%; }
+	.grid .prefix_seven_twelfths { padding-left: 58.333333; }
+	.grid .prefix_three_fifths, .grid .prefix_six_tenths { padding-left: 60%; }
+	.grid .prefix_seven_tenths { padding-left: 70%; }
+	.grid .prefix_two_thirds, .grid .prefix_four_sixths,
+	.grid .prefix_eight_twelfths { padding-left: 66.666666%; }
+	.grid .prefix_three_fourths, .grid .prefix_nine_twelfths { padding-left: 75%; }
+	.grid .prefix_four_fifths, .grid .prefix_eight_tenths { padding-left: 80%; }
+	.grid .prefix_ten_twelfths, .grid .prefix_five_sixths { padding-left: 83.333333%; }
+	.grid .prefix_nine_tenths { padding-left: 90%; }
+	.grid .prefix_eleven_twelfths {padding-left: 91.666666%; }
+
+/* TODO: add eighths */
+/*	=========================================================================	
+	suffix
+	=========================================================================	*/
+
+	.grid .suffix_one_twelfth { padding-right: 8.333333%; }
+	.grid .suffix_one_tenth { padding-right: 10%; }
+	.grid .suffix_one_sixth, .grid .suffix_two_twelfths  { padding-right: 16.666666%; }
+	.grid .suffix_one_fifth, .grid .suffix_two_tenths { padding-right: 20%; }
+	.grid .suffix_one_fourth, .grid .suffix_three_twelfths { padding-right: 25%; }
+	.grid .suffix_three_tenths { padding-right: 30%; }
+	.grid .suffix_one_third, .grid .suffix_two_sixths, .grid .suffix_four_twelfths { padding-right: 33.333333%; }
+	.grid .suffix_two_fifths, .grid .suffix_four_tenths { padding-right: 40%; }
+	.grid .suffix_five_twelfths { padding-right: 41.666666%; }
+	.grid .suffix_half, .grid .suffix_one_half, .grid .suffix_six_twelfths,
+	.grid .suffix_five_tenths, .grid .suffix_three_sixths, .grid .suffix_two_fourths { padding-right: 50%; }
+	.grid .suffix_seven_twelfths { padding-right: 58.333333; }
+	.grid .suffix_three_fifths, .grid .suffix_six_tenths { padding-right: 60%; }
+	.grid .suffix_seven_tenths { padding-right: 70%; }
+	.grid .suffix_two_thirds, .grid .suffix_four_sixths,
+	.grid .suffix_eight_twelfths { padding-right: 66.666666%; }
+	.grid .suffix_three_fourths, .grid .suffix_nine_twelfths { padding-right: 75%; }
+	.grid .suffix_four_fifths, .grid .suffix_eight_tenths { padding-right: 80%; }
+	.grid .suffix_ten_twelfths, .grid .suffix_five_sixths { padding-right: 83.333333%; }
+	.grid .suffix_nine_tenths { padding-right: 90%; }
+	.grid .suffix_eleven_twelfths {padding-right: 91.666666%; }
+
+/* TODO: add eighths */
+/*	=========================================================================	
+	push
+	=========================================================================	*/
+
+	.grid .push_one_twelfth { left: 8.333333%; }
+	.grid .push_one_tenth { left: 10%; }
+	.grid .push_one_sixth, .grid .push_two_twelfths  { left: 16.666666%; }
+	.grid .push_one_fifth, .grid .push_two_tenths { left: 20%; }
+	.grid .push_one_fourth, .grid .push_three_twelfths { left: 25%; }
+	.grid .push_three_tenths { left: 30%; }
+	.grid .push_one_third, .grid .push_two_sixths, .grid .push_four_twelfths { left: 33.333333%; }
+	.grid .push_two_fifths, .grid .push_four_tenths { left: 40%; }
+	.grid .push_five_twelfths { left: 41.666666%; }
+	.grid .push_half, .grid .push_one_half, .grid .push_six_twelfths,
+	.grid .push_five_tenths, .grid .push_three_sixths, .grid .push_two_fourths { left: 50%; }
+	.grid .push_seven_twelfths { left: 58.333333; }
+	.grid .push_three_fifths, .grid .push_six_tenths { left: 60%; }
+	.grid .push_seven_tenths { left: 70%; }
+	.grid .push_two_thirds, .grid .push_four_sixths,
+	.grid .push_eight_twelfths { left: 66.666666%; }
+	.grid .push_three_fourths, .grid .push_nine_twelfths { left: 75%; }
+	.grid .push_four_fifths, .grid .push_eight_tenths { left: 80%; }
+	.grid .push_ten_twelfths, .grid .push_five_sixths { left: 83.333333%; }
+	.grid .push_nine_tenths { left: 90%; }
+	.grid .push_eleven_twelfths {left: 91.666666%;}
+
+/* TODO: add eighths */
+/*	=========================================================================	
+	pull
+	=========================================================================	*/
+
+	.grid .pull_one_twelfth { left: -8.333333%; }
+	.grid .pull_one_tenth { left: -10%; }
+	.grid .pull_one_sixth, .grid .pull_two_twelfths  { left: -16.666666%; }
+	.grid .pull_one_fifth, .grid .pull_two_tenths { left: -20%; }
+	.grid .pull_one_fourth, .grid .pull_three_twelfths { left: -25%; }
+	.grid .pull_three_tenths { left: -30%; }
+	.grid .pull_one_third, .grid .pull_two_sixths, .grid .pull_four_twelfths { left: -33.333333%; }
+	.grid .pull_two_fifths, .grid .pull_four_tenths { left: -40%; }
+	.grid .pull_five_twelfths { left: -41.666666%; }
+	.grid .pull_half, .grid .pull_one_half, .grid .pull_six_twelfths,
+	.grid .pull_five_tenths, .grid .pull_three_sixths, .grid .pull_two_fourths { left: -50%; }
+	.grid .pull_seven_twelfths { left: -58.333333; }
+	.grid .pull_three_fifths, .grid .pull_six_tenths { left: -60%; }
+	.grid .pull_seven_tenths { left: -70%; }
+	.grid .pull_two_thirds, .grid .pull_four_sixths,
+	.grid .pull_eight_twelfths { left: -66.666666%; }
+	.grid .pull_three_fourths, .grid .pull_nine_twelfths { left: -75%; }
+	.grid .pull_four_fifths, .grid .pull_eight_tenths { left: -80%; }
+	.grid .pull_ten_twelfths, .grid .pull_five_sixths { left: -83.333333%; }
+	.grid .pull_nine_tenths { left: -90%; }
+	.grid .pull_eleven_twelfths {left: -91.666666%; }
+
+/*	=========================================================================	
+	last
+	=========================================================================	*/
+
+/*	denotes the last column in a row											*/
+	.grid .last {
+		float: none !important;
+		width: auto !important;
+		overflow: hidden;
+		display: block;
+	}
+	
+/*	=========================================================================	
+	clears
+	=========================================================================	*/
+	
+	.grid .row:after, .grid .last:after {
+		content: ".";
+		width: 0;
+		height: 0;
+		clear: both;
+		display: block;
+		visibility: hidden;
+		overflow: hidden;
+		line-height: 0;
+		font-size: 0;
+	}
+	
+/*	=========================================================================	
+	IE fixes
+	=========================================================================	*/
+
+	/* IE <= 6; using zoom: 1 to trigger hasLayout */
+	* html .grid * { zoom: 1; }
+	
+	/* this is needed to fix the 3px text-jog bug */
+	* html .grid .last {
+		left: -3px; 
+		margin: 0 -3px 0 3px;
+	}
+
+	/* IE == 7; using zoom: 1 to trigger hasLayout  */
+	*:first-child+html .grid * { zoom: 1; }
