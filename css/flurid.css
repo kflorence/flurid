@@ -496,7 +496,7 @@
 	* html .grid * { zoom: 1; }
 	
 	/* hasLayout breaks push/pull, so remove it */
-	* html .grid .push_one_sixteenth, *:first-child+html .grid .push_one_sixteenth
+	* html .grid .push_one_sixteenth,
 	* html .grid .push_one_twelfth,
 	* html .grid .push_one_tenth,
 	* html .grid .push_one_eighth,
