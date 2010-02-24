@@ -3,7 +3,7 @@
     <head>
     	<title>Flurid - The Fluid CSS Grid</title>
 		<link rel="stylesheet" type="text/css" href="css/styles.css" />
-		<link rel="stylesheet" type="text/css" href="css/flurid.css" />
+		<link rel="stylesheet" type="text/css" href="css/flurid.min.css" />
     </head>
     <body>
     	<h1>Flurid <span>The Fluid CSS Grid</span></h1>
@@ -34,10 +34,11 @@
 			<li>Mozilla Firefox (Windows/Linux) - versions 1.0 - 3.6</li>
 		</ul>
 		
-		<h2>Okay, how do I use it?</h2>
-		<p>The primary purpose of a grid system is to separate page content into rows and columns to aid in and increase the
-		efficiency of building the visual structure of a page.  Flurid comes with built-in support for the following grid sizes
-		(but of course you can add in other grid sizes as you see fit):</p>
+		<h2>Using Flurid</h2>
+		<p>Unlike other grid systems, Flurid uses very intuitive naming conventions for its styling properties.  First, you start by designating your grid
+		by applying the class "grid" to a block level element (such as a div).  Inside of your grid, you define your rows, using the class "row," and columns,
+		using their respective column class name, which is simply a description the fraction they respresent (ex: 1/16 = "one_sixteenth", 2/3 = "two_thirds").
+		All of the standard columns have been layed out in the grid below:</p>
 
 		<div class="grid">
 			<div class="row">
@@ -544,6 +545,10 @@
 				</div>
 			</div>
 		</div>
+		
+		<h2><a name="download">Getting Flurid</a></h2>
+		<p>The most up-to-date version of Flurid can be found on github: <a href="http://github.com/kflorence/flurid">http://github.com/kflorence/flurid</a>.
+		Also, please feel free to take a look at the <a href="css/flurid.css">stylesheet for this document</a>.</p>
 		
 		<h2><a name="caveats">Known Bugs and Caveats</a></h2>
 		<ul>
