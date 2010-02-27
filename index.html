@@ -10,21 +10,21 @@
     
     <h2>What is Flurid?</h2>
     <p>Flurid is a <strong>fluid width grid system</strong> optimized for flexibility (fluidity), and, as far as I know,
-    is one of the only fluid grid systems to work in Internet Explorer versions 6 and 7 without hiding pixels in margins.
-    Like any <a href="http://en.wikipedia.org/wiki/Grid_%28page_layout%29">grid system</a>, the basic purpose is to break
-    the page into a series of <em>rows</em> and <em>columns</em>, thus giving the designer an easy, rational way to
-    organize and present content to the user.</p>
+    is one of the only fluid grid systems to work in Internet Explorer versions 6 and 7 (and 5, with the exception of the push/pull classes)
+    without hiding pixels in margins. Like any <a href="http://en.wikipedia.org/wiki/Grid_%28page_layout%29">grid system</a>, the basic purpose is to break
+    the page into a series of <em>rows</em> and <em>columns</em>, thus giving the designer an easy, rational way to organize and present content to the user.</p>
     
     <p><strong>Fluidity</strong>, as far as I am concerned, is one of the cornerstones in making web design more <em>accessible</em>, <em>user friendly</em>,
     <em>customizable</em> and, perhaps most importantly, <em>adaptable</em> (see: <a href="http://www.alistapart.com/articles/dao/">A Dao of Web Design</a>).
     Fluid designs allow the content of a page to adjust according to the dimensions of their containing window, which makes it easy
-    to scale up or down, depending upon the needs of the user or the type of web device being used. Read more about <a href="http://www.alistapart.com/articles/fluidgrids" title="Fluid Grids">fluid grids</a>.</p>
+    to scale up or down, depending upon the needs of the user or the type of web device being used. If you're interested in learning more about fluid
+    grid systems, check out the article <a href="http://www.alistapart.com/articles/fluidgrids" title="Fluid Grids">"Fluid Grids"</a> on A List Apart.</p>
     
     <p>So why aren't there more fluid grid systems out there that don't hide pixels in margins?  Well, that is due to how different browsers
-    and web devices handle sub-pixel rounding (see: <a href="http://ejohn.org/blog/sub-pixel-problems-in-css/" title="Sub Pixel Rendering Problems in CSS">Sub Pixel Rendering Problems in CSS</a>.
+    and web devices handle sub-pixel rounding (see: <a href="http://ejohn.org/blog/sub-pixel-problems-in-css/" title="Sub Pixel Rendering Problems in CSS">Sub Pixel Rendering Problems in CSS</a>).
     Flurid deals with sub-pixel rounding issues in various ways, namely using the <em>overflow: hidden</em> and <em>width: auto</em> properties
     to get rid of the extra pixels in the last column in a row that would normally cause a layout to break (in Internet Explorer). Of course,
-    this does make the width of the last column <em>slightly</em> less precise (in Internet Explorer), but, as with any compromise, there must come
+    this does make the width of the last column <em>slightly</em> less precise (in Internet Explorer), but, as with any compromise, there must be
     some <a href="#caveats">caveats</a>.</p>
     
     <h3>Browser Support</h3>
@@ -36,8 +36,8 @@
     
     <h2>Using Flurid</h2>
     <p>Unlike other grid systems, Flurid uses very intuitive naming conventions for its styling properties.  First, you start by designating your grid
-    by applying the class "grid" to a block level element (such as a div).  Inside of your grid, you define your rows, using the class "row," and columns,
-    using their respective column class name, which is simply a description the fraction they respresent (ex: 1/16 = "one_sixteenth", 2/3 = "two_thirds").
+    by applying the class "grid" to a block level element (such as a div).  Inside of your grid, you may define your rows, using the class "row," and columns,
+    using their respective column class name, which is simply a description of the fraction they respresent (ex: 1/16 = "one_sixteenth", 2/3 = "two_thirds").
     All of the standard columns have been layed out in the grid below:</p>
 
     <div class="grid">
@@ -266,7 +266,7 @@
     
     <h3>Mixed Columns</h3>
     <p>Columns may be mixed and matched as needed, so long as the sum of the columns reduces to 1/1 (or, in other words, adds up to 100%).
-    I find it's often easier to stick to one denominator, but if you are keen to reducing your fractions, rest assured that it will not
+    I find it's often easier to stick to one denominator, but if you are keen to reducing your fractions, you can rest assured that it will not
     break the system.</p>
     
     <div class="grid">
@@ -298,9 +298,9 @@
     </div>
     
     <h3>Nesting</h3>
-    <p>Columns may also be nested inside of themselves, however, keep in mind that columns will inherit the full width of their parent container,
+    <p>Columns may also be nested inside of themselves as needed, however, keep in mind that columns will inherit the full width of their parent,
     meaning that if you were to nest a 1/2 width column inside another 1/2 width column, the result would be a container that takes
-    up 1/4 of the grids full width.</p>
+    up 1/4 of the grid's full width.</p>
     
     <div class="grid">
       <div class="row">
@@ -470,8 +470,6 @@
     This is handy for changing the location of a column visually without affecting where the column lies in relation to other markup in
     the HTML. Use push to position your columns to the <strong>right</strong> of their normal location and pull to to position
     your columns to the <strong>left</strong> of their normal location.</p>
-    
-    <!-- TODO: make these relative to the row? -->
     
     <div class="grid">
       <div class="row">
