@@ -2,13 +2,18 @@
     Flurid - The Fluid CSS Grid
     ------------------------------------------------------------------------
     @author    Kyle Florence <kyle.florence@gmail.com>
-    @update    February 25, 2010
+    @update    February 26, 2010
     ========================================================================    */
 
     .grid {
         margin: 0;
         padding: 0;
         overflow: hidden;
+    }
+    
+    .grid .row {
+    	_zoom: 1;
+    	*zoom: 1;
     }
 
     .grid .one_sixteenth,
@@ -76,6 +81,8 @@
         padding: 0;
         float: left;
         position: relative;
+        _zoom: 1;
+        *zoom: 1;
     }
 
     .grid .push_one_sixteenth, .grid .pull_one_sixteenth,
@@ -137,6 +144,8 @@
     .grid .push_eleven_twelfths, .grid .pull_eleven_twelfths,
     .grid .push_fifteen_sixteenths, .grid .pull_fifteen_sixteenths {
         position: relative;
+        _zoom: normal;
+        *zoom: normal;
     }
 
 /*  ------------------------------------------------------------------------
@@ -465,12 +474,14 @@
         width: auto !important;
         overflow: hidden;
         display: block;
+        _left: -3px;
+        _margin: 0 -3px 0 3px;
     }
-    
+
 /*  ------------------------------------------------------------------------
     clears (automatically applied to grid rows/last column)
     ------------------------------------------------------------------------    */
-    
+
     .grid .row:after,
     .grid .last:after {
         content: ".";
@@ -482,262 +493,6 @@
         overflow: hidden;
         line-height: 0;
         font-size: 0;
-    }
-    
-/*  ------------------------------------------------------------------------
-    IE fixes (add support for IE 6+; mostly hasLayout triggering)
-    ------------------------------------------------------------------------    */
-
-/*  IE <= 6; using zoom: 1 to trigger hasLayout                                 */
-    * html .grid * { zoom: 1; }
-    
-/*  hasLayout breaks push/pull, so remove it                                    */
-    * html .grid .push_one_sixteenth,
-    * html .grid .push_one_twelfth,
-    * html .grid .push_one_tenth,
-    * html .grid .push_one_eighth,
-    * html .grid .push_two_sixteenths,
-    * html .grid .push_one_sixth,
-    * html .grid .push_two_twelfths ,
-    * html .grid .push_three_sixteenths,
-    * html .grid .push_one_fifth,
-    * html .grid .push_two_tenths,
-    * html .grid .push_one_fourth,
-    * html .grid .push_two_eighths,
-    * html .grid .push_three_twelfths,
-    * html .grid .push_four_sixteenths,
-    * html .grid .push_three_tenths,
-    * html .grid .push_five_sixteenths,
-    * html .grid .push_one_third,
-    * html .grid .push_two_sixths,
-    * html .grid .push_four_twelfths,
-    * html .grid .push_three_eighths,
-    * html .grid .push_six_sixteenths,
-    * html .grid .push_two_fifths,
-    * html .grid .push_four_tenths,
-    * html .grid .push_five_twelfths,
-    * html .grid .push_seven_sixteenths,
-    * html .grid .push_half,
-    * html .grid .push_one_half,
-    * html .grid .push_two_fourths,
-    * html .grid .push_three_sixths,
-    * html .grid .push_four_eighths,
-    * html .grid .push_five_tenths,
-    * html .grid .push_six_twelfths,
-    * html .grid .push_eight_sixteenths,
-    * html .grid .push_nine_sixteenths,
-    * html .grid .push_seven_twelfths,
-    * html .grid .push_three_fifths,
-    * html .grid .push_six_tenths,
-    * html .grid .push_five_eighths,
-    * html .grid .push_ten_sixteenths,
-    * html .grid .push_eleven_sixteenths,
-    * html .grid .push_seven_tenths,
-    * html .grid .push_two_thirds,
-    * html .grid .push_four_sixths,
-    * html .grid .push_eight_twelfths,
-    * html .grid .push_three_fourths,
-    * html .grid .push_six_eighths,
-    * html .grid .push_nine_twelfths,
-    * html .grid .push_twelve_sixteenths,
-    * html .grid .push_four_fifths,
-    * html .grid .push_eight_tenths,
-    * html .grid .push_thirteen_sixteenths,
-    * html .grid .push_ten_twelfths,
-    * html .grid .push_five_sixths,
-    * html .grid .push_seven_eighths,
-    * html .grid .push_fourteen_sixteenths,
-    * html .grid .push_nine_tenths,
-    * html .grid .push_eleven_twelfths,
-    * html .grid .push_fifteen_sixteenths,
-    * html .grid .pull_one_sixteenth,
-    * html .grid .pull_one_twelfth,
-    * html .grid .pull_one_tenth,
-    * html .grid .pull_one_eighth,
-    * html .grid .pull_two_sixteenths,
-    * html .grid .pull_one_sixth,
-    * html .grid .pull_two_twelfths ,
-    * html .grid .pull_three_sixteenths,
-    * html .grid .pull_one_fifth,
-    * html .grid .pull_two_tenths,
-    * html .grid .pull_one_fourth,
-    * html .grid .pull_two_eighths,
-    * html .grid .pull_three_twelfths,
-    * html .grid .pull_four_sixteenths,
-    * html .grid .pull_three_tenths,
-    * html .grid .pull_five_sixteenths,
-    * html .grid .pull_one_third,
-    * html .grid .pull_two_sixths,
-    * html .grid .pull_four_twelfths,
-    * html .grid .pull_three_eighths,
-    * html .grid .pull_six_sixteenths,
-    * html .grid .pull_two_fifths,
-    * html .grid .pull_four_tenths,
-    * html .grid .pull_five_twelfths,
-    * html .grid .pull_seven_sixteenths,
-    * html .grid .pull_half,
-    * html .grid .pull_one_half,
-    * html .grid .pull_two_fourths,
-    * html .grid .pull_three_sixths,
-    * html .grid .pull_four_eighths,
-    * html .grid .pull_five_tenths,
-    * html .grid .pull_six_twelfths,
-    * html .grid .pull_eight_sixteenths,
-    * html .grid .pull_nine_sixteenths,
-    * html .grid .pull_seven_twelfths,
-    * html .grid .pull_three_fifths,
-    * html .grid .pull_six_tenths,
-    * html .grid .pull_five_eighths,
-    * html .grid .pull_ten_sixteenths,
-    * html .grid .pull_eleven_sixteenths,
-    * html .grid .pull_seven_tenths,
-    * html .grid .pull_two_thirds,
-    * html .grid .pull_four_sixths,
-    * html .grid .pull_eight_twelfths,
-    * html .grid .pull_three_fourths,
-    * html .grid .pull_six_eighths,
-    * html .grid .pull_nine_twelfths,
-    * html .grid .pull_twelve_sixteenths,
-    * html .grid .pull_four_fifths,
-    * html .grid .pull_eight_tenths,
-    * html .grid .pull_thirteen_sixteenths,
-    * html .grid .pull_ten_twelfths,
-    * html .grid .pull_five_sixths,
-    * html .grid .pull_seven_eighths,
-    * html .grid .pull_fourteen_sixteenths,
-    * html .grid .pull_nine_tenths,
-    * html .grid .pull_eleven_twelfths,
-    * html .grid .pull_fifteen_sixteenths {
-        zoom: normal;
-    }
-    
-/*  this is needed to fix the 3px text-jog bug                                  */
-    * html .grid .last {
-        left: -3px;
-        margin: 0 -3px 0 3px;
-    }
-
-/*  IE == 7; using zoom: 1 to trigger hasLayout                                 */
-    *:first-child+html .grid * { zoom: 1; }
-    
-/*  hasLayout breaks push/pull, so remove it                                    */
-    *:first-child+html .grid .push_one_sixteenth,
-    *:first-child+html .grid .push_one_twelfth,
-    *:first-child+html .grid .push_one_tenth,
-    *:first-child+html .grid .push_one_eighth,
-    *:first-child+html .grid .push_two_sixteenths,
-    *:first-child+html .grid .push_one_sixth,
-    *:first-child+html .grid .push_two_twelfths ,
-    *:first-child+html .grid .push_three_sixteenths,
-    *:first-child+html .grid .push_one_fifth,
-    *:first-child+html .grid .push_two_tenths,
-    *:first-child+html .grid .push_one_fourth,
-    *:first-child+html .grid .push_two_eighths,
-    *:first-child+html .grid .push_three_twelfths,
-    *:first-child+html .grid .push_four_sixteenths,
-    *:first-child+html .grid .push_three_tenths,
-    *:first-child+html .grid .push_five_sixteenths,
-    *:first-child+html .grid .push_one_third,
-    *:first-child+html .grid .push_two_sixths,
-    *:first-child+html .grid .push_four_twelfths,
-    *:first-child+html .grid .push_three_eighths,
-    *:first-child+html .grid .push_six_sixteenths,
-    *:first-child+html .grid .push_two_fifths,
-    *:first-child+html .grid .push_four_tenths,
-    *:first-child+html .grid .push_five_twelfths,
-    *:first-child+html .grid .push_seven_sixteenths,
-    *:first-child+html .grid .push_half,
-    *:first-child+html .grid .push_one_half,
-    *:first-child+html .grid .push_two_fourths,
-    *:first-child+html .grid .push_three_sixths,
-    *:first-child+html .grid .push_four_eighths,
-    *:first-child+html .grid .push_five_tenths,
-    *:first-child+html .grid .push_six_twelfths,
-    *:first-child+html .grid .push_eight_sixteenths,
-    *:first-child+html .grid .push_nine_sixteenths,
-    *:first-child+html .grid .push_seven_twelfths,
-    *:first-child+html .grid .push_three_fifths,
-    *:first-child+html .grid .push_six_tenths,
-    *:first-child+html .grid .push_five_eighths,
-    *:first-child+html .grid .push_ten_sixteenths,
-    *:first-child+html .grid .push_eleven_sixteenths,
-    *:first-child+html .grid .push_seven_tenths,
-    *:first-child+html .grid .push_two_thirds,
-    *:first-child+html .grid .push_four_sixths,
-    *:first-child+html .grid .push_eight_twelfths,
-    *:first-child+html .grid .push_three_fourths,
-    *:first-child+html .grid .push_six_eighths,
-    *:first-child+html .grid .push_nine_twelfths,
-    *:first-child+html .grid .push_twelve_sixteenths,
-    *:first-child+html .grid .push_four_fifths,
-    *:first-child+html .grid .push_eight_tenths,
-    *:first-child+html .grid .push_thirteen_sixteenths,
-    *:first-child+html .grid .push_ten_twelfths,
-    *:first-child+html .grid .push_five_sixths,
-    *:first-child+html .grid .push_seven_eighths,
-    *:first-child+html .grid .push_fourteen_sixteenths,
-    *:first-child+html .grid .push_nine_tenths,
-    *:first-child+html .grid .push_eleven_twelfths,
-    *:first-child+html .grid .push_fifteen_sixteenths,
-    *:first-child+html .grid .pull_one_sixteenth,
-    *:first-child+html .grid .pull_one_twelfth,
-    *:first-child+html .grid .pull_one_tenth,
-    *:first-child+html .grid .pull_one_eighth,
-    *:first-child+html .grid .pull_two_sixteenths,
-    *:first-child+html .grid .pull_one_sixth,
-    *:first-child+html .grid .pull_two_twelfths ,
-    *:first-child+html .grid .pull_three_sixteenths,
-    *:first-child+html .grid .pull_one_fifth,
-    *:first-child+html .grid .pull_two_tenths,
-    *:first-child+html .grid .pull_one_fourth,
-    *:first-child+html .grid .pull_two_eighths,
-    *:first-child+html .grid .pull_three_twelfths,
-    *:first-child+html .grid .pull_four_sixteenths,
-    *:first-child+html .grid .pull_three_tenths,
-    *:first-child+html .grid .pull_five_sixteenths,
-    *:first-child+html .grid .pull_one_third,
-    *:first-child+html .grid .pull_two_sixths,
-    *:first-child+html .grid .pull_four_twelfths,
-    *:first-child+html .grid .pull_three_eighths,
-    *:first-child+html .grid .pull_six_sixteenths,
-    *:first-child+html .grid .pull_two_fifths,
-    *:first-child+html .grid .pull_four_tenths,
-    *:first-child+html .grid .pull_five_twelfths,
-    *:first-child+html .grid .pull_seven_sixteenths,
-    *:first-child+html .grid .pull_half,
-    *:first-child+html .grid .pull_one_half,
-    *:first-child+html .grid .pull_two_fourths,
-    *:first-child+html .grid .pull_three_sixths,
-    *:first-child+html .grid .pull_four_eighths,
-    *:first-child+html .grid .pull_five_tenths,
-    *:first-child+html .grid .pull_six_twelfths,
-    *:first-child+html .grid .pull_eight_sixteenths,
-    *:first-child+html .grid .pull_nine_sixteenths,
-    *:first-child+html .grid .pull_seven_twelfths,
-    *:first-child+html .grid .pull_three_fifths,
-    *:first-child+html .grid .pull_six_tenths,
-    *:first-child+html .grid .pull_five_eighths,
-    *:first-child+html .grid .pull_ten_sixteenths,
-    *:first-child+html .grid .pull_eleven_sixteenths,
-    *:first-child+html .grid .pull_seven_tenths,
-    *:first-child+html .grid .pull_two_thirds,
-    *:first-child+html .grid .pull_four_sixths,
-    *:first-child+html .grid .pull_eight_twelfths,
-    *:first-child+html .grid .pull_three_fourths,
-    *:first-child+html .grid .pull_six_eighths,
-    *:first-child+html .grid .pull_nine_twelfths,
-    *:first-child+html .grid .pull_twelve_sixteenths,
-    *:first-child+html .grid .pull_four_fifths,
-    *:first-child+html .grid .pull_eight_tenths,
-    *:first-child+html .grid .pull_thirteen_sixteenths,
-    *:first-child+html .grid .pull_ten_twelfths,
-    *:first-child+html .grid .pull_five_sixths,
-    *:first-child+html .grid .pull_seven_eighths,
-    *:first-child+html .grid .pull_fourteen_sixteenths,
-    *:first-child+html .grid .pull_nine_tenths,
-    *:first-child+html .grid .pull_eleven_twelfths,
-    *:first-child+html .grid .pull_fifteen_sixteenths {
-        zoom: normal;
     }
 
 /*  ========================================================================
