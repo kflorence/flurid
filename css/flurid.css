@@ -12,8 +12,8 @@
     }
     
     .grid .row {
-    	_zoom: 1;
-    	*zoom: 1;
+        _zoom: 1;
+        *zoom: 1;
     }
 
     .grid .one_sixteenth,
