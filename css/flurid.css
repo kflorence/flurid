@@ -2,7 +2,7 @@
     Flurid - The Fluid CSS Grid
     ------------------------------------------------------------------------
     @author    Kyle Florence <kyle.florence@gmail.com>
-    @update    February 26, 2010
+    @update    June 09, 2010
     ========================================================================    */
 
     .grid {
@@ -217,31 +217,31 @@
     column prepend (prepends column spacers)
     ------------------------------------------------------------------------    */
 
-    .grid .prepend_one_sixteenth { padding-left: 6.25%; }
-    .grid .prepend_one_twelfth { padding-left: 8.333333%; }
-    .grid .prepend_one_tenth { padding-left: 10%; }
+    .grid .prepend_one_sixteenth { margin-left: 6.25%; }
+    .grid .prepend_one_twelfth { margin-left: 8.333333%; }
+    .grid .prepend_one_tenth { margin-left: 10%; }
     .grid .prepend_one_eighth,
-    .grid .prepend_two_sixteenths { padding-left: 12.5%; }
+    .grid .prepend_two_sixteenths { margin-left: 12.5%; }
     .grid .prepend_one_sixth,
-    .grid .prepend_two_twelfths  { padding-left: 16.666666%; }
-    .grid .prepend_three_sixteenths { padding-left: 18.75%; }
+    .grid .prepend_two_twelfths  { margin-left: 16.666666%; }
+    .grid .prepend_three_sixteenths { margin-left: 18.75%; }
     .grid .prepend_one_fifth,
-    .grid .prepend_two_tenths { padding-left: 20%; }
+    .grid .prepend_two_tenths { margin-left: 20%; }
     .grid .prepend_one_fourth,
     .grid .prepend_two_eighths,
     .grid .prepend_three_twelfths,
-    .grid .prepend_four_sixteenths { padding-left: 25%; }
-    .grid .prepend_three_tenths { padding-left: 30%; }
-    .grid .prepend_five_sixteenths { padding-left: 31.25%; }
+    .grid .prepend_four_sixteenths { margin-left: 25%; }
+    .grid .prepend_three_tenths { margin-left: 30%; }
+    .grid .prepend_five_sixteenths { margin-left: 31.25%; }
     .grid .prepend_one_third,
     .grid .prepend_two_sixths,
-    .grid .prepend_four_twelfths { padding-left: 33.333333%; }
+    .grid .prepend_four_twelfths { margin-left: 33.333333%; }
     .grid .prepend_three_eighths,
-    .grid .prepend_six_sixteenths { padding-left: 37.5%; }
+    .grid .prepend_six_sixteenths { margin-left: 37.5%; }
     .grid .prepend_two_fifths,
-    .grid .prepend_four_tenths { padding-left: 40%; }
-    .grid .prepend_five_twelfths { padding-left: 41.666666%; }
-    .grid .prepend_seven_sixteenths { padding-left: 43.75%; }
+    .grid .prepend_four_tenths { margin-left: 40%; }
+    .grid .prepend_five_twelfths { margin-left: 41.666666%; }
+    .grid .prepend_seven_sixteenths { margin-left: 43.75%; }
     .grid .prepend_half,
     .grid .prepend_one_half,
     .grid .prepend_two_fourths,
@@ -249,62 +249,62 @@
     .grid .prepend_four_eighths,
     .grid .prepend_five_tenths,
     .grid .prepend_six_twelfths,
-    .grid .prepend_eight_sixteenths { padding-left: 50%; }
-    .grid .prepend_nine_sixteenths { padding-left: 56.25%; }
-    .grid .prepend_seven_twelfths { padding-left: 58.333333%; }
+    .grid .prepend_eight_sixteenths { margin-left: 50%; }
+    .grid .prepend_nine_sixteenths { margin-left: 56.25%; }
+    .grid .prepend_seven_twelfths { margin-left: 58.333333%; }
     .grid .prepend_three_fifths,
-    .grid .prepend_six_tenths { padding-left: 60%; }
+    .grid .prepend_six_tenths { margin-left: 60%; }
     .grid .prepend_five_eighths,
-    .grid .prepend_ten_sixteenths { padding-left: 62.5%; }
-    .grid .prepend_eleven_sixteenths { padding-left: 68.75%; }
-    .grid .prepend_seven_tenths { padding-left: 70%; }
+    .grid .prepend_ten_sixteenths { margin-left: 62.5%; }
+    .grid .prepend_eleven_sixteenths { margin-left: 68.75%; }
+    .grid .prepend_seven_tenths { margin-left: 70%; }
     .grid .prepend_two_thirds,
     .grid .prepend_four_sixths,
-    .grid .prepend_eight_twelfths { padding-left: 66.666666%; }
+    .grid .prepend_eight_twelfths { margin-left: 66.666666%; }
     .grid .prepend_three_fourths,
     .grid .prepend_six_eighths,
     .grid .prepend_nine_twelfths,
-    .grid .prepend_twelve_sixteenths { padding-left: 75%; }
+    .grid .prepend_twelve_sixteenths { margin-left: 75%; }
     .grid .prepend_four_fifths,
-    .grid .prepend_eight_tenths { padding-left: 80%; }
-    .grid .prepend_thirteen_sixteenths { padding-left: 81.25%; }
+    .grid .prepend_eight_tenths { margin-left: 80%; }
+    .grid .prepend_thirteen_sixteenths { margin-left: 81.25%; }
     .grid .prepend_ten_twelfths,
-    .grid .prepend_five_sixths { padding-left: 83.333333%; }
+    .grid .prepend_five_sixths { margin-left: 83.333333%; }
     .grid .prepend_seven_eighths,
-    .grid .prepend_fourteen_sixteenths { padding-left: 87.5%; }
-    .grid .prepend_nine_tenths { padding-left: 90%; }
-    .grid .prepend_eleven_twelfths {padding-left: 91.666666%; }
-    .grid .prepend_fifteen_sixteenths { padding-left: 93.75%; }
+    .grid .prepend_fourteen_sixteenths { margin-left: 87.5%; }
+    .grid .prepend_nine_tenths { margin-left: 90%; }
+    .grid .prepend_eleven_twelfths {margin-left: 91.666666%; }
+    .grid .prepend_fifteen_sixteenths { margin-left: 93.75%; }
 
 /*  ------------------------------------------------------------------------    
     column append (appends column spacers)
     ------------------------------------------------------------------------    */
 
-    .grid .append_one_sixteenth { padding-right: 6.25%; }
-    .grid .append_one_twelfth { padding-right: 8.333333%; }
-    .grid .append_one_tenth { padding-right: 10%; }
+    .grid .append_one_sixteenth { margin-right: 6.25%; }
+    .grid .append_one_twelfth { margin-right: 8.333333%; }
+    .grid .append_one_tenth { margin-right: 10%; }
     .grid .append_one_eighth,
-    .grid .append_two_sixteenths { padding-right: 12.5%; }
+    .grid .append_two_sixteenths { margin-right: 12.5%; }
     .grid .append_one_sixth,
-    .grid .append_two_twelfths  { padding-right: 16.666666%; }
-    .grid .append_three_sixteenths { padding-right: 18.75%; }
+    .grid .append_two_twelfths  { margin-right: 16.666666%; }
+    .grid .append_three_sixteenths { margin-right: 18.75%; }
     .grid .append_one_fifth,
-    .grid .append_two_tenths { padding-right: 20%; }
+    .grid .append_two_tenths { margin-right: 20%; }
     .grid .append_one_fourth,
     .grid .append_two_eighths,
     .grid .append_three_twelfths,
-    .grid .append_four_sixteenths { padding-right: 25%; }
-    .grid .append_three_tenths { padding-right: 30%; }
-    .grid .append_five_sixteenths { padding-right: 31.25%; }
+    .grid .append_four_sixteenths { margin-right: 25%; }
+    .grid .append_three_tenths { margin-right: 30%; }
+    .grid .append_five_sixteenths { margin-right: 31.25%; }
     .grid .append_one_third,
     .grid .append_two_sixths,
-    .grid .append_four_twelfths { padding-right: 33.333333%; }
+    .grid .append_four_twelfths { margin-right: 33.333333%; }
     .grid .append_three_eighths,
-    .grid .append_six_sixteenths { padding-right: 37.5%; }
+    .grid .append_six_sixteenths { margin-right: 37.5%; }
     .grid .append_two_fifths,
-    .grid .append_four_tenths { padding-right: 40%; }
-    .grid .append_five_twelfths { padding-right: 41.666666%; }
-    .grid .append_seven_sixteenths { padding-right: 43.75%; }
+    .grid .append_four_tenths { margin-right: 40%; }
+    .grid .append_five_twelfths { margin-right: 41.666666%; }
+    .grid .append_seven_sixteenths { margin-right: 43.75%; }
     .grid .append_half,
     .grid .append_one_half,
     .grid .append_two_fourths,
@@ -312,32 +312,32 @@
     .grid .append_four_eighths,
     .grid .append_five_tenths,
     .grid .append_six_twelfths,
-    .grid .append_eight_sixteenths { padding-right: 50%; }
-    .grid .append_nine_sixteenths { padding-right: 56.25%; }
-    .grid .append_seven_twelfths { padding-right: 58.333333%; }
+    .grid .append_eight_sixteenths { margin-right: 50%; }
+    .grid .append_nine_sixteenths { margin-right: 56.25%; }
+    .grid .append_seven_twelfths { margin-right: 58.333333%; }
     .grid .append_three_fifths,
-    .grid .append_six_tenths { padding-right: 60%; }
+    .grid .append_six_tenths { margin-right: 60%; }
     .grid .append_five_eighths,
-    .grid .append_ten_sixteenths { padding-right: 62.5%; }
-    .grid .append_eleven_sixteenths { padding-right: 68.75%; }
-    .grid .append_seven_tenths { padding-right: 70%; }
+    .grid .append_ten_sixteenths { margin-right: 62.5%; }
+    .grid .append_eleven_sixteenths { margin-right: 68.75%; }
+    .grid .append_seven_tenths { margin-right: 70%; }
     .grid .append_two_thirds,
     .grid .append_four_sixths,
-    .grid .append_eight_twelfths { padding-right: 66.666666%; }
+    .grid .append_eight_twelfths { margin-right: 66.666666%; }
     .grid .append_three_fourths,
     .grid .append_six_eighths,
     .grid .append_nine_twelfths,
-    .grid .append_twelve_sixteenths { padding-right: 75%; }
+    .grid .append_twelve_sixteenths { margin-right: 75%; }
     .grid .append_four_fifths,
-    .grid .append_eight_tenths { padding-right: 80%; }
-    .grid .append_thirteen_sixteenths { padding-right: 81.25%; }
+    .grid .append_eight_tenths { margin-right: 80%; }
+    .grid .append_thirteen_sixteenths { margin-right: 81.25%; }
     .grid .append_ten_twelfths,
-    .grid .append_five_sixths { padding-right: 83.333333%; }
+    .grid .append_five_sixths { margin-right: 83.333333%; }
     .grid .append_seven_eighths,
-    .grid .append_fourteen_sixteenths { padding-right: 87.5%; }
-    .grid .append_nine_tenths { padding-right: 90%; }
-    .grid .append_eleven_twelfths {padding-right: 91.666666%; }
-    .grid .append_fifteen_sixteenths { padding-right: 93.75%; }
+    .grid .append_fourteen_sixteenths { margin-right: 87.5%; }
+    .grid .append_nine_tenths { margin-right: 90%; }
+    .grid .append_eleven_twelfths {margin-right: 91.666666%; }
+    .grid .append_fifteen_sixteenths { margin-right: 93.75%; }
 
 /*  ------------------------------------------------------------------------ 
     column push (move a column to the right)
