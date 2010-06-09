@@ -6,8 +6,13 @@ body {
     line-height: 1.4em;
 }
 
-a:link, a:active { color: #80ADDA; }
-a:hover, a:visited { color: #E88798; }
+a:link, a:active {
+	color: #80ADDA;
+}
+
+a:hover, a:visited {
+	color: #E88798;
+}
 
 h1 {
     margin: 0;
@@ -33,7 +38,9 @@ h2 {
     border-top: 3px solid #aaa;
 }
 
-h2 a:hover { color: #444 }
+h2 a:hover {
+	color: #444;
+}
 
 h3 {
     margin: 0;
@@ -61,6 +68,16 @@ ul {
     background-color: #E5E5E5;
 }
 
-.row { border-bottom: #FFF 1px solid; }
-.odd { background-color: #ADD8E6; }
-.even { background-color: #FFC0CB; }
+.row {
+	border-bottom: #FFF 1px solid;
+}
+
+.odd .column,
+.row .odd {
+	background-color: #ADD8E6;
+}
+
+.even .column,
+.row .even {
+	background-color: #FFC0CB;
+}
