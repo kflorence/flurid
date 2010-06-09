@@ -2,8 +2,17 @@ Flurid - The Fluid CSS Grid
 --------------------------------------------------------------------------------
 
   Author: Kyle Florence <kyle.florence@gmail.com>
-  Website: http://archive.kflorence.com/projects/flurid/
-  Version: 1.02252010
+  Website: http://projects.kflorence.com/programming/flurid/
+  Version: 1.16092010
+
+  CHANGELOG:
+  
+  - 06/09/2010 - Version 1.1
+      - Changed append/prepend spacer from padding to margin.
+      - Added jQuery.flurid plugin and demo page.
+      
+  - 02/25/2010 - Version 1.0
+      - Initial release
 
 --------------------------------------------------------------------------------
 Found a bug?  Have a suggestion?  Please shoot me an email (see above).
