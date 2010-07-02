@@ -1,7 +1,7 @@
 #[Flurid](http://comato.se/projects/flurid/ "Flurid - The Fluid CSS Grid") - The Fluid CSS Grid
 
-__Author__ Kyle Florence <kyle.florence@gmail.com>
-__Version__ 1.1.20100702
+__Author__ Kyle Florence <kyle.florence@gmail.com>  
+__Version__ 1.1.20100702  
 
 ##Change Log
 
