@@ -6,10 +6,11 @@ __Version__ 1.1.20100702
 ##Change Log
 
 * __06/09/2010__ Version 1.1
-> *  Changed append/prepend spacer from padding to margin.
-> *  Added jQuery.flurid plugin and demo page. 
+    *  Changed append/prepend spacer from padding to margin.
+    *  Added jQuery.flurid plugin and demo page.
+
 * __02/25/2010__ Version 1.0
-> *  Initial release
+    *  Initial release
 
 ##Contact
 
