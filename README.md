@@ -1,4 +1,4 @@
-# [Flurid](http://comato.se/projects/flurid/ "Flurid - The Fluid CSS Grid") - The Fluid CSS Grid
+# [Flurid](http://kflorence.github.com/flurid/ "Flurid - The Fluid CSS Grid") - The Fluid CSS Grid
 __Author__ Kyle Florence <kyle.florence@gmail.com>  
 __Version__ 1.1.20100702  
 

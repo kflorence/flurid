@@ -1,22 +1,28 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-    <head>
-      <title>Flurid - The Fluid CSS Grid</title>
-	  <link rel="stylesheet" type="text/css" href="../css/styles.css" />
-	  <link rel="stylesheet" type="text/css" href="../css/flurid.css" />
-	  
-	  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-	  <script type="text/javascript" src="jquery.flurid.js"></script>
-	  <script type="text/javascript">
-	  	jQuery(function($) {
-			$(".grid:not(#append_prepend)").flurid({equal_height_columns: true});
-			$("#append_prepend").flurid({alternate: "rows", equal_height_columns: true});
-	    });
-	  </script>
-    </head>
-    <body>
-      <h1>Flurid <span>The Fluid CSS Grid</span></h1>
-    
+  <head>
+    <title>Flurid - The Fluid CSS Grid</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/flurid.validates.min.css" />
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.flurid.js"></script>
+    <script type="text/javascript">
+      jQuery(function($) {
+        $(".grid:not(#append_prepend)").flurid({
+          equal_height_columns: true
+        });
+
+        $("#append_prepend").flurid({
+          alternate: "rows",
+          equal_height_columns: true
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Flurid <span>The Fluid CSS Grid</span></h1>
+
     <h2>Introducing jQuery.flurid</h2>
     <p>The jQuery.flurid plugin makes developing with Flurid easier by automatically adding classes
     for you.  You no longer have to denote each row as "odd" or "even" and you don't have to worry
@@ -30,12 +36,12 @@
       <li>Internet Explorer (Windows) - versions 6.0 - 8.0</li>
       <li>Mozilla Firefox (Windows/Linux) - versions 1.0 - 3.6</li>
     </ul>
-    
+
     <p>Below are replicas of the original Flurid grid system with the jQuery.flurid
     plugin enabled.  You should notice no difference between these demos and those
     on the <a href="../index.html">Flurid homepage</a>.</p>
 
-	<h3>The grid (with equal height columns enabled)</h3>
+    <h3>The grid (with equal height columns enabled)</h3>
     <div class="grid">
       <div class="row">
         <div class="column one_sixteenth">
@@ -259,7 +265,7 @@
         </div>
       </div>
     </div>
-    
+
     <h3>Mixed Columns</h3>
     <div class="grid">
       <div class="row">
@@ -288,7 +294,7 @@
         </div>
       </div>
     </div>
-    
+
     <h3>Nesting</h3>
     <div class="grid">
       <div class="row">
@@ -310,7 +316,7 @@
         </div>
       </div>
     </div>
-    
+
     <h3>Appending and Prepending Columns</h3>
     <div class="grid" id="append_prepend">
       <div class="row">
@@ -367,7 +373,7 @@
         <div class="column append_eleven_twelfths">
           <p>1/12</p>
         </div>
-      </div>  
+      </div>
       <div class="row">
         <div class="column prepend_one_twelfth">
           <p>11/12</p>
@@ -449,7 +455,7 @@
         </div>
       </div>
     </div>
-    
+
     <h3>Pushing and Pulling Columns</h3>
     <div class="grid">
       <div class="row">
@@ -523,15 +529,15 @@
         </div>
       </div>
     </div>
-    
+
     <h2><a name="download">Getting jQuery.flurid</a></h2>
     <p>The most up-to-date version of jquery.flurid can be found on github: <a href="http://github.com/kflorence/flurid">http://github.com/kflorence/flurid</a>.
     For examples on how to use the plugin, please view the source of this file.</p>
-    
+
     <h2><a name="caveats">Known Bugs and Caveats</a></h2>
     <ul>
       <li>Requires the <a href="http://jquery.com/">jQuery javaScript Library</a></li>
       <li>Requires that users have a javaScript enabled web-browser and that they have javaScript enabled.</li>
     </ul>
-    </body>
+  </body>
 </html>

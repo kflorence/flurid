@@ -2,7 +2,7 @@
     Flurid - The Fluid CSS Grid
     ------------------------------------------------------------------------
     @author    Kyle Florence <kyle.florence@gmail.com>
-    @update    June 09, 2010
+    @update    December 30, 2010
     ========================================================================    */
 
     .grid {
@@ -45,19 +45,19 @@
     .grid .six_tenths,
     .grid .seven_tenths,
     .grid .eight_tenths,
-    .grid .nin_tenths,
+    .grid .nine_tenths,
     .grid .one_eighth,
     .grid .two_eighths,
     .grid .three_eighths,
     .grid .four_eighths,
     .grid .five_eighths,
     .grid .six_eighths,
-    .grid .seven_eighths,    
+    .grid .seven_eighths,
     .grid .one_sixth,
     .grid .two_sixths,
     .grid .three_sixths,
     .grid .four_sixths,
-    .grid .five_sixths,    
+    .grid .five_sixths,
     .grid .one_fifth,
     .grid .two_fifths,
     .grid .three_fifths,
@@ -204,7 +204,7 @@
     .grid .full,
     .grid .full_width { width: 100%; }
 
-/*  ------------------------------------------------------------------------    
+/*  ------------------------------------------------------------------------
     column prepend (prepends column spacers)
     ------------------------------------------------------------------------    */
 
@@ -267,7 +267,7 @@
     .grid .prepend_eleven_twelfths {margin-left: 91.666666%; }
     .grid .prepend_fifteen_sixteenths { margin-left: 93.75%; }
 
-/*  ------------------------------------------------------------------------    
+/*  ------------------------------------------------------------------------
     column append (appends column spacers)
     ------------------------------------------------------------------------    */
 
@@ -330,7 +330,7 @@
     .grid .append_eleven_twelfths {margin-right: 91.666666%; }
     .grid .append_fifteen_sixteenths { margin-right: 93.75%; }
 
-/*  ------------------------------------------------------------------------ 
+/*  ------------------------------------------------------------------------
     column push (move a column to the right)
     ------------------------------------------------------------------------    */
 
@@ -623,7 +623,3 @@
     *:first-child+html .grid .push_fifteen_sixteenths, *:first-child+html .grid .pull_fifteen_sixteenths {
         zoom: normal;
     }
-
-/*  ========================================================================
-    EOF
-    ========================================================================    */
