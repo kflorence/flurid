@@ -1,8 +1,13 @@
-# [Flurid](http://kflorence.github.com/flurid/ "Flurid - The Fluid CSS Grid") - The Fluid CSS Grid
+# [Flurid](http://comato.se/flurid/ "Flurid - The Fluid CSS Grid") - The Fluid CSS Grid
 __Author__ Kyle Florence <kyle.florence@gmail.com>  
-__Version__ 1.2.20101230
+__Version__ 1.2.20110119
 
 ## Change Log
+* __01/19/2011__ Version 1.2
+    * Cleaned up branches. Separate gh-pages content from master branch.
+    * Reorganized project structure.
+    * Cleanup and update the demo and example page.
+
 * __12/30/2010__ Version 1.2
     *  Fixed a class name typo.
     *  General cleanup to all HTML, CSS and JavaScript.
