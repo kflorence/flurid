@@ -44,31 +44,31 @@ to include these things directly in the HTML.
 ## Compatibility and Requirements
 Flurid and jQuery.flurid have been tested and verified to work on:
 
-    *   Internet Explorer (Windows) - Versions 6.0+
-    *   Mozilla Firefox (Windows/Linux) - Versions 1.0+
+  *  Internet Explorer (Windows) - Versions 6.0+
+  *  Mozilla Firefox (Windows/Linux) - Versions 1.0+
 
 Additionally, the jQuery.flurid plugin requires a JavaScript enabled
 web browser and the jQuery Library (Versions 1.2.3+).
 
 ## Known Bugs and Caveats
 
-    *   A column should be at least as wide as the largest non-breaking item
-        inside of it or else the column will stretch.
-    *   The class "last" must be applied to the last column in a row in order
-        for Flurid to work correctly in _Internet Explorer_ versions 7 and below__*__,
-        however, it **should not** be applied to columns inside of a push block. If
-        there is only one column in a row, the "last" class may also be omitted.
-    *   In general, it is best to wrap _push or pull_ classes around a column
-        so that the width is assigned to the child of the pushed/pulled element.
-        Internet Explorer seems to like this better.
-    *   The immediate child element inside of an **append or prepend** block
-        should trigger the _hasLayout_ property in Internet Explorer.
-    *   Nesting columns several levels deep can be complicated as it's up to
-        you to keep track of the inherited width of parent elements.
-    *   The background color/image of a column does not stretch to the bottom
-        of the row, it only stretches as far as the content in that column __*__.
+__*__  Can be fixed by using the jQuery.flurid plugin.
 
-__*__ - Can be fixed by using the jQuery.flurid plugin.
+  *  A column should be at least as wide as the largest non-breaking item
+     inside of it or else the column will stretch.
+  *  The class "last" must be applied to the last column in a row in order
+     for Flurid to work correctly in _Internet Explorer_ versions 7 and below__*__,
+     however, it **should not** be applied to columns inside of a push block. If
+     there is only one column in a row, the "last" class may also be omitted.
+  *  In general, it is best to wrap _push or pull_ classes around a column
+     so that the width is assigned to the child of the pushed/pulled element.
+     Internet Explorer seems to like this better.
+  *  The immediate child element inside of an **append or prepend** block
+     should trigger the _hasLayout_ property in Internet Explorer.
+  *  Nesting columns several levels deep can be complicated as it's up to
+     you to keep track of the inherited width of parent elements.
+  *  The background color/image of a column does not stretch to the bottom
+     of the row, it only stretches as far as the content in that column __*__.
 
 ## Contact
 
