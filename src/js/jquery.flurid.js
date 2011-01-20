@@ -20,7 +20,7 @@
    * @return {jQuery}
    *    The jQuery Object(s) that were passed to this function.
    */
-  $.fn.flurid: function(options) {
+  $.fn.flurid = function(options) {
     options = $.extend({}, $.fn.flurid.options, options);
 
     // keep it chainable (tm)
