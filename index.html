@@ -1,14 +1,12 @@
-<!DOCTYPE html 
-     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html>
   <head>
     <title>Flurid - The Fluid CSS Grid</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
-    <link rel="stylesheet" type="text/css" href="dist/css/flurid.min.css" />
+    <link rel="stylesheet" type="text/css" href="src/css/flurid.css" />
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.2.3.min.js"></script>
-    <script type="text/javascript" src="dist/js/jquery.flurid.min.js"></script>
+    <script type="text/javascript" src="src/js/jquery.flurid.js"></script>
     <script type="text/javascript">
       jQuery(function($) {
         $(".grid:not(#append_prepend)").flurid({ equal_height_columns: true });
@@ -22,11 +20,10 @@
 
       <h2><a name="contents">Contents</a></h2>
       <ul>
-        <li><a href="#what">What is Flurid?</a></li>
+        <li><a href="#what">What Is Flurid?</a></li>
         <li><a href="#plugin">The jQuery.flurid Plugin</a></li>
-        <li><a href="#compatibility">Compatibility</a></li>
+        <li><a href="#compatibility">Browser Compatibility</a></li>
         <li><a href="#caveats">Known Bugs and Caveats</a></li>
-        <li><a href="#download">Getting Flurid</a></li>
         <li>
           <a href="#how">Using Flurid</a>
           <ul>
@@ -36,9 +33,10 @@
             <li><a href="#pushpull">Pushing and Pulling Columns</a></li>
           </ul>
         </li>
+        <li><a href="#download">Downloading Flurid</a></li>
       </ul>
 
-      <h2><a name="what">What is Flurid?</a></h2>
+      <h2><a name="what">What Is Flurid?</a></h2>
       <p>Flurid is a <strong>fluid width grid system</strong> optimized for
       flexibility (fluidity), and, as far as I know, is one of the only fluid
       grid systems to work in Internet Explorer versions 6 and 7 (and 5, with
@@ -72,61 +70,61 @@
 
       <h2><a name="plugin">The jQuery.flurid Plugin</a></h2>
       <p>Flurid has a companion jQuery plugin to help make developing with the
-      framework easier. Along with some additional features like equal height
-      columns, the jQuery plugin can also automatically append alternating "odd"
-      and "even" classes to rows and columns and apply the "last" class where
-      needed to fix things for Internet Explorer 7 and below without the need
-      to include these things directly in the HTML.</p>
+      framework easier. Along with some additional features like <strong>equal
+      height columns</strong>, the jQuery plugin also <strong>automatically appends
+      the <em>last</em> class to the last column in a row</strong> and optionally
+      adds alternating "odd" and "even" classes to rows and columns.</p>
 
-      <h2><a name="compatibility">Compatibility</a></h2>
-      <p>Flurid and jQuery.flurid have been tested and verified to work on:</p>
+      <p>The plugin requires a JavaScript enabled web browser and the
+      <a href="http://jquery.com">jQuery Library</a>, Version 1.2.3 or higher.</p>
+
+      <h2><a name="compatibility">Browser Compatibility</a></h2>
+      <p>Flurid and jQuery.flurid have been tested and verified to work on the
+      following browsers (but may very well be compatible with other browsers
+      or browser versions):</p>
 
       <ul>
-        <li>Internet Explorer (Windows) - Versions 6.0+</li>
-        <li>Mozilla Firefox (Windows/Linux) - Versions 1.0+</li>
-      </ul>
-
-      <p>Additionally, the jQuery.flurid plugin requires a JavaScript enabled
-      web browser and the jQuery Library (Versions 1.2.3+)</p>
-
-      <h2><a name="caveats">Known Bugs and Caveats</a></h2>
-      <p><strong>Note</strong>: Anything with <span class="fixed">a grey
-      background</span> in the text below can be fixed automatically by using
-      the jQuery.flurid plugin.</p>
-      <ul>
         <li>
-          A column should be at least as wide as the largest non-breaking item
-          inside of it (ex: a word or an image) or else the column will stretch.
-        </li>
-        <li class="fixed">
-          The class "<strong>last</strong>" must be applied to the last column
-          in a row in order for Flurid to work correctly in <em>Internet Explorer</em>
-          versions 7 and below, however, it <strong> should not be applied</strong>
-          to columns inside of a push block. If there is only one column in a row,
-          the "last" class may also be omitted.
+          <strong>Mozilla Firefox</strong>(Windows/Linux)<br />
+          Version 1.0 and higher
         </li>
         <li>
-          In general, it is best to attach <strong>push or pull</strong> classes
-          to their own element, then apply widths inside of that element (Internet
-          Explorer seems to like this better).
+          <strong>Internet Explorer</strong> (Windows)<br />
+          Version 5.0 and higher <a href="#caveats" class="note">*</a>
         </li>
         <li>
-          The immediate child element inside of an <strong>append or prepend</strong>
-          block must trigger hasLayout (this is done by default in the CSS).
+          <strong>Chromium/Google Chrome</strong> (Windows/Linux)<br />
+          Version 5.0 and higher <a href="#caveats" class="note">*</a>
         </li>
         <li>
-          Nesting columns several levels deep can be complicated as it's up to
-          you to keep track of the inherited width of parent elements.
-        </li>
-        <li>
-          The background color/image of a column does not stretch to the bottom
-          of the row, it only stretches as far as the content in that column.
+          <strong>Apple Safari</strong> (Windows/Mac)<br />
+          Version 4.0 and higher <a href="#caveats" class="note">*</a>
         </li>
       </ul>
 
-      <h2><a name="download">Getting Flurid</a></h2>
-      <p>The most up-to-date version of Flurid can be found on github:
-      <a href="http://github.com/kflorence/flurid">http://github.com/kflorence/flurid</a>.</p>
+      <h2><span class="note">*</span> <a name="caveats">Known Bugs and Caveats</a></h2>
+
+      <ul>
+        <li>
+          In general, it seems best to attach <strong>push or pull</strong> classes
+          to their own element, then apply widths inside of that element. Note that
+          push and pull classes do not work in <em>Internet Explorer 5.x</em>.
+        </li>
+        <li>
+          Due to the way different browsers handle sub-pixel rounding, columns may
+          not appear perfectly aligned in <em>Internet Explorer 7 and below</em>
+          or <em>Webkit-based browsers</em> (such as Safari and Chrome).
+        </li>
+        <li>
+          Because <em>Internet Explorer 7 and below</em> do not support the CSS
+          selector <em>:last-child</em>, the class <strong>last</strong> must be
+          applied to the last column in each row manually.
+        </li>
+        <li>
+          Column containers do not automatically stretch vertically across a row,
+          they only stretch as far as the content they contain.
+        </li>
+      </ul>
 
       <h2><a name="using">Using Flurid</a></h2>
       <p>Unlike other grid systems, Flurid uses very intuitive naming conventions
@@ -138,226 +136,228 @@
       All of the standard columns have been layed out in the grid below:</p>
     </div>
 
-    <div class="grid">
-      <div class="row">
-        <div class="column one_sixteenth">
-          <p>1/16</p>
-        </div>
-        <div class="column one_sixteenth">
-          <p>1/16</p>
-        </div>
-        <div class="column one_sixteenth">
-          <p>1/16</p>
-        </div>
-        <div class="column one_sixteenth">
-          <p>1/16</p>
-        </div>
-        <div class="column one_sixteenth">
-          <p>1/16</p>
-        </div>
-        <div class="column one_sixteenth">
-          <p>1/16</p>
-        </div>
-        <div class="column one_sixteenth">
-          <p>1/16</p>
-        </div>
-        <div class="column one_sixteenth">
-          <p>1/16</p>
-        </div>
-        <div class="column one_sixteenth">
-          <p>1/16</p>
-        </div>
-        <div class="column one_sixteenth">
-          <p>1/16</p>
-        </div>
-        <div class="column one_sixteenth">
-          <p>1/16</p>
-        </div>
-        <div class="column one_sixteenth">
-          <p>1/16</p>
-        </div>
-        <div class="column one_sixteenth">
-          <p>1/16</p>
-        </div>
-        <div class="column one_sixteenth">
-          <p>1/16</p>
-        </div>
-        <div class="column one_sixteenth">
-          <p>1/16</p>
-        </div>
-        <div class="column one_sixteenth">
-          <p>1/16</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="column one_twelfth">
-          <p>1/12</p>
-        </div>
-        <div class="column one_twelfth">
-          <p>1/12</p>
-        </div>
-        <div class="column one_twelfth">
-          <p>1/12</p>
-        </div>
-        <div class="column one_twelfth">
-          <p>1/12</p>
-        </div>
-        <div class="column one_twelfth">
-          <p>1/12</p>
-        </div>
-        <div class="column one_twelfth">
-          <p>1/12</p>
-        </div>
-        <div class="column one_twelfth">
-          <p>1/12</p>
-        </div>
-        <div class="column one_twelfth">
-          <p>1/12</p>
-        </div>
-        <div class="column one_twelfth">
-          <p>1/12</p>
-        </div>
-        <div class="column one_twelfth">
-          <p>1/12</p>
-        </div>
-        <div class="column one_twelfth">
-          <p>1/12</p>
-        </div>
-        <div class="column one_twelfth">
-          <p>1/12</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="column one_tenth">
-          <p>1/10</p>
-        </div>
-        <div class="column one_tenth">
-          <p>1/10</p>
-        </div>
-        <div class="column one_tenth">
-          <p>1/10</p>
-        </div>
-        <div class="column one_tenth">
-          <p>1/10</p>
-        </div>
-        <div class="column one_tenth">
-          <p>1/10</p>
-        </div>
-        <div class="column one_tenth">
-          <p>1/10</p>
-        </div>
-        <div class="column one_tenth">
-          <p>1/10</p>
-        </div>
-        <div class="column one_tenth">
-          <p>1/10</p>
-        </div>
-        <div class="column one_tenth">
-          <p>1/10</p>
-        </div>
-        <div class="column one_tenth">
-          <p>1/10</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="column one_eighth">
-          <p>1/8</p>
-        </div>
-        <div class="column one_eighth">
-          <p>1/8</p>
-        </div>
-        <div class="column one_eighth">
-          <p>1/8</p>
-        </div>
-        <div class="column one_eighth">
-          <p>1/8</p>
-        </div>
-        <div class="column one_eighth">
-          <p>1/8</p>
-        </div>
-        <div class="column one_eighth">
-          <p>1/8</p>
-        </div>
-        <div class="column one_eighth">
-          <p>1/8</p>
-        </div>
-        <div class="column one_eighth">
-          <p>1/8</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="column one_sixth">
-          <p>1/6</p>
-        </div>
-        <div class="column one_sixth">
-          <p>1/6</p>
-        </div>
-        <div class="column one_sixth">
-          <p>1/6</p>
-        </div>
-        <div class="column one_sixth">
-          <p>1/6</p>
-        </div>
-        <div class="column one_sixth">
-          <p>1/6</p>
-        </div>
-        <div class="column one_sixth">
-          <p>1/6</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="column one_fifth">
-          <p>1/5</p>
-        </div>
-        <div class="column one_fifth">
-          <p>1/5</p>
-        </div>
-        <div class="column one_fifth">
-          <p>1/5</p>
-        </div>
-        <div class="column one_fifth">
-          <p>1/5</p>
-        </div>
-        <div class="column one_fifth">
-          <p>1/5</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="column one_fourth">
-          <p>1/4</p>
-        </div>
-        <div class="column one_fourth">
-          <p>1/4</p>
-        </div>
-        <div class="column one_fourth">
-          <p>1/4</p>
-        </div>
-        <div class="column one_fourth">
-          <p>1/4</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="column one_third">
-          <p>1/3</p>
-        </div>
-        <div class="column one_third">
-          <p>1/3</p>
-        </div>
-        <div class="column one_third">
-          <p>1/3</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="column one_half">
-          <p>1/2</p>
-        </div>
-        <div class="column one_half">
-          <p>1/2</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="column full">
-          <p>1/1</p>
+    <div class="example">
+      <div class="grid">
+        <div class="row">
+          <div class="column one_sixteenth">
+            <p>1/16</p>
+          </div>
+          <div class="column one_sixteenth">
+            <p>1/16</p>
+          </div>
+          <div class="column one_sixteenth">
+            <p>1/16</p>
+          </div>
+          <div class="column one_sixteenth">
+            <p>1/16</p>
+          </div>
+          <div class="column one_sixteenth">
+            <p>1/16</p>
+          </div>
+          <div class="column one_sixteenth">
+            <p>1/16</p>
+          </div>
+          <div class="column one_sixteenth">
+            <p>1/16</p>
+          </div>
+          <div class="column one_sixteenth">
+            <p>1/16</p>
+          </div>
+          <div class="column one_sixteenth">
+            <p>1/16</p>
+          </div>
+          <div class="column one_sixteenth">
+            <p>1/16</p>
+          </div>
+          <div class="column one_sixteenth">
+            <p>1/16</p>
+          </div>
+          <div class="column one_sixteenth">
+            <p>1/16</p>
+          </div>
+          <div class="column one_sixteenth">
+            <p>1/16</p>
+          </div>
+          <div class="column one_sixteenth">
+            <p>1/16</p>
+          </div>
+          <div class="column one_sixteenth">
+            <p>1/16</p>
+          </div>
+          <div class="column one_sixteenth">
+            <p>1/16</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column one_twelfth">
+            <p>1/12</p>
+          </div>
+          <div class="column one_twelfth">
+            <p>1/12</p>
+          </div>
+          <div class="column one_twelfth">
+            <p>1/12</p>
+          </div>
+          <div class="column one_twelfth">
+            <p>1/12</p>
+          </div>
+          <div class="column one_twelfth">
+            <p>1/12</p>
+          </div>
+          <div class="column one_twelfth">
+            <p>1/12</p>
+          </div>
+          <div class="column one_twelfth">
+            <p>1/12</p>
+          </div>
+          <div class="column one_twelfth">
+            <p>1/12</p>
+          </div>
+          <div class="column one_twelfth">
+            <p>1/12</p>
+          </div>
+          <div class="column one_twelfth">
+            <p>1/12</p>
+          </div>
+          <div class="column one_twelfth">
+            <p>1/12</p>
+          </div>
+          <div class="column one_twelfth">
+            <p>1/12</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column one_tenth">
+            <p>1/10</p>
+          </div>
+          <div class="column one_tenth">
+            <p>1/10</p>
+          </div>
+          <div class="column one_tenth">
+            <p>1/10</p>
+          </div>
+          <div class="column one_tenth">
+            <p>1/10</p>
+          </div>
+          <div class="column one_tenth">
+            <p>1/10</p>
+          </div>
+          <div class="column one_tenth">
+            <p>1/10</p>
+          </div>
+          <div class="column one_tenth">
+            <p>1/10</p>
+          </div>
+          <div class="column one_tenth">
+            <p>1/10</p>
+          </div>
+          <div class="column one_tenth">
+            <p>1/10</p>
+          </div>
+          <div class="column one_tenth">
+            <p>1/10</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column one_eighth">
+            <p>1/8</p>
+          </div>
+          <div class="column one_eighth">
+            <p>1/8</p>
+          </div>
+          <div class="column one_eighth">
+            <p>1/8</p>
+          </div>
+          <div class="column one_eighth">
+            <p>1/8</p>
+          </div>
+          <div class="column one_eighth">
+            <p>1/8</p>
+          </div>
+          <div class="column one_eighth">
+            <p>1/8</p>
+          </div>
+          <div class="column one_eighth">
+            <p>1/8</p>
+          </div>
+          <div class="column one_eighth">
+            <p>1/8</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column one_sixth">
+            <p>1/6</p>
+          </div>
+          <div class="column one_sixth">
+            <p>1/6</p>
+          </div>
+          <div class="column one_sixth">
+            <p>1/6</p>
+          </div>
+          <div class="column one_sixth">
+            <p>1/6</p>
+          </div>
+          <div class="column one_sixth">
+            <p>1/6</p>
+          </div>
+          <div class="column one_sixth">
+            <p>1/6</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column one_fifth">
+            <p>1/5</p>
+          </div>
+          <div class="column one_fifth">
+            <p>1/5</p>
+          </div>
+          <div class="column one_fifth">
+            <p>1/5</p>
+          </div>
+          <div class="column one_fifth">
+            <p>1/5</p>
+          </div>
+          <div class="column one_fifth">
+            <p>1/5</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column one_fourth">
+            <p>1/4</p>
+          </div>
+          <div class="column one_fourth">
+            <p>1/4</p>
+          </div>
+          <div class="column one_fourth">
+            <p>1/4</p>
+          </div>
+          <div class="column one_fourth">
+            <p>1/4</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column one_third">
+            <p>1/3</p>
+          </div>
+          <div class="column one_third">
+            <p>1/3</p>
+          </div>
+          <div class="column one_third">
+            <p>1/3</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column one_half">
+            <p>1/2</p>
+          </div>
+          <div class="column one_half">
+            <p>1/2</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column full">
+            <p>1/1</p>
+          </div>
         </div>
       </div>
     </div>
@@ -370,30 +370,32 @@
       your fractions, you can rest assured that it will not break the system.</p>
     </div>
 
-    <div class="grid">
-      <div class="row">
-        <div class="column one_twelfth">
-          <p>1/12</p>
+    <div class="example">
+      <div class="grid">
+        <div class="row">
+          <div class="column one_twelfth">
+            <p>1/12</p>
+          </div>
+          <div class="column five_twelfths">
+            <p>5/12</p>
+          </div>
+          <div class="column six_twelfths">
+            <p>6/12 (1/2)</p>
+          </div>
         </div>
-        <div class="column five_twelfths">
-          <p>5/12</p>
-        </div>
-        <div class="column six_twelfths">
-          <p>6/12 (1/2)</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="column one_fourth">
-          <p>4/16 (1/4)</p>
-        </div>
-        <div class="column one_sixteenth">
-          <p>1/16</p>
-        </div>
-        <div class="column one_half">
-          <p>8/16 (1/2)</p>
-        </div>
-        <div class="column three_sixteenths">
-          <p>3/16</p>
+        <div class="row">
+          <div class="column one_fourth">
+            <p>4/16 (1/4)</p>
+          </div>
+          <div class="column one_sixteenth">
+            <p>1/16</p>
+          </div>
+          <div class="column one_half">
+            <p>8/16 (1/2)</p>
+          </div>
+          <div class="column three_sixteenths">
+            <p>3/16</p>
+          </div>
         </div>
       </div>
     </div>
@@ -407,23 +409,25 @@
       grid's full width.</p>
     </div>
 
-    <div class="grid">
-      <div class="row">
-        <div class="one_half">
-          <div class="column one_half">
-            <p>1/2 of 1/2 (1/4)</p>
-          </div>
+    <div class="example">
+      <div class="grid">
+        <div class="row">
           <div class="one_half">
             <div class="column one_half">
-              <p>1/2 of 1/2 of 1/2 (1/8)</p>
+              <p>1/2 of 1/2 (1/4)</p>
             </div>
-            <div class="column one_half">
-              <p>1/2 of 1/2 of 1/2 (1/8)</p>
+            <div class="one_half">
+              <div class="column one_half">
+                <p>1/2 of 1/2 of 1/2 (1/8)</p>
+              </div>
+              <div class="column one_half">
+                <p>1/2 of 1/2 of 1/2 (1/8)</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="column one_half">
-          <p>1/2</p>
+          <div class="column one_half">
+            <p>1/2</p>
+          </div>
         </div>
       </div>
     </div>
@@ -436,140 +440,142 @@
       prepend to add padding before a column (<strong>pad left</strong>).</p>
     </div>
 
-    <div class="grid" id="append_prepend">
-      <div class="row">
-        <div class="column append_one_twelfth">
-          <p>11/12</p>
+    <div class="example">
+      <div class="grid" id="append_prepend">
+        <div class="row">
+          <div class="column append_one_twelfth">
+            <p>11/12</p>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="column append_two_twelfths">
-          <p>10/12</p>
+        <div class="row">
+          <div class="column append_two_twelfths">
+            <p>10/12</p>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="column append_three_twelfths">
-          <p>9/12</p>
+        <div class="row">
+          <div class="column append_three_twelfths">
+            <p>9/12</p>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="column append_four_twelfths">
-          <p>8/12</p>
+        <div class="row">
+          <div class="column append_four_twelfths">
+            <p>8/12</p>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="column append_five_twelfths">
-          <p>7/12</p>
+        <div class="row">
+          <div class="column append_five_twelfths">
+            <p>7/12</p>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="column append_six_twelfths">
-          <p>6/12</p>
+        <div class="row">
+          <div class="column append_six_twelfths">
+            <p>6/12</p>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="column append_seven_twelfths">
-          <p>5/12</p>
+        <div class="row">
+          <div class="column append_seven_twelfths">
+            <p>5/12</p>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="column append_eight_twelfths">
-          <p>4/12</p>
+        <div class="row">
+          <div class="column append_eight_twelfths">
+            <p>4/12</p>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="column append_nine_twelfths">
-          <p>3/12</p>
+        <div class="row">
+          <div class="column append_nine_twelfths">
+            <p>3/12</p>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="column append_ten_twelfths">
-          <p>2/12</p>
+        <div class="row">
+          <div class="column append_ten_twelfths">
+            <p>2/12</p>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="column append_eleven_twelfths">
-          <p>1/12</p>
+        <div class="row">
+          <div class="column append_eleven_twelfths">
+            <p>1/12</p>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="column prepend_one_twelfth">
-          <p>11/12</p>
+        <div class="row">
+          <div class="column prepend_one_twelfth">
+            <p>11/12</p>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="column prepend_two_twelfths">
-          <p>10/12</p>
+        <div class="row">
+          <div class="column prepend_two_twelfths">
+            <p>10/12</p>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="column prepend_three_twelfths">
-          <p>9/12</p>
+        <div class="row">
+          <div class="column prepend_three_twelfths">
+            <p>9/12</p>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="column prepend_four_twelfths">
-          <p>8/12</p>
+        <div class="row">
+          <div class="column prepend_four_twelfths">
+            <p>8/12</p>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="column prepend_five_twelfths">
-          <p>7/12</p>
+        <div class="row">
+          <div class="column prepend_five_twelfths">
+            <p>7/12</p>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="column prepend_six_twelfths">
-          <p>6/12</p>
+        <div class="row">
+          <div class="column prepend_six_twelfths">
+            <p>6/12</p>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="column prepend_seven_twelfths">
-          <p>5/12</p>
+        <div class="row">
+          <div class="column prepend_seven_twelfths">
+            <p>5/12</p>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="column prepend_eight_twelfths">
-          <p>4/12</p>
+        <div class="row">
+          <div class="column prepend_eight_twelfths">
+            <p>4/12</p>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="column prepend_nine_twelfths">
-          <p>3/12</p>
+        <div class="row">
+          <div class="column prepend_nine_twelfths">
+            <p>3/12</p>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="column prepend_ten_twelfths">
-          <p>2/12</p>
+        <div class="row">
+          <div class="column prepend_ten_twelfths">
+            <p>2/12</p>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="column prepend_eleven_twelfths">
-          <p>1/12</p>
+        <div class="row">
+          <div class="column prepend_eleven_twelfths">
+            <p>1/12</p>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="column prepend_five_twelfths append_five_twelfths">
-          <p>2/12</p>
+        <div class="row">
+          <div class="column prepend_five_twelfths append_five_twelfths">
+            <p>2/12</p>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="column prepend_four_twelfths append_four_twelfths">
-          <p>4/12</p>
+        <div class="row">
+          <div class="column prepend_four_twelfths append_four_twelfths">
+            <p>4/12</p>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="column prepend_three_twelfths append_three_twelfths">
-          <p>6/12</p>
+        <div class="row">
+          <div class="column prepend_three_twelfths append_three_twelfths">
+            <p>6/12</p>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="column prepend_two_twelfths append_two_twelfths">
-          <p>8/12</p>
+        <div class="row">
+          <div class="column prepend_two_twelfths append_two_twelfths">
+            <p>8/12</p>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="column prepend_one_twelfth append_one_twelfth">
-          <p>10/12</p>
+        <div class="row">
+          <div class="column prepend_one_twelfth append_one_twelfth">
+            <p>10/12</p>
+          </div>
         </div>
       </div>
     </div>
@@ -585,77 +591,85 @@
       normal location.</p>
     </div>
 
-    <div class="grid">
-      <div class="row">
-        <div class="push_one_half">
-          <div class="column one_half">
-            <p>1/2 (push 1/2)</p>
+    <div class="example">
+      <div class="grid">
+        <div class="row">
+          <div class="push_one_half">
+            <div class="column one_half">
+              <p>1/2 (push 1/2)</p>
+            </div>
+          </div>
+          <div class="pull_one_half">
+            <div class="column one_fourth">
+              <p>1/4 (pull 1/2)</p>
+            </div>
+            <div class="column one_fourth ">
+              <p>1/4 (pull 1/2)</p>
+            </div>
           </div>
         </div>
-        <div class="pull_one_half">
+        <div class="row">
           <div class="column one_fourth">
-            <p>1/4 (pull 1/2)</p>
+            <p>1/4</p>
           </div>
-          <div class="column one_fourth ">
-            <p>1/4 (pull 1/2)</p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="column one_fourth">
-          <p>1/4</p>
-        </div>
-        <div class="push_one_half">
-          <div class="column one_fourth">
-            <p>1/4 (push 1/2)</p>
+          <div class="push_one_half">
+            <div class="column one_fourth">
+              <p>1/4 (push 1/2)</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="push_one_eighth">
-          <div class="column one_fourth">
-            <p>1/4 (push 1/8)</p>
+        <div class="row">
+          <div class="push_one_eighth">
+            <div class="column one_fourth">
+              <p>1/4 (push 1/8)</p>
+            </div>
+          </div>
+          <div class="push_three_eighths">
+            <div class="column one_fourth">
+              <p>1/4 (push 3/8)</p>
+            </div>
           </div>
         </div>
-        <div class="push_three_eighths">
-          <div class="column one_fourth">
-            <p>1/4 (push 3/8)</p>
+        <div class="row">
+          <div class="push_one_fourth">
+            <div class="column one_fourth">
+              <p>1/4 (push 1/4)</p>
+            </div>
+          </div>
+          <div class="push_one_fourth">
+            <div class="column one_fourth">
+              <p>1/4 (push 1/4)</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="push_one_fourth">
-          <div class="column one_fourth">
-            <p>1/4 (push 1/4)</p>
+        <div class="row">
+          <div class="column one_eighth">
+            <p>1/8</p>
           </div>
-        </div>
-        <div class="push_one_fourth">
-          <div class="column one_fourth">
-            <p>1/4 (push 1/4)</p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="column one_eighth">
-          <p>1/8</p>
-        </div>
-        <div class="column one_eighth">
-          <p>1/8</p>
-        </div>
-        <div class="push_one_eighth">
-          <div class="column one_fourth">
-            <p>1/4 (push 1/8)</p>
+          <div class="column one_eighth">
+            <p>1/8</p>
           </div>
           <div class="push_one_eighth">
-            <div class="column one_eighth">
-              <p>1/8 (push 1/8)</p>
+            <div class="column one_fourth">
+              <p>1/4 (push 1/8)</p>
             </div>
-            <div class="column one_eighth">
-              <p>1/8 (push 1/8)</p>
+            <div class="push_one_eighth">
+              <div class="column one_eighth">
+                <p>1/8 (push 1/8)</p>
+              </div>
+              <div class="column one_eighth">
+                <p>1/8 (push 1/8)</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="section">
+      <h2><a name="download">Downloading Flurid</a></h2>
+      <p>The most up-to-date version of Flurid can be found on github:
+      <a href="http://github.com/kflorence/flurid">http://github.com/kflorence/flurid</a>.</p>
     </div>
   </body>
 </html>
