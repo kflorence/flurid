@@ -25,11 +25,11 @@
 
     // keep it chainable (tm)
     return this.each(function() {
-      var $this = $(this), $rows = $(".row", $this);
+      var $this = $(this), $rows = $(".row", $this), row_count = $rows.length;
 
       // loops through rows
       $rows.each(function(r, row) {
-        var $row = $(row), $columns = $(".column", $row),
+        var r = (r + 1), $row = $(row), $columns = $(".column", $row),
           column_count = $columns.length, tallest_column = 0;
 
         // loops through columns
@@ -42,18 +42,29 @@
             $col.addClass((c % 2 == 0 ? "even" : "odd"));
           }
 
-          // add "last" to last column (except to columns inside a push block)
-          if (c === column_count && c !== 1 && !insidePushBlock) {
+          // first / last column
+          if (c === 1) {
+            $col.addClass("first");
+          } else if (c === column_count && !insidePushBlock) {
             $col.addClass("last");
           }
 
           // store tallest column height
-          if (height > tallest_column) tallest_column = height;
+          if (height > tallest_column) {
+            tallest_column = height;
+          }
         });
 
         // alternating rows
         if (options.alternate == "rows") {
           $row.addClass((r % 2 == 0 ? "even" : "odd"));
+        }
+
+        // first / last row
+        if (r === 1) {
+          $row.addClass("first");
+        } else if (r === row_count) {
+          $row.addClass("last");
         }
 
         // make columns have equal heights
