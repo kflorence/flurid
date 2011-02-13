@@ -10,7 +10,7 @@
 }
 
 .grid .row {
-  /* IE < 8 needs this */
+  /* IE < 8 needs hasLayout on rows */
   zoom: 1;
 }
 
@@ -146,7 +146,6 @@
 .grid .full_width .full_width,
 .grid .full .full {
   /* IE < 8 - fixes odd widths breaking nested columns */
-  _margin-right: -1px;
   *margin-right: -1px;
 }
 
@@ -515,7 +514,7 @@
 .grid .pull_fifteen_sixteenths { left: -93.75%; }
 
 /* Last column fix */
-.grid .row:last-child, .grid .row .last {
+.grid .row .last {
   float: none !important;
   /* Gecko needs this */
   overflow: hidden;
