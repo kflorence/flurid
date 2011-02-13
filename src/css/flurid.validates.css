@@ -1,625 +1,567 @@
-/*  ========================================================================
-    Flurid - The Fluid CSS Grid
-    ------------------------------------------------------------------------
-    @author    Kyle Florence <kyle.florence@gmail.com>
-    @update    December 30, 2010
-    ========================================================================    */
+/**
+ * Flurid - The Fluid CSS Grid
+ *
+ * @author Kyle Florence <kyle[dot]florence[at]gmail[dot]com>
+ * @update February 12, 2011
+ */
 
-    .grid {
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-    }
+.grid {
+  overflow: hidden;
+}
 
-    .grid .one_sixteenth,
-    .grid .two_sixteenths,
-    .grid .three_sixteenths,
-    .grid .four_sixteenths,
-    .grid .five_sixteenths,
-    .grid .six_sixteenths,
-    .grid .seven_sixteenths,
-    .grid .eight_sixteenths,
-    .grid .nine_sixteenths,
-    .grid .ten_sixteenths,
-    .grid .eleven_sixteenths,
-    .grid .twelve_sixteenths,
-    .grid .thirteen_sixteenths,
-    .grid .fourteen_sixteenths,
-    .grid .fifteen_sixteenths,
-    .grid .one_twelfth,
-    .grid .two_twelfths,
-    .grid .three_twelfths,
-    .grid .four_twelfths,
-    .grid .five_twelfths,
-    .grid .six_twelfths,
-    .grid .seven_twelfths,
-    .grid .eight_twelfths,
-    .grid .nine_twelfths,
-    .grid .ten_twelfths,
-    .grid .eleven_twelfths,
-    .grid .one_tenth,
-    .grid .two_tenths,
-    .grid .three_tenths,
-    .grid .four_tenths,
-    .grid .five_tenths,
-    .grid .six_tenths,
-    .grid .seven_tenths,
-    .grid .eight_tenths,
-    .grid .nine_tenths,
-    .grid .one_eighth,
-    .grid .two_eighths,
-    .grid .three_eighths,
-    .grid .four_eighths,
-    .grid .five_eighths,
-    .grid .six_eighths,
-    .grid .seven_eighths,
-    .grid .one_sixth,
-    .grid .two_sixths,
-    .grid .three_sixths,
-    .grid .four_sixths,
-    .grid .five_sixths,
-    .grid .one_fifth,
-    .grid .two_fifths,
-    .grid .three_fifths,
-    .grid .four_fifths,
-    .grid .five_fifths,
-    .grid .one_fourth,
-    .grid .two_fourths,
-    .grid .three_fourths,
-    .grid .one_third,
-    .grid .two_thirds,
-    .grid .one_half,
-    .grid .half,
-    .grid .full_width,
-    .grid .full {
-        margin: 0;
-        padding: 0;
-        float: left;
-        position: relative;
-    }
+/* IE < 8 needs hasLayout on rows */
+* html .grid .row { height: 1%; }
+*:first-child+html .grid .row { height: 1%; }
 
-    .grid .push_one_sixteenth, .grid .pull_one_sixteenth,
-    .grid .push_one_twelfth, .grid .pull_one_twelfth,
-    .grid .push_one_tenth, .grid .pull_one_tenth,
-    .grid .push_one_eighth, .grid .pull_one_eighth,
-    .grid .push_two_sixteenths, .grid .pull_two_sixteenths,
-    .grid .push_one_sixth, .grid .pull_one_sixth,
-    .grid .push_two_twelfths, .grid .pull_two_twelfths,
-    .grid .push_three_sixteenths, .grid .pull_three_sixteenths,
-    .grid .push_one_fifth, .grid .pull_one_fifth,
-    .grid .push_two_tenths, .grid .pull_two_tenths,
-    .grid .push_one_fourth, .grid .pull_one_fourth,
-    .grid .push_two_eighths, .grid .pull_two_eighths,
-    .grid .push_three_twelfths, .grid .pull_three_twelfths,
-    .grid .push_four_sixteenths, .grid .pull_four_sixteenths,
-    .grid .push_three_tenths, .grid .pull_three_tenths,
-    .grid .push_five_sixteenths, .grid .pull_five_sixteenths,
-    .grid .push_one_third, .grid .pull_one_third,
-    .grid .push_two_sixths, .grid .pull_two_sixths,
-    .grid .push_four_twelfths, .grid .pull_four_twelfths,
-    .grid .push_three_eighths, .grid .pull_three_eighths,
-    .grid .push_six_sixteenths, .grid .pull_six_sixteenths,
-    .grid .push_two_fifths, .grid .pull_two_fifths,
-    .grid .push_four_tenths, .grid .pull_four_tenths,
-    .grid .push_five_twelfths, .grid .pull_five_twelfths,
-    .grid .push_seven_sixteenths, .grid .pull_seven_sixteenths,
-    .grid .push_half, .grid .pull_half,
-    .grid .push_one_half, .grid .pull_one_half,
-    .grid .push_two_fourths, .grid .pull_two_fourths,
-    .grid .push_three_sixths, .grid .pull_three_sixths,
-    .grid .push_four_eighths, .grid .pull_four_eighths,
-    .grid .push_five_tenths, .grid .pull_five_tenths,
-    .grid .push_six_twelfths, .grid .pull_six_twelfths,
-    .grid .push_eight_sixteenths, .grid .pull_eight_sixteenths,
-    .grid .push_nine_sixteenths, .grid .pull_nine_sixteenths,
-    .grid .push_seven_twelfths, .grid .pull_seven_twelfths,
-    .grid .push_three_fifths, .grid .pull_three_fifths,
-    .grid .push_six_tenths, .grid .pull_six_tenths,
-    .grid .push_five_eighths, .grid .pull_five_eighths,
-    .grid .push_ten_sixteenths, .grid .pull_ten_sixteenths,
-    .grid .push_eleven_sixteenths, .grid .pull_eleven_sixteenths,
-    .grid .push_seven_tenths, .grid .pull_seven_tenths,
-    .grid .push_two_thirds, .grid .pull_two_thirds,
-    .grid .push_four_sixths, .grid .pull_four_sixths,
-    .grid .push_eight_twelfths, .grid .pull_eight_twelfths,
-    .grid .push_three_fourths, .grid .pull_three_fourths,
-    .grid .push_six_eighths, .grid .pull_six_eighths,
-    .grid .push_nine_twelfths, .grid .pull_nine_twelfths,
-    .grid .push_twelve_sixteenths, .grid .pull_twelve_sixteenths,
-    .grid .push_four_fifths, .grid .pull_four_fifths,
-    .grid .push_eight_tenths, .grid .pull_eight_tenths,
-    .grid .push_thirteen_sixteenths, .grid .pull_thirteen_sixteenths,
-    .grid .push_ten_twelfths, .grid .pull_ten_twelfths,
-    .grid .push_five_sixths, .grid .pull_five_sixths,
-    .grid .push_seven_eighths, .grid .pull_seven_eighths,
-    .grid .push_fourteen_sixteenths, .grid .pull_fourteen_sixteenths,
-    .grid .push_nine_tenths, .grid .pull_nine_tenths,
-    .grid .push_eleven_twelfths, .grid .pull_eleven_twelfths,
-    .grid .push_fifteen_sixteenths, .grid .pull_fifteen_sixteenths {
-        position: relative;
-    }
+/* Columns */
+.grid .one_sixteenth,
+.grid .two_sixteenths,
+.grid .three_sixteenths,
+.grid .four_sixteenths,
+.grid .five_sixteenths,
+.grid .six_sixteenths,
+.grid .seven_sixteenths,
+.grid .eight_sixteenths,
+.grid .nine_sixteenths,
+.grid .ten_sixteenths,
+.grid .eleven_sixteenths,
+.grid .twelve_sixteenths,
+.grid .thirteen_sixteenths,
+.grid .fourteen_sixteenths,
+.grid .fifteen_sixteenths,
+.grid .one_twelfth,
+.grid .two_twelfths,
+.grid .three_twelfths,
+.grid .four_twelfths,
+.grid .five_twelfths,
+.grid .six_twelfths,
+.grid .seven_twelfths,
+.grid .eight_twelfths,
+.grid .nine_twelfths,
+.grid .ten_twelfths,
+.grid .eleven_twelfths,
+.grid .one_tenth,
+.grid .two_tenths,
+.grid .three_tenths,
+.grid .four_tenths,
+.grid .five_tenths,
+.grid .six_tenths,
+.grid .seven_tenths,
+.grid .eight_tenths,
+.grid .nine_tenths,
+.grid .one_eighth,
+.grid .two_eighths,
+.grid .three_eighths,
+.grid .four_eighths,
+.grid .five_eighths,
+.grid .six_eighths,
+.grid .seven_eighths,
+.grid .one_sixth,
+.grid .two_sixths,
+.grid .three_sixths,
+.grid .four_sixths,
+.grid .five_sixths,
+.grid .one_fifth,
+.grid .two_fifths,
+.grid .three_fifths,
+.grid .four_fifths,
+.grid .five_fifths,
+.grid .one_fourth,
+.grid .two_fourths,
+.grid .three_fourths,
+.grid .one_third,
+.grid .two_thirds,
+.grid .one_half,
+.grid .half,
+.grid .full_width,
+.grid .full {
+  border: 0;
+  float: left;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
 
-/*  ------------------------------------------------------------------------
-    columns (supports up to 16)
-    ------------------------------------------------------------------------    */
+/* IE 6 - Nested columns */
+* html .grid .five_twelfths .five_twelfths,
+* html .grid .six_twelfths .six_twelfths,
+* html .grid .seven_twelfths .seven_twelfths,
+* html .grid .eight_twelfths .eight_twelfths,
+* html .grid .nine_twelfths .nine_twelfths,
+* html .grid .ten_twelfths .ten_twelfths,
+* html .grid .eleven_twelfths .eleven_twelfths,
+* html .grid .one_tenth .one_tenth,
+* html .grid .two_tenths .two_tenths,
+* html .grid .three_tenths .three_tenths,
+* html .grid .four_tenths .four_tenths,
+* html .grid .five_tenths .five_tenths,
+* html .grid .six_tenths .six_tenths,
+* html .grid .seven_tenths .seven_tenths,
+* html .grid .eight_tenths .eight_tenths,
+* html .grid .nine_tenths .nine_tenths,
+* html .grid .one_eighth .one_eighth,
+* html .grid .two_eighths .two_eighths,
+* html .grid .three_eighths .three_eighths,
+* html .grid .four_eighths .four_eighths,
+* html .grid .five_eighths .five_eighths,
+* html .grid .six_eighths .six_eighths,
+* html .grid .seven_eighths .seven_eighths,
+* html .grid .one_sixth .one_sixth,
+* html .grid .two_sixths .two_sixths,
+* html .grid .three_sixths .three_sixths,
+* html .grid .four_sixths .four_sixths,
+* html .grid .five_sixths .five_sixths,
+* html .grid .one_fifth .one_fifth,
+* html .grid .two_fifths .two_fifths,
+* html .grid .three_fifths .three_fifths,
+* html .grid .four_fifths .four_fifths,
+* html .grid .five_fifths .five_fifths,
+* html .grid .one_fourth .one_fourth,
+* html .grid .two_fourths .two_fourths,
+* html .grid .three_fourths .three_fourths,
+* html .grid .one_third .one_third,
+* html .grid .two_thirds .two_thirds,
+* html .grid .one_half .one_half,
+* html .grid .half .half,
+* html .grid .full_width .full_width,
+* html .grid .full .full {
+  /* Fix odd widths breaking nested columns */
+  margin-right: -1px;
+}
 
-    .grid .one_sixteenth { width: 6.25%; }
-    .grid .one_twelfth { width: 8.333333%; }
-    .grid .one_tenth { width: 10%; }
-    .grid .one_eighth,
-    .grid .two_sixteenths { width: 12.5%; }
-    .grid .one_sixth,
-    .grid .two_twelfths  { width: 16.666666%; }
-    .grid .three_sixteenths { width: 18.75%; }
-    .grid .one_fifth,
-    .grid .two_tenths { width: 20%; }
-    .grid .one_fourth,
-    .grid .two_eighths,
-    .grid .three_twelfths,
-    .grid .four_sixteenths { width: 25%; }
-    .grid .three_tenths { width: 30%; }
-    .grid .five_sixteenths { width: 31.25%; }
-    .grid .one_third,
-    .grid .two_sixths,
-    .grid .four_twelfths { width: 33.333333%; }
-    .grid .three_eighths,
-    .grid .six_sixteenths { width: 37.5%; }
-    .grid .two_fifths,
-    .grid .four_tenths { width: 40%; }
-    .grid .five_twelfths { width: 41.666666%; }
-    .grid .seven_sixteenths { width: 43.75%; }
-    .grid .half,
-    .grid .one_half,
-    .grid .two_fourths,
-    .grid .three_sixths,
-    .grid .four_eighths,
-    .grid .five_tenths,
-    .grid .six_twelfths,
-    .grid .eight_sixteenths { width: 50%; }
-    .grid .nine_sixteenths { width: 56.25%; }
-    .grid .seven_twelfths { width: 58.333333%; }
-    .grid .three_fifths,
-    .grid .six_tenths { width: 60%; }
-    .grid .five_eighths,
-    .grid .ten_sixteenths { width: 62.5%; }
-    .grid .eleven_sixteenths { width: 68.75%; }
-    .grid .seven_tenths { width: 70%; }
-    .grid .two_thirds,
-    .grid .four_sixths,
-    .grid .eight_twelfths { width: 66.666666%; }
-    .grid .three_fourths,
-    .grid .six_eighths,
-    .grid .nine_twelfths,
-    .grid .twelve_sixteenths { width: 75%; }
-    .grid .four_fifths,
-    .grid .eight_tenths { width: 80%; }
-    .grid .thirteen_sixteenths { width: 81.25%; }
-    .grid .ten_twelfths,
-    .grid .five_sixths { width: 83.333333%; }
-    .grid .seven_eighths,
-    .grid .fourteen_sixteenths { width: 87.5%; }
-    .grid .nine_tenths { width: 90%; }
-    .grid .eleven_twelfths {width: 91.666666%; }
-    .grid .fifteen_sixteenths { width: 93.75%; }
-    .grid .full,
-    .grid .full_width { width: 100%; }
+/* IE 7 - Nested Columns */
+*:first-child+html .grid .five_twelfths .five_twelfths,
+*:first-child+html .grid .six_twelfths .six_twelfths,
+*:first-child+html .grid .seven_twelfths .seven_twelfths,
+*:first-child+html .grid .eight_twelfths .eight_twelfths,
+*:first-child+html .grid .nine_twelfths .nine_twelfths,
+*:first-child+html .grid .ten_twelfths .ten_twelfths,
+*:first-child+html .grid .eleven_twelfths .eleven_twelfths,
+*:first-child+html .grid .one_tenth .one_tenth,
+*:first-child+html .grid .two_tenths .two_tenths,
+*:first-child+html .grid .three_tenths .three_tenths,
+*:first-child+html .grid .four_tenths .four_tenths,
+*:first-child+html .grid .five_tenths .five_tenths,
+*:first-child+html .grid .six_tenths .six_tenths,
+*:first-child+html .grid .seven_tenths .seven_tenths,
+*:first-child+html .grid .eight_tenths .eight_tenths,
+*:first-child+html .grid .nine_tenths .nine_tenths,
+*:first-child+html .grid .one_eighth .one_eighth,
+*:first-child+html .grid .two_eighths .two_eighths,
+*:first-child+html .grid .three_eighths .three_eighths,
+*:first-child+html .grid .four_eighths .four_eighths,
+*:first-child+html .grid .five_eighths .five_eighths,
+*:first-child+html .grid .six_eighths .six_eighths,
+*:first-child+html .grid .seven_eighths .seven_eighths,
+*:first-child+html .grid .one_sixth .one_sixth,
+*:first-child+html .grid .two_sixths .two_sixths,
+*:first-child+html .grid .three_sixths .three_sixths,
+*:first-child+html .grid .four_sixths .four_sixths,
+*:first-child+html .grid .five_sixths .five_sixths,
+*:first-child+html .grid .one_fifth .one_fifth,
+*:first-child+html .grid .two_fifths .two_fifths,
+*:first-child+html .grid .three_fifths .three_fifths,
+*:first-child+html .grid .four_fifths .four_fifths,
+*:first-child+html .grid .five_fifths .five_fifths,
+*:first-child+html .grid .one_fourth .one_fourth,
+*:first-child+html .grid .two_fourths .two_fourths,
+*:first-child+html .grid .three_fourths .three_fourths,
+*:first-child+html .grid .one_third .one_third,
+*:first-child+html .grid .two_thirds .two_thirds,
+*:first-child+html .grid .one_half .one_half,
+*:first-child+html .grid .half .half,
+*:first-child+html .grid .full_width .full_width,
+*:first-child+html .grid .full .full {
+  /* Fix odd widths breaking nested columns */
+  margin-right: -1px;
+}
 
-/*  ------------------------------------------------------------------------
-    column prepend (prepends column spacers)
-    ------------------------------------------------------------------------    */
+/* Push and pull columns */
+.grid .push_one_sixteenth, .grid .pull_one_sixteenth,
+.grid .push_one_twelfth, .grid .pull_one_twelfth,
+.grid .push_one_tenth, .grid .pull_one_tenth,
+.grid .push_one_eighth, .grid .pull_one_eighth,
+.grid .push_two_sixteenths, .grid .pull_two_sixteenths,
+.grid .push_one_sixth, .grid .pull_one_sixth,
+.grid .push_two_twelfths, .grid .pull_two_twelfths,
+.grid .push_three_sixteenths, .grid .pull_three_sixteenths,
+.grid .push_one_fifth, .grid .pull_one_fifth,
+.grid .push_two_tenths, .grid .pull_two_tenths,
+.grid .push_one_fourth, .grid .pull_one_fourth,
+.grid .push_two_eighths, .grid .pull_two_eighths,
+.grid .push_three_twelfths, .grid .pull_three_twelfths,
+.grid .push_four_sixteenths, .grid .pull_four_sixteenths,
+.grid .push_three_tenths, .grid .pull_three_tenths,
+.grid .push_five_sixteenths, .grid .pull_five_sixteenths,
+.grid .push_one_third, .grid .pull_one_third,
+.grid .push_two_sixths, .grid .pull_two_sixths,
+.grid .push_four_twelfths, .grid .pull_four_twelfths,
+.grid .push_three_eighths, .grid .pull_three_eighths,
+.grid .push_six_sixteenths, .grid .pull_six_sixteenths,
+.grid .push_two_fifths, .grid .pull_two_fifths,
+.grid .push_four_tenths, .grid .pull_four_tenths,
+.grid .push_five_twelfths, .grid .pull_five_twelfths,
+.grid .push_seven_sixteenths, .grid .pull_seven_sixteenths,
+.grid .push_half, .grid .pull_half,
+.grid .push_one_half, .grid .pull_one_half,
+.grid .push_two_fourths, .grid .pull_two_fourths,
+.grid .push_three_sixths, .grid .pull_three_sixths,
+.grid .push_four_eighths, .grid .pull_four_eighths,
+.grid .push_five_tenths, .grid .pull_five_tenths,
+.grid .push_six_twelfths, .grid .pull_six_twelfths,
+.grid .push_eight_sixteenths, .grid .pull_eight_sixteenths,
+.grid .push_nine_sixteenths, .grid .pull_nine_sixteenths,
+.grid .push_seven_twelfths, .grid .pull_seven_twelfths,
+.grid .push_three_fifths, .grid .pull_three_fifths,
+.grid .push_six_tenths, .grid .pull_six_tenths,
+.grid .push_five_eighths, .grid .pull_five_eighths,
+.grid .push_ten_sixteenths, .grid .pull_ten_sixteenths,
+.grid .push_eleven_sixteenths, .grid .pull_eleven_sixteenths,
+.grid .push_seven_tenths, .grid .pull_seven_tenths,
+.grid .push_two_thirds, .grid .pull_two_thirds,
+.grid .push_four_sixths, .grid .pull_four_sixths,
+.grid .push_eight_twelfths, .grid .pull_eight_twelfths,
+.grid .push_three_fourths, .grid .pull_three_fourths,
+.grid .push_six_eighths, .grid .pull_six_eighths,
+.grid .push_nine_twelfths, .grid .pull_nine_twelfths,
+.grid .push_twelve_sixteenths, .grid .pull_twelve_sixteenths,
+.grid .push_four_fifths, .grid .pull_four_fifths,
+.grid .push_eight_tenths, .grid .pull_eight_tenths,
+.grid .push_thirteen_sixteenths, .grid .pull_thirteen_sixteenths,
+.grid .push_ten_twelfths, .grid .pull_ten_twelfths,
+.grid .push_five_sixths, .grid .pull_five_sixths,
+.grid .push_seven_eighths, .grid .pull_seven_eighths,
+.grid .push_fourteen_sixteenths, .grid .pull_fourteen_sixteenths,
+.grid .push_nine_tenths, .grid .pull_nine_tenths,
+.grid .push_eleven_twelfths, .grid .pull_eleven_twelfths,
+.grid .push_fifteen_sixteenths, .grid .pull_fifteen_sixteenths {
+  position: relative;
+}
 
-    .grid .prepend_one_sixteenth { margin-left: 6.25%; }
-    .grid .prepend_one_twelfth { margin-left: 8.333333%; }
-    .grid .prepend_one_tenth { margin-left: 10%; }
-    .grid .prepend_one_eighth,
-    .grid .prepend_two_sixteenths { margin-left: 12.5%; }
-    .grid .prepend_one_sixth,
-    .grid .prepend_two_twelfths  { margin-left: 16.666666%; }
-    .grid .prepend_three_sixteenths { margin-left: 18.75%; }
-    .grid .prepend_one_fifth,
-    .grid .prepend_two_tenths { margin-left: 20%; }
-    .grid .prepend_one_fourth,
-    .grid .prepend_two_eighths,
-    .grid .prepend_three_twelfths,
-    .grid .prepend_four_sixteenths { margin-left: 25%; }
-    .grid .prepend_three_tenths { margin-left: 30%; }
-    .grid .prepend_five_sixteenths { margin-left: 31.25%; }
-    .grid .prepend_one_third,
-    .grid .prepend_two_sixths,
-    .grid .prepend_four_twelfths { margin-left: 33.333333%; }
-    .grid .prepend_three_eighths,
-    .grid .prepend_six_sixteenths { margin-left: 37.5%; }
-    .grid .prepend_two_fifths,
-    .grid .prepend_four_tenths { margin-left: 40%; }
-    .grid .prepend_five_twelfths { margin-left: 41.666666%; }
-    .grid .prepend_seven_sixteenths { margin-left: 43.75%; }
-    .grid .prepend_half,
-    .grid .prepend_one_half,
-    .grid .prepend_two_fourths,
-    .grid .prepend_three_sixths,
-    .grid .prepend_four_eighths,
-    .grid .prepend_five_tenths,
-    .grid .prepend_six_twelfths,
-    .grid .prepend_eight_sixteenths { margin-left: 50%; }
-    .grid .prepend_nine_sixteenths { margin-left: 56.25%; }
-    .grid .prepend_seven_twelfths { margin-left: 58.333333%; }
-    .grid .prepend_three_fifths,
-    .grid .prepend_six_tenths { margin-left: 60%; }
-    .grid .prepend_five_eighths,
-    .grid .prepend_ten_sixteenths { margin-left: 62.5%; }
-    .grid .prepend_eleven_sixteenths { margin-left: 68.75%; }
-    .grid .prepend_seven_tenths { margin-left: 70%; }
-    .grid .prepend_two_thirds,
-    .grid .prepend_four_sixths,
-    .grid .prepend_eight_twelfths { margin-left: 66.666666%; }
-    .grid .prepend_three_fourths,
-    .grid .prepend_six_eighths,
-    .grid .prepend_nine_twelfths,
-    .grid .prepend_twelve_sixteenths { margin-left: 75%; }
-    .grid .prepend_four_fifths,
-    .grid .prepend_eight_tenths { margin-left: 80%; }
-    .grid .prepend_thirteen_sixteenths { margin-left: 81.25%; }
-    .grid .prepend_ten_twelfths,
-    .grid .prepend_five_sixths { margin-left: 83.333333%; }
-    .grid .prepend_seven_eighths,
-    .grid .prepend_fourteen_sixteenths { margin-left: 87.5%; }
-    .grid .prepend_nine_tenths { margin-left: 90%; }
-    .grid .prepend_eleven_twelfths {margin-left: 91.666666%; }
-    .grid .prepend_fifteen_sixteenths { margin-left: 93.75%; }
+/* Column widths (1/16 - 1/1) */
+.grid .one_sixteenth { width: 6.25%; }
+.grid .one_twelfth { width: 8.333333%; }
+.grid .one_tenth { width: 10%; }
+.grid .one_eighth,
+.grid .two_sixteenths { width: 12.5%; }
+.grid .one_sixth,
+.grid .two_twelfths  { width: 16.666666%; }
+.grid .three_sixteenths { width: 18.75%; }
+.grid .one_fifth,
+.grid .two_tenths { width: 20%; }
+.grid .one_fourth,
+.grid .two_eighths,
+.grid .three_twelfths,
+.grid .four_sixteenths { width: 25%; }
+.grid .three_tenths { width: 30%; }
+.grid .five_sixteenths { width: 31.25%; }
+.grid .one_third,
+.grid .two_sixths,
+.grid .four_twelfths { width: 33.333333%; }
+.grid .three_eighths,
+.grid .six_sixteenths { width: 37.5%; }
+.grid .two_fifths,
+.grid .four_tenths { width: 40%; }
+.grid .five_twelfths { width: 41.666666%; }
+.grid .seven_sixteenths { width: 43.75%; }
+.grid .half,
+.grid .one_half,
+.grid .two_fourths,
+.grid .three_sixths,
+.grid .four_eighths,
+.grid .five_tenths,
+.grid .six_twelfths,
+.grid .eight_sixteenths { width: 50%; }
+.grid .nine_sixteenths { width: 56.25%; }
+.grid .seven_twelfths { width: 58.333333%; }
+.grid .three_fifths,
+.grid .six_tenths { width: 60%; }
+.grid .five_eighths,
+.grid .ten_sixteenths { width: 62.5%; }
+.grid .eleven_sixteenths { width: 68.75%; }
+.grid .seven_tenths { width: 70%; }
+.grid .two_thirds,
+.grid .four_sixths,
+.grid .eight_twelfths { width: 66.666666%; }
+.grid .three_fourths,
+.grid .six_eighths,
+.grid .nine_twelfths,
+.grid .twelve_sixteenths { width: 75%; }
+.grid .four_fifths,
+.grid .eight_tenths { width: 80%; }
+.grid .thirteen_sixteenths { width: 81.25%; }
+.grid .ten_twelfths,
+.grid .five_sixths { width: 83.333333%; }
+.grid .seven_eighths,
+.grid .fourteen_sixteenths { width: 87.5%; }
+.grid .nine_tenths { width: 90%; }
+.grid .eleven_twelfths {width: 91.666666%; }
+.grid .fifteen_sixteenths { width: 93.75%; }
+.grid .full,
+.grid .full_width { width: 100%; }
 
-/*  ------------------------------------------------------------------------
-    column append (appends column spacers)
-    ------------------------------------------------------------------------    */
+/* Column prepend (prepends column spacers) */
+.grid .prepend_one_sixteenth { margin-left: 6.25%; }
+.grid .prepend_one_twelfth { margin-left: 8.333333%; }
+.grid .prepend_one_tenth { margin-left: 10%; }
+.grid .prepend_one_eighth,
+.grid .prepend_two_sixteenths { margin-left: 12.5%; }
+.grid .prepend_one_sixth,
+.grid .prepend_two_twelfths  { margin-left: 16.666666%; }
+.grid .prepend_three_sixteenths { margin-left: 18.75%; }
+.grid .prepend_one_fifth,
+.grid .prepend_two_tenths { margin-left: 20%; }
+.grid .prepend_one_fourth,
+.grid .prepend_two_eighths,
+.grid .prepend_three_twelfths,
+.grid .prepend_four_sixteenths { margin-left: 25%; }
+.grid .prepend_three_tenths { margin-left: 30%; }
+.grid .prepend_five_sixteenths { margin-left: 31.25%; }
+.grid .prepend_one_third,
+.grid .prepend_two_sixths,
+.grid .prepend_four_twelfths { margin-left: 33.333333%; }
+.grid .prepend_three_eighths,
+.grid .prepend_six_sixteenths { margin-left: 37.5%; }
+.grid .prepend_two_fifths,
+.grid .prepend_four_tenths { margin-left: 40%; }
+.grid .prepend_five_twelfths { margin-left: 41.666666%; }
+.grid .prepend_seven_sixteenths { margin-left: 43.75%; }
+.grid .prepend_half,
+.grid .prepend_one_half,
+.grid .prepend_two_fourths,
+.grid .prepend_three_sixths,
+.grid .prepend_four_eighths,
+.grid .prepend_five_tenths,
+.grid .prepend_six_twelfths,
+.grid .prepend_eight_sixteenths { margin-left: 50%; }
+.grid .prepend_nine_sixteenths { margin-left: 56.25%; }
+.grid .prepend_seven_twelfths { margin-left: 58.333333%; }
+.grid .prepend_three_fifths,
+.grid .prepend_six_tenths { margin-left: 60%; }
+.grid .prepend_five_eighths,
+.grid .prepend_ten_sixteenths { margin-left: 62.5%; }
+.grid .prepend_eleven_sixteenths { margin-left: 68.75%; }
+.grid .prepend_seven_tenths { margin-left: 70%; }
+.grid .prepend_two_thirds,
+.grid .prepend_four_sixths,
+.grid .prepend_eight_twelfths { margin-left: 66.666666%; }
+.grid .prepend_three_fourths,
+.grid .prepend_six_eighths,
+.grid .prepend_nine_twelfths,
+.grid .prepend_twelve_sixteenths { margin-left: 75%; }
+.grid .prepend_four_fifths,
+.grid .prepend_eight_tenths { margin-left: 80%; }
+.grid .prepend_thirteen_sixteenths { margin-left: 81.25%; }
+.grid .prepend_ten_twelfths,
+.grid .prepend_five_sixths { margin-left: 83.333333%; }
+.grid .prepend_seven_eighths,
+.grid .prepend_fourteen_sixteenths { margin-left: 87.5%; }
+.grid .prepend_nine_tenths { margin-left: 90%; }
+.grid .prepend_eleven_twelfths {margin-left: 91.666666%; }
+.grid .prepend_fifteen_sixteenths { margin-left: 93.75%; }
 
-    .grid .append_one_sixteenth { margin-right: 6.25%; }
-    .grid .append_one_twelfth { margin-right: 8.333333%; }
-    .grid .append_one_tenth { margin-right: 10%; }
-    .grid .append_one_eighth,
-    .grid .append_two_sixteenths { margin-right: 12.5%; }
-    .grid .append_one_sixth,
-    .grid .append_two_twelfths  { margin-right: 16.666666%; }
-    .grid .append_three_sixteenths { margin-right: 18.75%; }
-    .grid .append_one_fifth,
-    .grid .append_two_tenths { margin-right: 20%; }
-    .grid .append_one_fourth,
-    .grid .append_two_eighths,
-    .grid .append_three_twelfths,
-    .grid .append_four_sixteenths { margin-right: 25%; }
-    .grid .append_three_tenths { margin-right: 30%; }
-    .grid .append_five_sixteenths { margin-right: 31.25%; }
-    .grid .append_one_third,
-    .grid .append_two_sixths,
-    .grid .append_four_twelfths { margin-right: 33.333333%; }
-    .grid .append_three_eighths,
-    .grid .append_six_sixteenths { margin-right: 37.5%; }
-    .grid .append_two_fifths,
-    .grid .append_four_tenths { margin-right: 40%; }
-    .grid .append_five_twelfths { margin-right: 41.666666%; }
-    .grid .append_seven_sixteenths { margin-right: 43.75%; }
-    .grid .append_half,
-    .grid .append_one_half,
-    .grid .append_two_fourths,
-    .grid .append_three_sixths,
-    .grid .append_four_eighths,
-    .grid .append_five_tenths,
-    .grid .append_six_twelfths,
-    .grid .append_eight_sixteenths { margin-right: 50%; }
-    .grid .append_nine_sixteenths { margin-right: 56.25%; }
-    .grid .append_seven_twelfths { margin-right: 58.333333%; }
-    .grid .append_three_fifths,
-    .grid .append_six_tenths { margin-right: 60%; }
-    .grid .append_five_eighths,
-    .grid .append_ten_sixteenths { margin-right: 62.5%; }
-    .grid .append_eleven_sixteenths { margin-right: 68.75%; }
-    .grid .append_seven_tenths { margin-right: 70%; }
-    .grid .append_two_thirds,
-    .grid .append_four_sixths,
-    .grid .append_eight_twelfths { margin-right: 66.666666%; }
-    .grid .append_three_fourths,
-    .grid .append_six_eighths,
-    .grid .append_nine_twelfths,
-    .grid .append_twelve_sixteenths { margin-right: 75%; }
-    .grid .append_four_fifths,
-    .grid .append_eight_tenths { margin-right: 80%; }
-    .grid .append_thirteen_sixteenths { margin-right: 81.25%; }
-    .grid .append_ten_twelfths,
-    .grid .append_five_sixths { margin-right: 83.333333%; }
-    .grid .append_seven_eighths,
-    .grid .append_fourteen_sixteenths { margin-right: 87.5%; }
-    .grid .append_nine_tenths { margin-right: 90%; }
-    .grid .append_eleven_twelfths {margin-right: 91.666666%; }
-    .grid .append_fifteen_sixteenths { margin-right: 93.75%; }
+/* Column append (appends column spacers) */
+.grid .append_one_sixteenth { margin-right: 6.25%; }
+.grid .append_one_twelfth { margin-right: 8.333333%; }
+.grid .append_one_tenth { margin-right: 10%; }
+.grid .append_one_eighth,
+.grid .append_two_sixteenths { margin-right: 12.5%; }
+.grid .append_one_sixth,
+.grid .append_two_twelfths  { margin-right: 16.666666%; }
+.grid .append_three_sixteenths { margin-right: 18.75%; }
+.grid .append_one_fifth,
+.grid .append_two_tenths { margin-right: 20%; }
+.grid .append_one_fourth,
+.grid .append_two_eighths,
+.grid .append_three_twelfths,
+.grid .append_four_sixteenths { margin-right: 25%; }
+.grid .append_three_tenths { margin-right: 30%; }
+.grid .append_five_sixteenths { margin-right: 31.25%; }
+.grid .append_one_third,
+.grid .append_two_sixths,
+.grid .append_four_twelfths { margin-right: 33.333333%; }
+.grid .append_three_eighths,
+.grid .append_six_sixteenths { margin-right: 37.5%; }
+.grid .append_two_fifths,
+.grid .append_four_tenths { margin-right: 40%; }
+.grid .append_five_twelfths { margin-right: 41.666666%; }
+.grid .append_seven_sixteenths { margin-right: 43.75%; }
+.grid .append_half,
+.grid .append_one_half,
+.grid .append_two_fourths,
+.grid .append_three_sixths,
+.grid .append_four_eighths,
+.grid .append_five_tenths,
+.grid .append_six_twelfths,
+.grid .append_eight_sixteenths { margin-right: 50%; }
+.grid .append_nine_sixteenths { margin-right: 56.25%; }
+.grid .append_seven_twelfths { margin-right: 58.333333%; }
+.grid .append_three_fifths,
+.grid .append_six_tenths { margin-right: 60%; }
+.grid .append_five_eighths,
+.grid .append_ten_sixteenths { margin-right: 62.5%; }
+.grid .append_eleven_sixteenths { margin-right: 68.75%; }
+.grid .append_seven_tenths { margin-right: 70%; }
+.grid .append_two_thirds,
+.grid .append_four_sixths,
+.grid .append_eight_twelfths { margin-right: 66.666666%; }
+.grid .append_three_fourths,
+.grid .append_six_eighths,
+.grid .append_nine_twelfths,
+.grid .append_twelve_sixteenths { margin-right: 75%; }
+.grid .append_four_fifths,
+.grid .append_eight_tenths { margin-right: 80%; }
+.grid .append_thirteen_sixteenths { margin-right: 81.25%; }
+.grid .append_ten_twelfths,
+.grid .append_five_sixths { margin-right: 83.333333%; }
+.grid .append_seven_eighths,
+.grid .append_fourteen_sixteenths { margin-right: 87.5%; }
+.grid .append_nine_tenths { margin-right: 90%; }
+.grid .append_eleven_twelfths {margin-right: 91.666666%; }
+.grid .append_fifteen_sixteenths { margin-right: 93.75%; }
 
-/*  ------------------------------------------------------------------------
-    column push (move a column to the right)
-    ------------------------------------------------------------------------    */
+/* Column push (move a column to the right) */
+.grid .push_one_sixteenth { left: 6.25%; }
+.grid .push_one_twelfth { left: 8.333333%; }
+.grid .push_one_tenth { left: 10%; }
+.grid .push_one_eighth,
+.grid .push_two_sixteenths { left: 12.5%; }
+.grid .push_one_sixth,
+.grid .push_two_twelfths  { left: 16.666666%; }
+.grid .push_three_sixteenths { left: 18.75%; }
+.grid .push_one_fifth,
+.grid .push_two_tenths { left: 20%; }
+.grid .push_one_fourth,
+.grid .push_two_eighths,
+.grid .push_three_twelfths,
+.grid .push_four_sixteenths { left: 25%; }
+.grid .push_three_tenths { left: 30%; }
+.grid .push_five_sixteenths { left: 31.25%; }
+.grid .push_one_third,
+.grid .push_two_sixths,
+.grid .push_four_twelfths { left: 33.333333%; }
+.grid .push_three_eighths,
+.grid .push_six_sixteenths { left: 37.5%; }
+.grid .push_two_fifths,
+.grid .push_four_tenths { left: 40%; }
+.grid .push_five_twelfths { left: 41.666666%; }
+.grid .push_seven_sixteenths { left: 43.75%; }
+.grid .push_half,
+.grid .push_one_half,
+.grid .push_two_fourths,
+.grid .push_three_sixths,
+.grid .push_four_eighths,
+.grid .push_five_tenths,
+.grid .push_six_twelfths,
+.grid .push_eight_sixteenths { left: 50%; }
+.grid .push_nine_sixteenths { left: 56.25%; }
+.grid .push_seven_twelfths { left: 58.333333%; }
+.grid .push_three_fifths,
+.grid .push_six_tenths { left: 60%; }
+.grid .push_five_eighths,
+.grid .push_ten_sixteenths { left: 62.5%; }
+.grid .push_eleven_sixteenths { left: 68.75%; }
+.grid .push_seven_tenths { left: 70%; }
+.grid .push_two_thirds,
+.grid .push_four_sixths,
+.grid .push_eight_twelfths { left: 66.666666%; }
+.grid .push_three_fourths,
+.grid .push_six_eighths,
+.grid .push_nine_twelfths,
+.grid .push_twelve_sixteenths { left: 75%; }
+.grid .push_four_fifths,
+.grid .push_eight_tenths { left: 80%; }
+.grid .push_thirteen_sixteenths { left: 81.25%; }
+.grid .push_ten_twelfths,
+.grid .push_five_sixths { left: 83.333333%; }
+.grid .push_seven_eighths,
+.grid .push_fourteen_sixteenths { left: 87.5%; }
+.grid .push_nine_tenths { left: 90%; }
+.grid .push_eleven_twelfths { left: 91.666666%; }
+.grid .push_fifteen_sixteenths { left: 93.75%; }
 
-    .grid .push_one_sixteenth { left: 6.25%; }
-    .grid .push_one_twelfth { left: 8.333333%; }
-    .grid .push_one_tenth { left: 10%; }
-    .grid .push_one_eighth,
-    .grid .push_two_sixteenths { left: 12.5%; }
-    .grid .push_one_sixth,
-    .grid .push_two_twelfths  { left: 16.666666%; }
-    .grid .push_three_sixteenths { left: 18.75%; }
-    .grid .push_one_fifth,
-    .grid .push_two_tenths { left: 20%; }
-    .grid .push_one_fourth,
-    .grid .push_two_eighths,
-    .grid .push_three_twelfths,
-    .grid .push_four_sixteenths { left: 25%; }
-    .grid .push_three_tenths { left: 30%; }
-    .grid .push_five_sixteenths { left: 31.25%; }
-    .grid .push_one_third,
-    .grid .push_two_sixths,
-    .grid .push_four_twelfths { left: 33.333333%; }
-    .grid .push_three_eighths,
-    .grid .push_six_sixteenths { left: 37.5%; }
-    .grid .push_two_fifths,
-    .grid .push_four_tenths { left: 40%; }
-    .grid .push_five_twelfths { left: 41.666666%; }
-    .grid .push_seven_sixteenths { left: 43.75%; }
-    .grid .push_half,
-    .grid .push_one_half,
-    .grid .push_two_fourths,
-    .grid .push_three_sixths,
-    .grid .push_four_eighths,
-    .grid .push_five_tenths,
-    .grid .push_six_twelfths,
-    .grid .push_eight_sixteenths { left: 50%; }
-    .grid .push_nine_sixteenths { left: 56.25%; }
-    .grid .push_seven_twelfths { left: 58.333333%; }
-    .grid .push_three_fifths,
-    .grid .push_six_tenths { left: 60%; }
-    .grid .push_five_eighths,
-    .grid .push_ten_sixteenths { left: 62.5%; }
-    .grid .push_eleven_sixteenths { left: 68.75%; }
-    .grid .push_seven_tenths { left: 70%; }
-    .grid .push_two_thirds,
-    .grid .push_four_sixths,
-    .grid .push_eight_twelfths { left: 66.666666%; }
-    .grid .push_three_fourths,
-    .grid .push_six_eighths,
-    .grid .push_nine_twelfths,
-    .grid .push_twelve_sixteenths { left: 75%; }
-    .grid .push_four_fifths,
-    .grid .push_eight_tenths { left: 80%; }
-    .grid .push_thirteen_sixteenths { left: 81.25%; }
-    .grid .push_ten_twelfths,
-    .grid .push_five_sixths { left: 83.333333%; }
-    .grid .push_seven_eighths,
-    .grid .push_fourteen_sixteenths { left: 87.5%; }
-    .grid .push_nine_tenths { left: 90%; }
-    .grid .push_eleven_twelfths { left: 91.666666%; }
-    .grid .push_fifteen_sixteenths { left: 93.75%; }
+/* Column pull (move a column to the left) */
+.grid .pull_one_sixteenth { left: -6.25%; }
+.grid .pull_one_twelfth { left: -8.333333%; }
+.grid .pull_one_tenth { left: -10%; }
+.grid .pull_one_eighth,
+.grid .pull_two_sixteenths { left: -12.5%; }
+.grid .pull_one_sixth,
+.grid .pull_two_twelfths  { left: -16.666666%; }
+.grid .pull_three_sixteenths { left: -18.75%; }
+.grid .pull_one_fifth,
+.grid .pull_two_tenths { left: -20%; }
+.grid .pull_one_fourth,
+.grid .pull_two_eighths,
+.grid .pull_three_twelfths,
+.grid .pull_four_sixteenths { left: -25%; }
+.grid .pull_three_tenths { left: -30%; }
+.grid .pull_five_sixteenths { left: -31.25%; }
+.grid .pull_one_third,
+.grid .pull_two_sixths,
+.grid .pull_four_twelfths { left: -33.333333%; }
+.grid .pull_three_eighths,
+.grid .pull_six_sixteenths { left: -37.5%; }
+.grid .pull_two_fifths,
+.grid .pull_four_tenths { left: -40%; }
+.grid .pull_five_twelfths { left: -41.666666%; }
+.grid .pull_seven_sixteenths { left: -43.75%; }
+.grid .pull_half,
+.grid .pull_one_half,
+.grid .pull_two_fourths,
+.grid .pull_three_sixths,
+.grid .pull_four_eighths,
+.grid .pull_five_tenths,
+.grid .pull_six_twelfths,
+.grid .pull_eight_sixteenths { left: -50%; }
+.grid .pull_nine_sixteenths { left: -56.25%; }
+.grid .pull_seven_twelfths { left: -58.333333%; }
+.grid .pull_three_fifths,
+.grid .pull_six_tenths { left: -60%; }
+.grid .pull_five_eighths,
+.grid .pull_ten_sixteenths { left: -62.5%; }
+.grid .pull_eleven_sixteenths { left: -68.75%; }
+.grid .pull_seven_tenths { left: -70%; }
+.grid .pull_two_thirds,
+.grid .pull_four_sixths,
+.grid .pull_eight_twelfths { left: -66.666666%; }
+.grid .pull_three_fourths,
+.grid .pull_six_eighths,
+.grid .pull_nine_twelfths,
+.grid .pull_twelve_sixteenths { left: -75%; }
+.grid .pull_four_fifths,
+.grid .pull_eight_tenths { left: -80%; }
+.grid .pull_thirteen_sixteenths { left: -81.25%; }
+.grid .pull_ten_twelfths,
+.grid .pull_five_sixths { left: -83.333333%; }
+.grid .pull_seven_eighths,
+.grid .pull_fourteen_sixteenths { left: -87.5%; }
+.grid .pull_nine_tenths { left: -90%; }
+.grid .pull_eleven_twelfths {left: -91.666666%; }
+.grid .pull_fifteen_sixteenths { left: -93.75%; }
 
-/*  ------------------------------------------------------------------------
-    column pull (move a column to the left)
-    ------------------------------------------------------------------------    */
+/* Last column fix */
+.grid .row .last {
+  float: none !important;
+  /* Gecko needs this */
+  overflow: hidden;
+  width: auto !important;
+}
 
-    .grid .pull_one_sixteenth { left: -6.25%; }
-    .grid .pull_one_twelfth { left: -8.333333%; }
-    .grid .pull_one_tenth { left: -10%; }
-    .grid .pull_one_eighth,
-    .grid .pull_two_sixteenths { left: -12.5%; }
-    .grid .pull_one_sixth,
-    .grid .pull_two_twelfths  { left: -16.666666%; }
-    .grid .pull_three_sixteenths { left: -18.75%; }
-    .grid .pull_one_fifth,
-    .grid .pull_two_tenths { left: -20%; }
-    .grid .pull_one_fourth,
-    .grid .pull_two_eighths,
-    .grid .pull_three_twelfths,
-    .grid .pull_four_sixteenths { left: -25%; }
-    .grid .pull_three_tenths { left: -30%; }
-    .grid .pull_five_sixteenths { left: -31.25%; }
-    .grid .pull_one_third,
-    .grid .pull_two_sixths,
-    .grid .pull_four_twelfths { left: -33.333333%; }
-    .grid .pull_three_eighths,
-    .grid .pull_six_sixteenths { left: -37.5%; }
-    .grid .pull_two_fifths,
-    .grid .pull_four_tenths { left: -40%; }
-    .grid .pull_five_twelfths { left: -41.666666%; }
-    .grid .pull_seven_sixteenths { left: -43.75%; }
-    .grid .pull_half,
-    .grid .pull_one_half,
-    .grid .pull_two_fourths,
-    .grid .pull_three_sixths,
-    .grid .pull_four_eighths,
-    .grid .pull_five_tenths,
-    .grid .pull_six_twelfths,
-    .grid .pull_eight_sixteenths { left: -50%; }
-    .grid .pull_nine_sixteenths { left: -56.25%; }
-    .grid .pull_seven_twelfths { left: -58.333333%; }
-    .grid .pull_three_fifths,
-    .grid .pull_six_tenths { left: -60%; }
-    .grid .pull_five_eighths,
-    .grid .pull_ten_sixteenths { left: -62.5%; }
-    .grid .pull_eleven_sixteenths { left: -68.75%; }
-    .grid .pull_seven_tenths { left: -70%; }
-    .grid .pull_two_thirds,
-    .grid .pull_four_sixths,
-    .grid .pull_eight_twelfths { left: -66.666666%; }
-    .grid .pull_three_fourths,
-    .grid .pull_six_eighths,
-    .grid .pull_nine_twelfths,
-    .grid .pull_twelve_sixteenths { left: -75%; }
-    .grid .pull_four_fifths,
-    .grid .pull_eight_tenths { left: -80%; }
-    .grid .pull_thirteen_sixteenths { left: -81.25%; }
-    .grid .pull_ten_twelfths,
-    .grid .pull_five_sixths { left: -83.333333%; }
-    .grid .pull_seven_eighths,
-    .grid .pull_fourteen_sixteenths { left: -87.5%; }
-    .grid .pull_nine_tenths { left: -90%; }
-    .grid .pull_eleven_twelfths {left: -91.666666%; }
-    .grid .pull_fifteen_sixteenths { left: -93.75%; }
+/* IE6 - 3 pixel gap bug fix */
+* html .grid .last {
+  left: -3px;
+  margin-right: -3px !important;
+}
 
-/*  ------------------------------------------------------------------------
-    last (must be assigned to last column in a row)
-    ------------------------------------------------------------------------    */
+/* Clear fix */
+.grid .row:before, .grid .row:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
 
-    .grid .last {
-        float: none !important;
-        width: auto !important;
-        overflow: hidden;
-        display: block;
-    }
-
-/*  ------------------------------------------------------------------------
-    clears (automatically applied to grid rows/last column)
-    ------------------------------------------------------------------------    */
-
-    .grid .row:after,
-    .grid .last:after {
-        content: ".";
-        width: 0;
-        height: 0;
-        clear: both;
-        display: block;
-        visibility: hidden;
-        overflow: hidden;
-        line-height: 0;
-        font-size: 0;
-    }
-
-/*  ------------------------------------------------------------------------
-    IE fixes (add support for IE 6+; mostly hasLayout triggering)
-    ------------------------------------------------------------------------    */
-
-/*  IE <= 6; using zoom: 1 to trigger hasLayout                                 */
-    * html .grid * { zoom: 1; }
-
-/*  hasLayout breaks push/pull, so remove it                                    */
-    * html .grid .push_one_sixteenth, * html .grid .pull_one_sixteenth,
-    * html .grid .push_one_twelfth, * html .grid .pull_one_twelfth,
-    * html .grid .push_one_tenth, * html .grid .pull_one_tenth,
-    * html .grid .push_one_eighth, * html .grid .pull_one_eighth,
-    * html .grid .push_two_sixteenths, * html .grid .pull_two_sixteenths,
-    * html .grid .push_one_sixth, * html .grid .pull_one_sixth,
-    * html .grid .push_two_twelfths , * html .grid .pull_two_twelfths ,
-    * html .grid .push_three_sixteenths, * html .grid .pull_three_sixteenths,
-    * html .grid .push_one_fifth, * html .grid .pull_one_fifth,
-    * html .grid .push_two_tenths, * html .grid .pull_two_tenths,
-    * html .grid .push_one_fourth, * html .grid .pull_one_fourth,
-    * html .grid .push_two_eighths, * html .grid .pull_two_eighths,
-    * html .grid .push_three_twelfths, * html .grid .pull_three_twelfths,
-    * html .grid .push_four_sixteenths, * html .grid .pull_four_sixteenths,
-    * html .grid .push_three_tenths, * html .grid .pull_three_tenths,
-    * html .grid .push_five_sixteenths, * html .grid .pull_five_sixteenths,
-    * html .grid .push_one_third, * html .grid .pull_one_third,
-    * html .grid .push_two_sixths, * html .grid .pull_two_sixths,
-    * html .grid .push_four_twelfths, * html .grid .pull_four_twelfths,
-    * html .grid .push_three_eighths, * html .grid .pull_three_eighths,
-    * html .grid .push_six_sixteenths, * html .grid .pull_six_sixteenths,
-    * html .grid .push_two_fifths, * html .grid .pull_two_fifths,
-    * html .grid .push_four_tenths, * html .grid .pull_four_tenths,
-    * html .grid .push_five_twelfths, * html .grid .pull_five_twelfths,
-    * html .grid .push_seven_sixteenths, * html .grid .pull_seven_sixteenths,
-    * html .grid .push_half, * html .grid .pull_half,
-    * html .grid .push_one_half, * html .grid .pull_one_half,
-    * html .grid .push_two_fourths, * html .grid .pull_two_fourths,
-    * html .grid .push_three_sixths, * html .grid .pull_three_sixths,
-    * html .grid .push_four_eighths, * html .grid .pull_four_eighths,
-    * html .grid .push_five_tenths, * html .grid .pull_five_tenths,
-    * html .grid .push_six_twelfths, * html .grid .pull_six_twelfths,
-    * html .grid .push_eight_sixteenths, * html .grid .pull_eight_sixteenths,
-    * html .grid .push_nine_sixteenths, * html .grid .pull_nine_sixteenths,
-    * html .grid .push_seven_twelfths, * html .grid .pull_seven_twelfths,
-    * html .grid .push_three_fifths, * html .grid .pull_three_fifths,
-    * html .grid .push_six_tenths, * html .grid .pull_six_tenths,
-    * html .grid .push_five_eighths, * html .grid .pull_five_eighths,
-    * html .grid .push_ten_sixteenths, * html .grid .pull_ten_sixteenths,
-    * html .grid .push_eleven_sixteenths, * html .grid .pull_eleven_sixteenths,
-    * html .grid .push_seven_tenths, * html .grid .pull_seven_tenths,
-    * html .grid .push_two_thirds, * html .grid .pull_two_thirds,
-    * html .grid .push_four_sixths, * html .grid .pull_four_sixths,
-    * html .grid .push_eight_twelfths, * html .grid .pull_eight_twelfths,
-    * html .grid .push_three_fourths, * html .grid .pull_three_fourths,
-    * html .grid .push_six_eighths, * html .grid .pull_six_eighths,
-    * html .grid .push_nine_twelfths, * html .grid .pull_nine_twelfths,
-    * html .grid .push_twelve_sixteenths, * html .grid .pull_twelve_sixteenths,
-    * html .grid .push_four_fifths, * html .grid .pull_four_fifths,
-    * html .grid .push_eight_tenths, * html .grid .pull_eight_tenths,
-    * html .grid .push_thirteen_sixteenths, * html .grid .pull_thirteen_sixteenths,
-    * html .grid .push_ten_twelfths, * html .grid .pull_ten_twelfths,
-    * html .grid .push_five_sixths, * html .grid .pull_five_sixths,
-    * html .grid .push_seven_eighths, * html .grid .pull_seven_eighths,
-    * html .grid .push_fourteen_sixteenths, * html .grid .pull_fourteen_sixteenths,
-    * html .grid .push_nine_tenths, * html .grid .pull_nine_tenths,
-    * html .grid .push_eleven_twelfths, * html .grid .pull_eleven_twelfths,
-    * html .grid .push_fifteen_sixteenths, * html .grid .pull_fifteen_sixteenths {
-        zoom: normal;
-    }
-
-/*  this is needed to fix the 3px text-jog bug                                  */
-    * html .grid .last {
-        left: -3px;
-        margin: 0 -3px 0 3px;
-    }
-
-/*  IE == 7; using zoom: 1 to trigger hasLayout                                 */
-    *:first-child+html .grid * { zoom: 1; }
-
-/*  hasLayout breaks push/pull, so remove it                                    */
-    *:first-child+html .grid .push_one_sixteenth, *:first-child+html .grid .pull_one_sixteenth,
-    *:first-child+html .grid .push_one_twelfth, *:first-child+html .grid .pull_one_twelfth,
-    *:first-child+html .grid .push_one_tenth, *:first-child+html .grid .pull_one_tenth,
-    *:first-child+html .grid .push_one_eighth, *:first-child+html .grid .pull_one_eighth,
-    *:first-child+html .grid .push_two_sixteenths, *:first-child+html .grid .pull_two_sixteenths,
-    *:first-child+html .grid .push_one_sixth, *:first-child+html .grid .pull_one_sixth,
-    *:first-child+html .grid .push_two_twelfths, *:first-child+html .grid .pull_two_twelfths,
-    *:first-child+html .grid .push_three_sixteenths, *:first-child+html .grid .pull_three_sixteenths,
-    *:first-child+html .grid .push_one_fifth, *:first-child+html .grid .pull_one_fifth,
-    *:first-child+html .grid .push_two_tenths, *:first-child+html .grid .pull_two_tenths,
-    *:first-child+html .grid .push_one_fourth, *:first-child+html .grid .pull_one_fourth,
-    *:first-child+html .grid .push_two_eighths, *:first-child+html .grid .pull_two_eighths,
-    *:first-child+html .grid .push_three_twelfths, *:first-child+html .grid .pull_three_twelfths,
-    *:first-child+html .grid .push_four_sixteenths, *:first-child+html .grid .pull_four_sixteenths,
-    *:first-child+html .grid .push_three_tenths, *:first-child+html .grid .pull_three_tenths,
-    *:first-child+html .grid .push_five_sixteenths, *:first-child+html .grid .pull_five_sixteenths,
-    *:first-child+html .grid .push_one_third, *:first-child+html .grid .pull_one_third,
-    *:first-child+html .grid .push_two_sixths, *:first-child+html .grid .pull_two_sixths,
-    *:first-child+html .grid .push_four_twelfths, *:first-child+html .grid .pull_four_twelfths,
-    *:first-child+html .grid .push_three_eighths, *:first-child+html .grid .pull_three_eighths,
-    *:first-child+html .grid .push_six_sixteenths, *:first-child+html .grid .pull_six_sixteenths,
-    *:first-child+html .grid .push_two_fifths, *:first-child+html .grid .pull_two_fifths,
-    *:first-child+html .grid .push_four_tenths, *:first-child+html .grid .pull_four_tenths,
-    *:first-child+html .grid .push_five_twelfths, *:first-child+html .grid .pull_five_twelfths,
-    *:first-child+html .grid .push_seven_sixteenths, *:first-child+html .grid .pull_seven_sixteenths,
-    *:first-child+html .grid .push_half, *:first-child+html .grid .pull_half,
-    *:first-child+html .grid .push_one_half, *:first-child+html .grid .pull_one_half,
-    *:first-child+html .grid .push_two_fourths, *:first-child+html .grid .pull_two_fourths,
-    *:first-child+html .grid .push_three_sixths, *:first-child+html .grid .pull_three_sixths,
-    *:first-child+html .grid .push_four_eighths, *:first-child+html .grid .pull_four_eighths,
-    *:first-child+html .grid .push_five_tenths, *:first-child+html .grid .pull_five_tenths,
-    *:first-child+html .grid .push_six_twelfths, *:first-child+html .grid .pull_six_twelfths,
-    *:first-child+html .grid .push_eight_sixteenths, *:first-child+html .grid .pull_eight_sixteenths,
-    *:first-child+html .grid .push_nine_sixteenths, *:first-child+html .grid .pull_nine_sixteenths,
-    *:first-child+html .grid .push_seven_twelfths, *:first-child+html .grid .pull_seven_twelfths,
-    *:first-child+html .grid .push_three_fifths, *:first-child+html .grid .pull_three_fifths,
-    *:first-child+html .grid .push_six_tenths, *:first-child+html .grid .pull_six_tenths,
-    *:first-child+html .grid .push_five_eighths, *:first-child+html .grid .pull_five_eighths,
-    *:first-child+html .grid .push_ten_sixteenths, *:first-child+html .grid .pull_ten_sixteenths,
-    *:first-child+html .grid .push_eleven_sixteenths, *:first-child+html .grid .pull_eleven_sixteenths,
-    *:first-child+html .grid .push_seven_tenths, *:first-child+html .grid .pull_seven_tenths,
-    *:first-child+html .grid .push_two_thirds, *:first-child+html .grid .pull_two_thirds,
-    *:first-child+html .grid .push_four_sixths, *:first-child+html .grid .pull_four_sixths,
-    *:first-child+html .grid .push_eight_twelfths, *:first-child+html .grid .pull_eight_twelfths,
-    *:first-child+html .grid .push_three_fourths, *:first-child+html .grid .pull_three_fourths,
-    *:first-child+html .grid .push_six_eighths, *:first-child+html .grid .pull_six_eighths,
-    *:first-child+html .grid .push_nine_twelfths, *:first-child+html .grid .pull_nine_twelfths,
-    *:first-child+html .grid .push_twelve_sixteenths, *:first-child+html .grid .pull_twelve_sixteenths,
-    *:first-child+html .grid .push_four_fifths, *:first-child+html .grid .pull_four_fifths,
-    *:first-child+html .grid .push_eight_tenths, *:first-child+html .grid .pull_eight_tenths,
-    *:first-child+html .grid .push_thirteen_sixteenths, *:first-child+html .grid .pull_thirteen_sixteenths,
-    *:first-child+html .grid .push_ten_twelfths, *:first-child+html .grid .pull_ten_twelfths,
-    *:first-child+html .grid .push_five_sixths, *:first-child+html .grid .pull_five_sixths,
-    *:first-child+html .grid .push_seven_eighths, *:first-child+html .grid .pull_seven_eighths,
-    *:first-child+html .grid .push_fourteen_sixteenths, *:first-child+html .grid .pull_fourteen_sixteenths,
-    *:first-child+html .grid .push_nine_tenths, *:first-child+html .grid .pull_nine_tenths,
-    *:first-child+html .grid .push_eleven_twelfths, *:first-child+html .grid .pull_eleven_twelfths,
-    *:first-child+html .grid .push_fifteen_sixteenths, *:first-child+html .grid .pull_fifteen_sixteenths {
-        zoom: normal;
-    }
+.grid .row:after {
+  clear: both;
+}
