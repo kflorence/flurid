@@ -21,25 +21,64 @@
    *    The jQuery Object(s) that were passed to this function.
    */
   $.fn.flurid = function(options) {
-    options = $.extend({}, $.fn.flurid.options, options);
+    var self = this;
 
-    // keep it chainable (tm)
+    options = $.extend({}, $.fn.flurid.options, options);
+/*
+    // fix subpixel rounding problems
+    if (options.fix_subpixel_rounding && $.resize) {
+
+      var fix_subpixel_rounding = function() {
+        var grid_width = self.width();
+
+        self.each(function() {
+          var $row = $(".row", self);
+
+          $row.each(function(r, row) {
+            var $columns = $(".column", $row),
+              column_count = $columns.length;
+
+            $columns.each(function(c, col) {
+              var c = (c + 1),
+                $col = $(col),
+                even = (c % 2 === 0),
+                width = (grid_width / column_count);
+
+              // we are going to mimick gecko here
+              $col.width(even ? width + 1 : width);
+              console.log(width, $col.width());
+            });
+          });
+        });
+      };
+
+      // attach to window.onresize
+      $(window).resize(fix_subpixel_rounding);
+    }
+*/
     return this.each(function() {
-      var $this = $(this), $rows = $(".row", $this), row_count = $rows.length;
+      var $grid = $(this),
+        $rows = $(".row", $grid),
+        row_count = $rows.length;
 
       // loops through rows
       $rows.each(function(r, row) {
-        var r = (r + 1), $row = $(row), $columns = $(".column", $row),
-          column_count = $columns.length, tallest_column = 0;
+        var r = (r + 1),
+          $row = $(row),
+          $columns = $(".column", $row),
+          column_count = $columns.length,
+          tallest_column = 0;
 
         // loops through columns
         $columns.each(function(c, col) {
-          var c = (c + 1), $col = $(col), height = $col.height(),
+          var c = (c + 1),
+            $col = $(col),
+            height = $col.height(),
             insidePushBlock = $col.parents("[class*=push]").length > 0;
 
           // alternating columns
           if (options.alternate == "columns") {
-            $col.addClass((c % 2 == 0 ? "even" : "odd"));
+            $col.addClass(c % 2 === 0 ? "even" : "odd");
           }
 
           // first / last column
@@ -73,7 +112,7 @@
         }
       });
     });
-  }
+  };
 
   /**
    * @namespace Holds the default options for the jQuery.flurid plugin
@@ -96,6 +135,9 @@
      * @default false
      * @type Boolean
      */
-    equal_height_columns: false
-  }
+    equal_height_columns: false,
+
+    fix_subpixel_rounding: true
+  };
+
 })(jQuery);
