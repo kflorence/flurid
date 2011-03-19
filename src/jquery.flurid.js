@@ -6,7 +6,7 @@
  * @author Kyle Florence <kyle[dot]florence[at]gmail[dot]com>
  * @version 1.0.20110119
  */
-;(function($) {
+;(function($, window) {
   /**
    * $.fn.flurid: Allows this function to be chained to a jQuery Object
    * selection.
@@ -21,41 +21,38 @@
    *    The jQuery Object(s) that were passed to this function.
    */
   $.fn.flurid = function(options) {
-    var self = this;
-
     options = $.extend({}, $.fn.flurid.options, options);
-/*
-    // fix subpixel rounding problems
+
+    // Mimic Gecko sub-pixel rounding behavior
+    // http://ejohn.org/blog/sub-pixel-problems-in-css/
+    /* Work in Progress
     if (options.fix_subpixel_rounding && $.resize) {
+      // Prevent multiple bindings
+      $(window).unbind("resize").bind("resize", function() {
+        // Now re-calculate and apply new widths
+        $(".grid").each(function() {
+          var $grid = $(this),
+            $rows = $(".row", $grid),
+            grid_width = $grid.width();
 
-      var fix_subpixel_rounding = function() {
-        var grid_width = self.width();
-
-        self.each(function() {
-          var $row = $(".row", self);
-
-          $row.each(function(r, row) {
-            var $columns = $(".column", $row),
+          $rows.each(function(r, row) {
+            var $columns = $(".column", $(row)),
               column_count = $columns.length;
 
             $columns.each(function(c, col) {
-              var c = (c + 1),
-                $col = $(col),
-                even = (c % 2 === 0),
-                width = (grid_width / column_count);
+              if (grid_width % 2 !== 0 || column_count % 2 !== 0) {
+                var width = Math.round(grid_width / column_count)
+                  + (c % 2 === 0 ? 0 : 1);
 
-              // we are going to mimick gecko here
-              $col.width(even ? width + 1 : width);
-              console.log(width, $col.width());
+                $(col).width(width);
+              }
             });
           });
         });
-      };
-
-      // attach to window.onresize
-      $(window).resize(fix_subpixel_rounding);
+      });
     }
-*/
+    */
+
     return this.each(function() {
       var $grid = $(this),
         $rows = $(".row", $grid),
@@ -140,4 +137,4 @@
     fix_subpixel_rounding: true
   };
 
-})(jQuery);
+})(jQuery, this);

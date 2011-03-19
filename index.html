@@ -2,14 +2,15 @@
 <html>
   <head>
     <title>Flurid - The Fluid CSS Grid</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css" />
-    <link rel="stylesheet" type="text/css" href="src/css/flurid.css" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" type="text/css" href="src/flurid.css" />
 
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.2.3.min.js"></script>
-    <script type="text/javascript" src="src/js/jquery.flurid.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.min.js"></script>
+    <!--<script type="text/javascript" src="tmp/jquery.ba-resize.js"></script>-->
+    <script type="text/javascript" src="src/jquery.flurid.js"></script>
     <script type="text/javascript">
       jQuery(function($) {
-        $(".grid:not(#append-prepend)").flurid({ equal_height_columns: true });
+        $(".grid").flurid({ equal_height_columns: true });
         $("#append-prepend").flurid({ alternate:"rows", equal_height_columns: true });
       });
     </script>
