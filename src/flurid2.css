@@ -713,7 +713,8 @@
 
 .flurid .row {
   /* IE < 8 needs hasLayout on rows */
-  zoom: 1;
+  height: 1%;
+  position: relative;
 }
 
 .flurid .row:before, .flurid .row:after {
@@ -745,11 +746,11 @@
 }
 
 /* Fix last column in row */
-.flurid .row .column:last-child, .flurid .row .last {
-  float: none !important;
+.flurid .row .last {
+  float: none;
   /* Gecko needs this */
   overflow: hidden;
-  width: auto !important;
+  width: auto;
   /* IE6 - 3 pixel gap bug fix */
   _left: -3px;
   _margin-right: -3px;

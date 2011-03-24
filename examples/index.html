@@ -3,130 +3,24 @@
   <head>
     <title>Flurid - The Fluid CSS Grid</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
-    <link rel="stylesheet" type="text/css" href="../src/flurid22.css" />
+    <link rel="stylesheet" type="text/css" href="../src/flurid2.css" />
   </head>
   <body>
-    <div class="section">
-      <h1>Flurid <span>The Fluid CSS Grid</span></h1>
+    <h1>Flurid <span>The Fluid CSS Grid</span></h1>
 
-      <h2><a name="contents">Contents</a></h2>
-      <ul>
-        <li><a href="#what">What Is Flurid?</a></li>
-        <li><a href="#plugin">The jQuery.flurid Plugin</a></li>
-        <li><a href="#compatibility">Browser Compatibility</a></li>
-        <li><a href="#caveats">Known Bugs and Caveats</a></li>
-        <li>
-          <a href="#how">Using Flurid</a>
-          <ul>
-            <li><a href="#mixed">Mixed Columns</a></li>
-            <li><a href="#nesting">Nesting Columns</a></li>
-            <li><a href="#appendprepend">Appending and Prepending Columns</a></li>
-            <li><a href="#pushpull">Pushing and Pulling Columns</a></li>
-          </ul>
-        </li>
-        <li><a href="#download">Downloading Flurid</a></li>
-      </ul>
+    <a href="https://github.com/kflorence/flurid" title="Source">Source</a> |
+    <a href="https://github.com/kflorence/flurid/wiki" title="Documentation">Docs</a>
 
-      <h2><a name="what">What Is Flurid?</a></h2>
-      <p>Flurid is a <strong>fluid width grid system</strong> optimized for
-      flexibility (fluidity), and, as far as I know, is one of the only fluid
-      grid systems to work in Internet Explorer versions 6 and 7 (and 5, with
-      the exception of the push/pull classes) without hiding pixels in margins.
-      Like any <a href="http://en.wikipedia.org/wiki/Grid_%28page_layout%29">grid system</a>,
-      the basic purpose is to break the page into a series of <em>rows</em> and
-      <em>columns</em>, thus giving the designer an easy, rational way to
-      organize and present content to the user.</p>
+    <h2><a name="contents">Contents</a></h2>
+    <ul>
+      <li><a href="#grid">The Grid</a></li>
+      <li><a href="#mixed">Mixed Columns</a></li>
+      <li><a href="#nested">Nested Columns</a></li>
+      <li><a href="#padded">Padded Columns</a></li>
+      <li><a href="#shifted">Shifted Columns</a></li>
+    </ul>
 
-      <p><strong>Fluidity</strong>, as far as I am concerned, is one of the
-      cornerstones in making web design more <em>accessible</em>, <em>user friendly</em>,
-      <em>customizable</em> and, perhaps most importantly, <em>adaptable</em>
-      (see: <a href="http://www.alistapart.com/articles/dao/">A Dao of Web Design</a>).
-      Fluid designs allow the content of a page to adjust according to the dimensions of
-      their containing window, which makes it easy to scale up or down, depending upon
-      the needs of the user or the type of web device being used. If you're interested
-      in learning more about fluid grid systems, check out the article
-      <a href="http://www.alistapart.com/articles/fluidgrids" title="Fluid Grids">"Fluid Grids"</a>
-      on A List Apart.</p>
-
-      <p>So why aren't there more fluid grid systems out there that don't hide
-      pixels in margins?  Well, that is due to how different browsers and web
-      devices handle sub-pixel rounding (see: <a href="http://ejohn.org/blog/sub-pixel-problems-in-css/"
-      title="Sub Pixel Rendering Problems in CSS">Sub Pixel Rendering Problems in CSS</a>).
-      Flurid deals with sub-pixel rounding issues in various ways, namely using
-      the <em>overflow: hidden</em> and <em>width: auto</em> properties to get
-      rid of the extra pixels in the last column in a row that would normally
-      cause a layout to break (in Internet Explorer). Of course, this does make
-      the width of the last column <em>slightly</em> less precise (in Internet
-      Explorer), but, as with any compromise, there are <a href="#caveats">caveats</a>.</p>
-
-      <h2><a name="plugin">The jQuery.flurid Plugin</a></h2>
-      <p>Flurid has a companion jQuery plugin to help make developing with the
-      framework easier. Along with some additional features like <strong>equal
-      height columns</strong>, the jQuery plugin also <strong>automatically appends
-      the <em>last</em> class to the last column in a row</strong> and optionally
-      adds alternating "odd" and "even" classes to rows and columns.</p>
-
-      <p>The plugin requires a JavaScript enabled web browser and the
-      <a href="http://jquery.com">jQuery Library</a>, Version 1.2.3 or higher.</p>
-
-      <h2><a name="compatibility">Browser Compatibility</a></h2>
-      <p>Flurid and jQuery.flurid have been tested and verified to work on the
-      following browsers (but may very well be compatible with other browsers
-      or browser versions):</p>
-
-      <ul>
-        <li>
-          <strong>Mozilla Firefox</strong>(Windows/Linux)<br />
-          Version 1.0 and higher
-        </li>
-        <li>
-          <strong>Internet Explorer</strong> (Windows)<br />
-          Version 5.0 and higher <a href="#caveats" class="note">*</a>
-        </li>
-        <li>
-          <strong>Chromium/Google Chrome</strong> (Windows/Linux)<br />
-          Version 5.0 and higher <a href="#caveats" class="note">*</a>
-        </li>
-        <li>
-          <strong>Apple Safari</strong> (Windows/Mac)<br />
-          Version 4.0 and higher <a href="#caveats" class="note">*</a>
-        </li>
-      </ul>
-
-      <h2><span class="note">*</span> <a name="caveats">Known Bugs and Caveats</a></h2>
-
-      <ul>
-        <li>
-          In general, it seems best to attach <strong>push or pull</strong> classes
-          to their own element, then apply widths inside of that element. Note that
-          push and pull classes do not work in <em>Internet Explorer 5.x</em>.
-        </li>
-        <li>
-          Due to the way different browsers handle sub-pixel rounding, columns may
-          not appear perfectly aligned in <em>Internet Explorer 7 and below</em>
-          or <em>Webkit-based browsers</em> (such as Safari and Chrome).
-        </li>
-        <li>
-          Because <em>Internet Explorer 7 and below</em> do not support the CSS
-          selector <em>:last-child</em>, the class <strong>last</strong> must be
-          applied to the last column in each row manually.
-        </li>
-        <li>
-          Column containers do not automatically stretch vertically across a row,
-          they only stretch as far as the content they contain.
-        </li>
-      </ul>
-
-      <h2><a name="using">Using Flurid</a></h2>
-      <p>Unlike other grid systems, Flurid uses very intuitive naming conventions
-      for its styling properties.  First, you start by designating your grid by
-      applying the class "grid" to a block level element (such as a div).  Inside
-      of your grid, you may define your rows, using the class "row." Columns are
-      defined using fractions such as "1/16" or "2/5" -- it is often helpful to
-      assign the class "column" to the width that denotes where content will
-      actually reside (in the case of nested columns), but it is not required.
-      All of the standard columns have been layed out in the grid below:</p>
-    </div>
+    <h2><a name="grid">The Grid</a></h2>
 
     <div class="example">
       <div class="flurid">
@@ -573,13 +467,7 @@
       </div>
     </div>
 
-    <div class="section">
-      <h3><a name="mixed">Mixed Columns</a></h3>
-      <p>Columns may be mixed and matched as needed, so long as the sum of the
-      columns reduces to 1/1 (or, in other words, adds up to 100%). I find it's
-      often easier to stick to one denominator, but if you are keen to reducing
-      your fractions, you can rest assured that it will not break the system.</p>
-    </div>
+    <h2><a name="mixed">Mixed Columns</a></h2>
 
     <div class="example">
       <div class="flurid">
@@ -611,14 +499,7 @@
       </div>
     </div>
 
-    <div class="section">
-      <h3><a name="nesting">Nesting Columns</a></h3>
-      <p>Columns may also be nested inside of themselves as needed, however,
-      keep in mind that columns will inherit the full width of their parent,
-      meaning that if you were to nest a 1/2 width column inside another 1/2
-      width column, the result would be a container that takes up 1/4 of the
-      grid's full width.</p>
-    </div>
+    <h2><a name="nested">Nested Columns</a></h2>
 
     <div class="example">
       <div class="flurid">
@@ -643,29 +524,30 @@
       </div>
     </div>
 
-    <div class="section">
-      <h3><a name="appendprepend">Appending and Prepending Columns</a></h3>
-      <p>These classes are used to pad content from the left or right edge of
-      the grid and should be used instead of empty column markup in your HTML.
-      Use append to add padding after a column (<strong>pad right</strong>) and
-      prepend to add padding before a column (<strong>pad left</strong>).</p>
-    </div>
+    <h2><a name="padded">Padded Columns</a></h2>
 
-    <div class="example">
-      <div class="flurid" id="append-prepend">
+    <div class="example" id="padded">
+      <div class="flurid">
         <div class="row">
           <div class="append 1/16">
-            <p class="content">15/16</p>
+            <p class="odd">15/16</p>
           </div>
         </div>
         <div class="row">
           <div class="prepend 1/16">
-            <p class="content">15/16</p>
+            <p class="even">15/16</p>
           </div>
         </div>
         <div class="row">
           <div class="append-prepend 1/16">
-            <p class="content">15/16</p>
+            <p class="odd">15/16</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="append 1/2">
+            <div class="prepend 1/2">
+              <p class="even">1/4</p>
+            </div>
           </div>
         </div>
         <div class="row">
@@ -806,26 +688,17 @@
       </div>
     </div>
 
-    <div class="section">
-      <h3><a name="pushpull">Pushing and Pulling Columns</a></h3>
-      <p>These classes are used to change the position of a column, relative to
-      where it would normally appear in the flow of the document. This is handy
-      for changing the location of a column visually without affecting where the
-      column lies in relation to other markup in the HTML. Use push to position
-      your columns to the <strong>right</strong> of their normal location and
-      pull to to position your columns to the <strong>left</strong> of their
-      normal location.</p>
-    </div>
+    <h2><a name="shifted">Shifted Columns</a></h2>
 
     <div class="example">
       <div class="flurid">
         <div class="row">
-          <div class="push-1/2">
+          <div class="push 1/2">
             <div class="column 1/2">
               <p>1/2 (push 1/2)</p>
             </div>
           </div>
-          <div class="pull-1/2">
+          <div class="pull 1/2">
             <div class="column 1/4">
               <p>1/4 (pull 1/2)</p>
             </div>
@@ -890,12 +763,6 @@
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="section">
-      <h2><a name="download">Downloading Flurid</a></h2>
-      <p>The most up-to-date version of Flurid can be found on github:
-      <a href="http://github.com/kflorence/flurid">http://github.com/kflorence/flurid</a>.</p>
     </div>
   </body>
 </html>
