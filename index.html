@@ -1,677 +1,160 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Flurid - The Fluid CSS Grid</title>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
-    <link rel="stylesheet" type="text/css" href="src/flurid.css" />
+    <title>Flurid - The Fluid CSS Grid Framework</title>
+    <link rel="stylesheet" type="text/css" href="src/flurid2.css" />
+    <style type="text/css">
+      body {
+        background-color: #eee;
+        font-family: monospace, sans-serif;
+        font-size: 62.5%;
+        margin: 0;
+        padding: 0;
+      }
 
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.min.js"></script>
-    <!--<script type="text/javascript" src="tmp/jquery.ba-resize.js"></script>-->
-    <script type="text/javascript" src="src/jquery.flurid.js"></script>
-    <script type="text/javascript">
-      jQuery(function($) {
-        $(".grid").flurid({ equal_height_columns: true });
-        $("#append-prepend").flurid({ alternate:"rows", equal_height_columns: true });
-      });
-    </script>
+      a {
+        color: #666;
+        outline: none;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      p {
+        margin: 0;
+        padding: 0;
+      }
+
+      acronym {
+        border-bottom: #aaa 1px dashed;
+      }
+
+      #wrapper {
+        display: table;
+        height: 100%;
+        left: 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+      }
+
+      #container {
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+
+        /* For IE */
+        *position: absolute;
+        *top: 50%;
+        *margin-top: -150px;
+      }
+
+      #content {
+        font-size: 1.2em;
+        line-height: 1.6em;
+        margin: 0 auto;
+        width: 40em;
+        height: 30em;
+      }
+
+      #information ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      #information li {
+        text-align: center;
+      }
+
+      #information li a:hover {
+        color: #333;
+      }
+
+      #flurid {
+        background: #fff;
+        margin: 10px 0;
+        padding: 5px;
+      }
+
+      #flurid .content {
+        font-size: 6.66em;
+        line-height: 1.4em;
+        margin: 5px;
+        text-align: center;
+      }
+
+      #flurid .odd {
+        color: #80ADDA;
+        background-color: #f4f4f4;
+      }
+
+      #flurid .even {
+        color: #E88798;
+        background-color: #f1f1f1;
+      }
+
+      #description {
+        color: #666;
+        text-align: center;
+      }
+
+      #description p {
+        padding: 0 10px;
+      }
+    </style>
   </head>
   <body>
-    <div class="section">
-      <h1>Flurid <span>The Fluid CSS Grid</span></h1>
+    <div id="wrapper">
+      <div id="container">
+        <div id="content">
+          <div id="information" class="flurid">
+            <ul class="row">
+              <li class="column 1/3" id="download">
+                <a href="http://github.com/kflorence/flurid" title="Download">download</a>
+              </li>
+              <li class="column 1/3" id="documentation">
+                <a href="documentation/" title="Documentation">documentation</a>
+              </li>
+              <li class="column 1/3 last" id="issues">
+                <a href="http://github.com/kflorence/flurid/issues" title="Issues">issues</a>
+              </li>
+            </ul>
+          </div>
 
-      <h2><a name="contents">Contents</a></h2>
-      <ul>
-        <li><a href="#what">What Is Flurid?</a></li>
-        <li><a href="#plugin">The jQuery.flurid Plugin</a></li>
-        <li><a href="#compatibility">Browser Compatibility</a></li>
-        <li><a href="#caveats">Known Bugs and Caveats</a></li>
-        <li>
-          <a href="#how">Using Flurid</a>
-          <ul>
-            <li><a href="#mixed">Mixed Columns</a></li>
-            <li><a href="#nesting">Nesting Columns</a></li>
-            <li><a href="#appendprepend">Appending and Prepending Columns</a></li>
-            <li><a href="#pushpull">Pushing and Pulling Columns</a></li>
-          </ul>
-        </li>
-        <li><a href="#download">Downloading Flurid</a></li>
-      </ul>
-
-      <h2><a name="what">What Is Flurid?</a></h2>
-      <p>Flurid is a <strong>fluid width grid system</strong> optimized for
-      flexibility (fluidity), and, as far as I know, is one of the only fluid
-      grid systems to work in Internet Explorer versions 6 and 7 (and 5, with
-      the exception of the push/pull classes) without hiding pixels in margins.
-      Like any <a href="http://en.wikipedia.org/wiki/Grid_%28page_layout%29">grid system</a>,
-      the basic purpose is to break the page into a series of <em>rows</em> and
-      <em>columns</em>, thus giving the designer an easy, rational way to
-      organize and present content to the user.</p>
-
-      <p><strong>Fluidity</strong>, as far as I am concerned, is one of the
-      cornerstones in making web design more <em>accessible</em>, <em>user friendly</em>,
-      <em>customizable</em> and, perhaps most importantly, <em>adaptable</em>
-      (see: <a href="http://www.alistapart.com/articles/dao/">A Dao of Web Design</a>).
-      Fluid designs allow the content of a page to adjust according to the dimensions of
-      their containing window, which makes it easy to scale up or down, depending upon
-      the needs of the user or the type of web device being used. If you're interested
-      in learning more about fluid grid systems, check out the article
-      <a href="http://www.alistapart.com/articles/fluidgrids" title="Fluid Grids">"Fluid Grids"</a>
-      on A List Apart.</p>
-
-      <p>So why aren't there more fluid grid systems out there that don't hide
-      pixels in margins?  Well, that is due to how different browsers and web
-      devices handle sub-pixel rounding (see: <a href="http://ejohn.org/blog/sub-pixel-problems-in-css/"
-      title="Sub Pixel Rendering Problems in CSS">Sub Pixel Rendering Problems in CSS</a>).
-      Flurid deals with sub-pixel rounding issues in various ways, namely using
-      the <em>overflow: hidden</em> and <em>width: auto</em> properties to get
-      rid of the extra pixels in the last column in a row that would normally
-      cause a layout to break (in Internet Explorer). Of course, this does make
-      the width of the last column <em>slightly</em> less precise (in Internet
-      Explorer), but, as with any compromise, there are <a href="#caveats">caveats</a>.</p>
-
-      <h2><a name="plugin">The jQuery.flurid Plugin</a></h2>
-      <p>Flurid has a companion jQuery plugin to help make developing with the
-      framework easier. Along with some additional features like <strong>equal
-      height columns</strong>, the jQuery plugin also <strong>automatically appends
-      the <em>last</em> class to the last column in a row</strong> and optionally
-      adds alternating "odd" and "even" classes to rows and columns.</p>
-
-      <p>The plugin requires a JavaScript enabled web browser and the
-      <a href="http://jquery.com">jQuery Library</a>, Version 1.2.3 or higher.</p>
-
-      <h2><a name="compatibility">Browser Compatibility</a></h2>
-      <p>Flurid and jQuery.flurid have been tested and verified to work on the
-      following browsers (but may very well be compatible with other browsers
-      or browser versions):</p>
-
-      <ul>
-        <li>
-          <strong>Mozilla Firefox</strong>(Windows/Linux)<br />
-          Version 1.0 and higher
-        </li>
-        <li>
-          <strong>Internet Explorer</strong> (Windows)<br />
-          Version 5.0 and higher <a href="#caveats" class="note">*</a>
-        </li>
-        <li>
-          <strong>Chromium/Google Chrome</strong> (Windows/Linux)<br />
-          Version 5.0 and higher <a href="#caveats" class="note">*</a>
-        </li>
-        <li>
-          <strong>Apple Safari</strong> (Windows/Mac)<br />
-          Version 4.0 and higher <a href="#caveats" class="note">*</a>
-        </li>
-      </ul>
-
-      <h2><span class="note">*</span> <a name="caveats">Known Bugs and Caveats</a></h2>
-
-      <ul>
-        <li>
-          In general, it seems best to attach <strong>push or pull</strong> classes
-          to their own element, then apply widths inside of that element. Note that
-          push and pull classes do not work in <em>Internet Explorer 5.x</em>.
-        </li>
-        <li>
-          Due to the way different browsers handle sub-pixel rounding, columns may
-          not appear perfectly aligned in <em>Internet Explorer 7 and below</em>
-          or <em>Webkit-based browsers</em> (such as Safari and Chrome).
-        </li>
-        <li>
-          Because <em>Internet Explorer 7 and below</em> do not support the CSS
-          selector <em>:last-child</em>, the class <strong>last</strong> must be
-          applied to the last column in each row manually.
-        </li>
-        <li>
-          Column containers do not automatically stretch vertically across a row,
-          they only stretch as far as the content they contain.
-        </li>
-      </ul>
-
-      <h2><a name="using">Using Flurid</a></h2>
-      <p>Unlike other grid systems, Flurid uses very intuitive naming conventions
-      for its styling properties.  First, you start by designating your grid by
-      applying the class "grid" to a block level element (such as a div).  Inside
-      of your grid, you may define your rows, using the class "row." Columns are
-      defined using fractions such as "1/16" or "2/5" -- it is often helpful to
-      assign the class "column" to the width that denotes where content will
-      actually reside (in the case of nested columns), but it is not required.
-      All of the standard columns have been layed out in the grid below:</p>
-    </div>
-
-    <div class="example">
-      <div class="grid">
-        <div class="row">
-          <div class="column 1/16">
-            <p>1/16</p>
-          </div>
-          <div class="column 1/16">
-            <p>1/16</p>
-          </div>
-          <div class="column 1/16">
-            <p>1/16</p>
-          </div>
-          <div class="column 1/16">
-            <p>1/16</p>
-          </div>
-          <div class="column 1/16">
-            <p>1/16</p>
-          </div>
-          <div class="column 1/16">
-            <p>1/16</p>
-          </div>
-          <div class="column 1/16">
-            <p>1/16</p>
-          </div>
-          <div class="column 1/16">
-            <p>1/16</p>
-          </div>
-          <div class="column 1/16">
-            <p>1/16</p>
-          </div>
-          <div class="column 1/16">
-            <p>1/16</p>
-          </div>
-          <div class="column 1/16">
-            <p>1/16</p>
-          </div>
-          <div class="column 1/16">
-            <p>1/16</p>
-          </div>
-          <div class="column 1/16">
-            <p>1/16</p>
-          </div>
-          <div class="column 1/16">
-            <p>1/16</p>
-          </div>
-          <div class="column 1/16">
-            <p>1/16</p>
-          </div>
-          <div class="column 1/16">
-            <p>1/16</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column 1/12">
-            <p>1/12</p>
-          </div>
-          <div class="column 1/12">
-            <p>1/12</p>
-          </div>
-          <div class="column 1/12">
-            <p>1/12</p>
-          </div>
-          <div class="column 1/12">
-            <p>1/12</p>
-          </div>
-          <div class="column 1/12">
-            <p>1/12</p>
-          </div>
-          <div class="column 1/12">
-            <p>1/12</p>
-          </div>
-          <div class="column 1/12">
-            <p>1/12</p>
-          </div>
-          <div class="column 1/12">
-            <p>1/12</p>
-          </div>
-          <div class="column 1/12">
-            <p>1/12</p>
-          </div>
-          <div class="column 1/12">
-            <p>1/12</p>
-          </div>
-          <div class="column 1/12">
-            <p>1/12</p>
-          </div>
-          <div class="column 1/12">
-            <p>1/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column 1/10">
-            <p>1/10</p>
-          </div>
-          <div class="column 1/10">
-            <p>1/10</p>
-          </div>
-          <div class="column 1/10">
-            <p>1/10</p>
-          </div>
-          <div class="column 1/10">
-            <p>1/10</p>
-          </div>
-          <div class="column 1/10">
-            <p>1/10</p>
-          </div>
-          <div class="column 1/10">
-            <p>1/10</p>
-          </div>
-          <div class="column 1/10">
-            <p>1/10</p>
-          </div>
-          <div class="column 1/10">
-            <p>1/10</p>
-          </div>
-          <div class="column 1/10">
-            <p>1/10</p>
-          </div>
-          <div class="column 1/10">
-            <p>1/10</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column 1/8">
-            <p>1/8</p>
-          </div>
-          <div class="column 1/8">
-            <p>1/8</p>
-          </div>
-          <div class="column 1/8">
-            <p>1/8</p>
-          </div>
-          <div class="column 1/8">
-            <p>1/8</p>
-          </div>
-          <div class="column 1/8">
-            <p>1/8</p>
-          </div>
-          <div class="column 1/8">
-            <p>1/8</p>
-          </div>
-          <div class="column 1/8">
-            <p>1/8</p>
-          </div>
-          <div class="column 1/8">
-            <p>1/8</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column 1/6">
-            <p>1/6</p>
-          </div>
-          <div class="column 1/6">
-            <p>1/6</p>
-          </div>
-          <div class="column 1/6">
-            <p>1/6</p>
-          </div>
-          <div class="column 1/6">
-            <p>1/6</p>
-          </div>
-          <div class="column 1/6">
-            <p>1/6</p>
-          </div>
-          <div class="column 1/6">
-            <p>1/6</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column 1/5">
-            <p>1/5</p>
-          </div>
-          <div class="column 1/5">
-            <p>1/5</p>
-          </div>
-          <div class="column 1/5">
-            <p>1/5</p>
-          </div>
-          <div class="column 1/5">
-            <p>1/5</p>
-          </div>
-          <div class="column 1/5">
-            <p>1/5</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column 1/4">
-            <p>1/4</p>
-          </div>
-          <div class="column 1/4">
-            <p>1/4</p>
-          </div>
-          <div class="column 1/4">
-            <p>1/4</p>
-          </div>
-          <div class="column 1/4">
-            <p>1/4</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column 1/3">
-            <p>1/3</p>
-          </div>
-          <div class="column 1/3">
-            <p>1/3</p>
-          </div>
-          <div class="column 1/3">
-            <p>1/3</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column 1/2">
-            <p>1/2</p>
-          </div>
-          <div class="column 1/2">
-            <p>1/2</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column 1/1">
-            <p>1/1</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <h3><a name="mixed">Mixed Columns</a></h3>
-      <p>Columns may be mixed and matched as needed, so long as the sum of the
-      columns reduces to 1/1 (or, in other words, adds up to 100%). I find it's
-      often easier to stick to one denominator, but if you are keen to reducing
-      your fractions, you can rest assured that it will not break the system.</p>
-    </div>
-
-    <div class="example">
-      <div class="grid">
-        <div class="row">
-          <div class="column 1/12">
-            <p>1/12</p>
-          </div>
-          <div class="column 5/12">
-            <p>5/12</p>
-          </div>
-          <div class="column 6/12">
-            <p>6/12 (1/2)</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column 1/4">
-            <p>4/16 (1/4)</p>
-          </div>
-          <div class="column 1/16">
-            <p>1/16</p>
-          </div>
-          <div class="column 1/2">
-            <p>8/16 (1/2)</p>
-          </div>
-          <div class="column 3/16">
-            <p>3/16</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <h3><a name="nesting">Nesting Columns</a></h3>
-      <p>Columns may also be nested inside of themselves as needed, however,
-      keep in mind that columns will inherit the full width of their parent,
-      meaning that if you were to nest a 1/2 width column inside another 1/2
-      width column, the result would be a container that takes up 1/4 of the
-      grid's full width.</p>
-    </div>
-
-    <div class="example">
-      <div class="grid">
-        <div class="row">
-          <div class="1/2">
-            <div class="column 1/2">
-              <p>1/2 of 1/2 (1/4)</p>
-            </div>
-            <div class="1/2">
-              <div class="column 1/2">
-                <p>1/2 of 1/2 of 1/2 (1/8)</p>
+          <div id="flurid" class="flurid">
+            <div class="row">
+              <div class="column 1/3">
+                <p class="content odd">f</p>
               </div>
-              <div class="column 1/2">
-                <p>1/2 of 1/2 of 1/2 (1/8)</p>
+              <div class="column 1/3">
+                <p class="content even">l</p>
+              </div>
+              <div class="column last 1/3">
+                <p class="content odd">u</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column 1/3">
+                <p class="content even">r</p>
+              </div>
+              <div class="column 1/3">
+                <p class="content odd">i</p>
+              </div>
+              <div class="column last 1/3">
+                <p class="content even">d</p>
               </div>
             </div>
           </div>
-          <div class="column 1/2">
-            <p>1/2</p>
+
+          <div id="description">
+            <p>A cross-browser <acronym title="Cascading Style Sheets">CSS</acronym> grid
+            framework that doesn't hide pixels in margins!</p>
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="section">
-      <h3><a name="appendprepend">Appending and Prepending Columns</a></h3>
-      <p>These classes are used to pad content from the left or right edge of
-      the grid and should be used instead of empty column markup in your HTML.
-      Use append to add padding after a column (<strong>pad right</strong>) and
-      prepend to add padding before a column (<strong>pad left</strong>).</p>
-    </div>
-
-    <div class="example">
-      <div class="grid" id="append-prepend">
-        <div class="row">
-          <div class="column append-1/12">
-            <p>11/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column append-2/12">
-            <p>10/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column append-3/12">
-            <p>9/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column append-4/12">
-            <p>8/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column append-5/12">
-            <p>7/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column append-6/12">
-            <p>6/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column append-7/12">
-            <p>5/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column append-8/12">
-            <p>4/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column append-9/12">
-            <p>3/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column append-10/12">
-            <p>2/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column append-11/12">
-            <p>1/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column prepend-1/12">
-            <p>11/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column prepend-2/12">
-            <p>10/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column prepend-3/12">
-            <p>9/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column prepend-4/12">
-            <p>8/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column prepend-5/12">
-            <p>7/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column prepend-6/12">
-            <p>6/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column prepend-7/12">
-            <p>5/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column prepend-8/12">
-            <p>4/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column prepend-9/12">
-            <p>3/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column prepend-10/12">
-            <p>2/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column prepend-11/12">
-            <p>1/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column prepend-5/12 append-5/12">
-            <p>2/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column prepend-4/12 append-4/12">
-            <p>4/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column prepend-3/12 append-3/12">
-            <p>6/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column prepend-2/12 append-2/12">
-            <p>8/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column prepend-1/12 append-1/12">
-            <p>10/12</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <h3><a name="pushpull">Pushing and Pulling Columns</a></h3>
-      <p>These classes are used to change the position of a column, relative to
-      where it would normally appear in the flow of the document. This is handy
-      for changing the location of a column visually without affecting where the
-      column lies in relation to other markup in the HTML. Use push to position
-      your columns to the <strong>right</strong> of their normal location and
-      pull to to position your columns to the <strong>left</strong> of their
-      normal location.</p>
-    </div>
-
-    <div class="example">
-      <div class="grid">
-        <div class="row">
-          <div class="push-1/2">
-            <div class="column 1/2">
-              <p>1/2 (push 1/2)</p>
-            </div>
-          </div>
-          <div class="pull-1/2">
-            <div class="column 1/4">
-              <p>1/4 (pull 1/2)</p>
-            </div>
-            <div class="column 1/4 ">
-              <p>1/4 (pull 1/2)</p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column 1/4">
-            <p>1/4</p>
-          </div>
-          <div class="push-1/2">
-            <div class="column 1/4">
-              <p>1/4 (push 1/2)</p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="push-1/8">
-            <div class="column 1/4">
-              <p>1/4 (push 1/8)</p>
-            </div>
-          </div>
-          <div class="push-3/8">
-            <div class="column 1/4">
-              <p>1/4 (push 3/8)</p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="push-1/4">
-            <div class="column 1/4">
-              <p>1/4 (push 1/4)</p>
-            </div>
-          </div>
-          <div class="push-1/4">
-            <div class="column 1/4">
-              <p>1/4 (push 1/4)</p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column 1/8">
-            <p>1/8</p>
-          </div>
-          <div class="column 1/8">
-            <p>1/8</p>
-          </div>
-          <div class="push-1/8">
-            <div class="column 1/4">
-              <p>1/4 (push 1/8)</p>
-            </div>
-            <div class="push-1/8">
-              <div class="column 1/8">
-                <p>1/8 (push 1/8)</p>
-              </div>
-              <div class="column 1/8">
-                <p>1/8 (push 1/8)</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2><a name="download">Downloading Flurid</a></h2>
-      <p>The most up-to-date version of Flurid can be found on github:
-      <a href="http://github.com/kflorence/flurid">http://github.com/kflorence/flurid</a>.</p>
     </div>
   </body>
 </html>

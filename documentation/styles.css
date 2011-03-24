@@ -82,23 +82,25 @@ ul {
   background-color: #fff;
 }
 
-.grid {
+.flurid {
   border: #fff 1px solid;
   background-color: #eee;
 }
 
-.row {
+.flurid .row {
   border-bottom: #fff 1px solid;
 }
 
-.grid .last {
+.flurid .last {
   border: 0;
 }
 
-.odd .column, .row .odd {
+.flurid .odd {
   background-color: #ADD8E6;
+  text-align: center;
 }
 
-.even .column, .row .even {
+.flurid .even {
   background-color: #FFC0CB;
+  text-align: center;
 }

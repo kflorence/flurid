@@ -1,0 +1,799 @@
+/**
+ * Flurid - The Fluid CSS Grid
+ *
+ * @author Kyle Florence <kyle[dot]florence[at]gmail[dot]com>
+ * @website http://github.com/kflorence/flurid
+ * @version 1.3.20110318
+ */
+
+.flurid {
+  overflow: hidden;
+}
+
+/**
+ * Widths (1/1 - 16/16)
+ */
+
+.flurid .\0031\002F\0031\0036 {
+  width: 6.25%;
+  margin-left: 6.25%;
+  margin-right: 6.25%;
+  left: 6.25%;
+  right: 6.25%;
+}
+
+.flurid .\0031\002F\0031\0035 {
+  width: 6.66%;
+  margin-left: 6.66%;
+  margin-right: 6.66%;
+  left: 6.66%;
+  right: 6.66%;
+
+}
+
+.flurid .\0031\002F\0031\0034 {
+  width: 7.14%;
+  margin-left: 7.14%;
+  margin-right: 7.14%;
+  left: 7.14%;
+  right: 7.14%;
+}
+
+.flurid .\0031\002F\0031\0033 {
+  width: 7.69%;
+  margin-left: 7.69%;
+  margin-right: 7.69%;
+  left: 7.69%;
+  right: 7.69%;
+}
+
+.flurid .\0031\002F\0031\0032 {
+  width: 8.33%;
+  margin-left: 8.33%;
+  margin-right: 8.33%;
+  left: 8.33%;
+  right: 8.33%;
+}
+
+.flurid .\0031\002F\0031\0031 {
+  width: 9.09%;
+  margin-left: 9.09%;
+  margin-right: 9.09%;
+  left: 9.09%;
+  right: 9.09%;
+}
+
+.flurid .\0031\002F\0031\0030 {
+  width: 10%;
+  margin-left: 10%;
+  margin-right: 10%;
+  left: 10%;
+  right: 10%;
+}
+
+.flurid .\0031\002F\0039 {
+  width: 11.11%;
+  margin-left: 11.11%;
+  margin-right: 11.11%;
+  left: 11.11%;
+  right: 11.11%;
+}
+
+.flurid .\0032\002F\0031\0036,
+.flurid .\0031\002F\0038 {
+  width: 12.5%;
+  margin-left: 12.5%;
+  margin-right: 12.5%;
+  left: 12.5%;
+  right: 12.5%;
+}
+
+.flurid .\0032\002F\0031\0035 {
+  width: 13.33%;
+  margin-left: 13.33%;
+  margin-right: 13.33%;
+  left: 13.33%;
+  right: 13.33%;
+}
+
+.flurid .\0032\002F\0031\0034,
+.flurid .\0031\002F\0037 {
+  width: 14.28%;
+  margin-left: 14.28%;
+  margin-right: 14.28%;
+  left: 14.28%;
+  right: 14.28%;
+}
+
+.flurid .\0032\002F\0031\0033 {
+  width: 15.38%;
+  margin-left: 15.38%;
+  margin-right: 15.38%;
+  left: 15.38%;
+  right: 15.38%;
+}
+
+.flurid .\0032\002F\0031\0032,
+.flurid .\0031\002F\0036 {
+  width: 16.66%;
+  margin-left: 16.66%;
+  margin-right: 16.66%;
+  left: 16.66%;
+  right: 16.66%;
+}
+
+.flurid .\0032\002F\0031\0031 {
+  width: 18.18%;
+  margin-left: 18.18%;
+  margin-right: 18.18%;
+  left: 18.18%;
+  right: 18.18%;
+}
+
+.flurid .\0033\002F\0031\0036 {
+  width: 18.75%;
+  margin-left: 18.75%;
+  margin-right: 18.75%;
+  left: 18.75%;
+  right: 18.75%;
+}
+
+.flurid .\0033\002F\0031\0035,
+.flurid .\0032\002F\0031\0030,
+.flurid .\0031\002F\0035 {
+  width: 20%;
+  margin-left: 20%;
+  margin-right: 20%;
+  left: 20%;
+  right: 20%;
+}
+
+.flurid .\0033\002F\0031\0034 {
+  width: 21.42%;
+  margin-left: 21.42%;
+  margin-right: 21.42%;
+  left: 21.42%;
+  right: 21.42%;
+}
+
+.flurid .\0032\002F\0039 {
+  width: 22.22%;
+  margin-left: 22.22%;
+  margin-right: 22.22%;
+  left: 22.22%;
+  right: 22.22%;
+}
+
+.flurid .\0033\002F\0031\0033 {
+  width: 23.07%;
+  margin-left: 23.07%;
+  margin-right: 23.07%;
+  left: 23.07%;
+  right: 23.07%;
+}
+
+.flurid .\0034\002F\0031\0036,
+.flurid .\0033\002F\0031\0032,
+.flurid .\0032\002F\0038,
+.flurid .\0031\002F\0034 {
+  width: 25%;
+  margin-left: 25%;
+  margin-right: 25%;
+  left: 25%;
+  right: 25%;
+}
+
+.flurid .\0034\002F\0031\0035 {
+  width: 26.66%;
+  margin-left: 26.66%;
+  margin-right: 26.66%;
+  left: 26.66%;
+  right: 26.66%;
+}
+
+.flurid .\0033\002F\0031\0031 {
+  width: 27.27%;
+  margin-left: 27.27%;
+  margin-right: 27.27%;
+  left: 27.27%;
+  right: 27.27%;
+}
+
+.flurid .\0034\002F\0031\0034,
+.flurid .\0032\002F\0037 {
+  width: 28.57%;
+  margin-left: 28.57%;
+  margin-right: 28.57%;
+  left: 28.57%;
+  right: 28.57%;
+}
+
+.flurid .\0033\002F\0031\0030 {
+  width: 30%;
+  margin-left: 30%;
+  margin-right: 30%;
+  left: 30%;
+  right: 30%;
+}
+
+.flurid .\0034\002F\0031\0033 {
+  width: 30.76%;
+  margin-left: 30.76%;
+  margin-right: 30.76%;
+  left: 30.76%;
+  right: 30.76%;
+}
+
+.flurid .\0035\002F\0031\0036 {
+  width: 31.25%;
+  margin-left: 31.25%;
+  margin-right: 31.25%;
+  left: 31.25%;
+  right: 31.25%;
+}
+
+.flurid .\0035\002F\0031\0035,
+.flurid .\0034\002F\0031\0032,
+.flurid .\0033\002F\0039,
+.flurid .\0032\002F\0036,
+.flurid .\0031\002F\0033 {
+  width: 33.33%;
+  margin-left: 33.33%;
+  margin-right: 33.33%;
+  left: 33.33%;
+  right: 33.33%;
+}
+
+.flurid .\0035\002F\0031\0034 {
+  width: 35.71%;
+  margin-left: 35.71%;
+  margin-right: 35.71%;
+  left: 35.71%;
+  right: 35.71%;
+}
+
+.flurid .\0034\002F\0031\0031 {
+  width: 36.36%;
+  margin-left: 36.36%;
+  margin-right: 36.36%;
+  left: 36.36%;
+  right: 36.36%;
+}
+
+.flurid .\0036\002F\0031\0036,
+.flurid .\0033\002F\0038 {
+  width: 37.5%;
+  margin-left: 37.5%;
+  margin-right: 37.5%;
+  left: 37.5%;
+  right: 37.5%;
+}
+
+.flurid .\0035\002F\0031\0033 {
+  width: 38.46%;
+  margin-left: 38.46%;
+  margin-right: 38.46%;
+  left: 38.46%;
+  right: 38.46%;
+}
+
+.flurid .\0036\002F\0031\0035,
+.flurid .\0034\002F\0031\0030,
+.flurid .\0032\002F\0035 {
+  width: 40%;
+  margin-left: 40%;
+  margin-right: 40%;
+  left: 40%;
+  right: 40%;
+}
+
+.flurid .\0035\002F\0031\0032 {
+  width: 41.66%;
+  margin-left: 41.66%;
+  margin-right: 41.66%;
+  left: 41.66%;
+  right: 41.66%;
+}
+
+.flurid .\0036\002F\0031\0034,
+.flurid .\0033\002F\0037 {
+  width: 42.85%;
+  margin-left: 42.85%;
+  margin-right: 42.85%;
+  left: 42.85%;
+  right: 42.85%;
+}
+
+.flurid .\0037\002F\0031\0036 {
+  width: 43.75%;
+  margin-left: 43.75%;
+  margin-right: 43.75%;
+  left: 43.75%;
+  right: 43.75%;
+}
+
+.flurid .\0034\002F\0039 {
+  width: 44.44%;
+  margin-left: 44.44%;
+  margin-right: 44.44%;
+  left: 44.44%;
+  right: 44.44%;
+}
+
+.flurid .\0035\002F\0031\0031 {
+  width: 45.45%;
+  margin-left: 45.45%;
+  margin-right: 45.45%;
+  left: 45.45%;
+  right: 45.45%;
+}
+
+.flurid .\0036\002F\0031\0033 {
+  width: 46.15%;
+  margin-left: 46.15%;
+  margin-right: 46.15%;
+  left: 46.15%;
+  right: 46.15%;
+}
+
+.flurid .\0037\002F\0031\0035 {
+  width: 46.66%;
+  margin-left: 46.66%;
+  margin-right: 46.66%;
+  left: 46.66%;
+  right: 46.66%;
+}
+
+.flurid .\0038\002F\0031\0036,
+.flurid .\0037\002F\0031\0034,
+.flurid .\0036\002F\0031\0032,
+.flurid .\0035\002F\0031\0030,
+.flurid .\0034\002F\0038,
+.flurid .\0033\002F\0036,
+.flurid .\0032\002F\0034,
+.flurid .\0031\002F\0032 {
+  width: 50%;
+  margin-left: 50%;
+  margin-right: 50%;
+  left: 50%;
+  right: 50%;
+}
+
+.flurid .\0038\002F\0031\0035 {
+  width: 53.33%;
+  margin-left: 53.33%;
+  margin-right: 53.33%;
+  left: 53.33%;
+  right: 53.33%;
+}
+
+.flurid .\0037\002F\0031\0033 {
+  width: 53.84%;
+  margin-left: 53.84%;
+  margin-right: 53.84%;
+  left: 53.84%;
+  right: 53.84%;
+}
+
+.flurid .\0036\002F\0031\0031 {
+  width: 54.54%;
+  margin-left: 54.54%;
+  margin-right: 54.54%;
+  left: 54.54%;
+  right: 54.54%;
+}
+
+.flurid .\0035\002F\0039 {
+  width: 55.55%;
+  margin-left: 55.55%;
+  margin-right: 55.55%;
+  left: 55.55%;
+  right: 55.55%;
+}
+
+.flurid .\0039\002F\0031\0036 {
+  width: 56.25%;
+  margin-left: 56.25%;
+  margin-right: 56.25%;
+  left: 56.25%;
+  right: 56.25%;
+}
+
+.flurid .\0038\002F\0031\0034,
+.flurid .\0034\002F\0037 {
+  width: 57.14%;
+  margin-left: 57.14%;
+  margin-right: 57.14%;
+  left: 57.14%;
+  right: 57.14%;
+}
+
+.flurid .\0037\002F\0031\0032 {
+  width: 58.33%;
+  margin-left: 58.33%;
+  margin-right: 58.33%;
+  left: 58.33%;
+  right: 58.33%;
+}
+
+.flurid .\0039\002F\0031\0035,
+.flurid .\0036\002F\0031\0030,
+.flurid .\0033\002F\0035 {
+  width: 60%;
+  margin-left: 60%;
+  margin-right: 60%;
+  left: 60%;
+  right: 60%;
+}
+
+.flurid .\0038\002F\0031\0033 {
+  width: 61.53%;
+  margin-left: 61.53%;
+  margin-right: 61.53%;
+  left: 61.53%;
+  right: 61.53%;
+}
+
+.flurid .\0031\0030\002F\0031\0036,
+.flurid .\0035\002F\0038 {
+  width: 62.5%;
+  margin-left: 62.5%;
+  margin-right: 62.5%;
+  left: 62.5%;
+  right: 62.5%;
+}
+
+.flurid .\0037\002F\0031\0031 {
+  width: 63.63%;
+  margin-left: 63.63%;
+  margin-right: 63.63%;
+  left: 63.63%;
+  right: 63.63%;
+}
+
+.flurid .\0039\002F\0031\0034 {
+  width: 64.28%;
+  margin-left: 64.28%;
+  margin-right: 64.28%;
+  left: 64.28%;
+  right: 64.28%;
+}
+
+.flurid .\0031\0031\002F\0031\0036 {
+  width: 68.75%;
+  margin-left: 68.75%;
+  margin-right: 68.75%;
+  left: 68.75%;
+  right: 68.75%;
+}
+
+.flurid .\0031\0030\002F\0031\0035,
+.flurid .\0038\002F\0031\0032,
+.flurid .\0036\002F\0039,
+.flurid .\0034\002F\0036,
+.flurid .\0032\002F\0033 {
+  width: 66.66%;
+  margin-left: 66.66%;
+  margin-right: 66.66%;
+  left: 66.66%;
+  right: 66.66%;
+}
+
+.flurid .\0039\002F\0031\0033 {
+  width: 69.23%;
+  margin-left: 69.23%;
+  margin-right: 69.23%;
+  left: 69.23%;
+  right: 69.23%;
+}
+
+.flurid .\0037\002F\0031\0030 {
+  width: 70%;
+  margin-left: 70%;
+  margin-right: 70%;
+  left: 70%;
+  right: 70%;
+}
+
+.flurid .\0031\0030\002F\0031\0034,
+.flurid .\0035\002F\0037 {
+  width: 71.42%;
+  margin-left: 71.42%;
+  margin-right: 71.42%;
+  left: 71.42%;
+  right: 71.42%;
+}
+
+.flurid .\0038\002F\0031\0031 {
+  width: 72.72%;
+  margin-left: 72.72%;
+  margin-right: 72.72%;
+  left: 72.72%;
+  right: 72.72%;
+}
+
+.flurid .\0031\0031\002F\0031\0035 {
+  width: 73.33%;
+  margin-left: 73.33%;
+  margin-right: 73.33%;
+  left: 73.33%;
+  right: 73.33%;
+}
+
+.flurid .\0031\0032\002F\0031\0036,
+.flurid .\0039\002F\0031\0032,
+.flurid .\0036\002F\0038,
+.flurid .\0033\002F\0034 {
+  width: 75%;
+  margin-left: 75%;
+  margin-right: 75%;
+  left: 75%;
+  right: 75%;
+}
+
+.flurid .\0031\0030\002F\0031\0033 {
+  width: 76.92%;
+  margin-left: 76.92%;
+  margin-right: 76.92%;
+  left: 76.92%;
+  right: 76.92%;
+}
+
+.flurid .\0037\002F\0039 {
+  width: 77.77%;
+  margin-left: 77.77%;
+  margin-right: 77.77%;
+  left: 77.77%;
+  right: 77.77%;
+}
+
+.flurid .\0031\0031\002F\0031\0034 {
+  width: 78.57%;
+  margin-left: 78.57%;
+  margin-right: 78.57%;
+  left: 78.57%;
+  right: 78.57%;
+}
+
+.flurid .\0031\0032\002F\0031\0035,
+.flurid .\0038\002F\0031\0030,
+.flurid .\0034\002F\0035 {
+  width: 80%;
+  margin-left: 80%;
+  margin-right: 80%;
+  left: 80%;
+  right: 80%;
+}
+
+.flurid .\0031\0033\002F\0031\0036 {
+  width: 81.25%;
+  margin-left: 81.25%;
+  margin-right: 81.25%;
+  left: 81.25%;
+  right: 81.25%;
+}
+
+.flurid .\0039\002F\0031\0031 {
+  width: 81.81%;
+  margin-left: 81.81%;
+  margin-right: 81.81%;
+  left: 81.81%;
+  right: 81.81%;
+}
+
+.flurid .\0031\0030\002F\0031\0032,
+.flurid .\0035\002F\0036 {
+  width: 83.33%;
+  margin-left: 83.33%;
+  margin-right: 83.33%;
+  left: 83.33%;
+  right: 83.33%;
+}
+
+.flurid .\0031\0031\002F\0031\0033 {
+  width: 84.61%;
+  margin-left: 84.61%;
+  margin-right: 84.61%;
+  left: 84.61%;
+  right: 84.61%;
+}
+
+.flurid .\0031\0032\002F\0031\0034,
+.flurid .\0036\002F\0037 {
+  width: 85.71%;
+  margin-left: 85.71%;
+  margin-right: 85.71%;
+  left: 85.71%;
+  right: 85.71%;
+}
+
+.flurid .\0031\0033\002F\0031\0035 {
+  width: 86.66%;
+  margin-left: 86.66%;
+  margin-right: 86.66%;
+  left: 86.66%;
+  right: 86.66%;
+}
+
+.flurid .\0031\0034\002F\0031\0036,
+.flurid .\0037\002F\0038 {
+  width: 87.5%;
+  margin-left: 87.5%;
+  margin-right: 87.5%;
+  left: 87.5%;
+  right: 87.5%;
+}
+
+.flurid .\0038\002F\0039 {
+  width: 88.88%;
+  margin-left: 88.88%;
+  margin-right: 88.88%;
+  left: 88.88%;
+  right: 88.88%;
+}
+
+.flurid .\0039\002F\0031\0030 {
+  width: 90%;
+  margin-left: 90%;
+  margin-right: 90%;
+  left: 90%;
+  right: 90%;
+}
+
+.flurid .\0031\0030\002F\0031\0031 {
+  width: 90.90%;
+  margin-left: 90.90%;
+  margin-right: 90.90%;
+  left: 90.90%;
+  right: 90.90%;
+}
+
+.flurid .\0031\0031\002F\0031\0032 {
+  width: 91.66%;
+  margin-left: 91.66%;
+  margin-right: 91.66%;
+  left: 91.66%;
+  right: 91.66%;
+}
+
+.flurid .\0031\0032\002F\0031\0033 {
+  width: 92.30%;
+  margin-left: 92.30%;
+  margin-right: 92.30%;
+  left: 92.30%;
+  right: 92.30%;
+}
+
+.flurid .\0031\0033\002F\0031\0034 {
+  width: 92.85%;
+  margin-left: 92.85%;
+  margin-right: 92.85%;
+  left: 92.85%;
+  right: 92.85%;
+}
+
+.flurid .\0031\0034\002F\0031\0035 {
+  width: 93.33%;
+  margin-left: 93.33%;
+  margin-right: 93.33%;
+  left: 93.33%;
+  right: 93.33%;
+}
+
+.flurid .\0031\0035\002F\0031\0036 {
+  width: 93.75%;
+  margin-left: 93.75%;
+  margin-right: 93.75%;
+  left: 93.75%;
+  right: 93.75%;
+}
+
+.flurid .\0031\0036\002F\0031\0036,
+.flurid .\0031\0035\002F\0031\0035,
+.flurid .\0031\0034\002F\0031\0034,
+.flurid .\0031\0033\002F\0031\0033,
+.flurid .\0031\0032\002F\0031\0032,
+.flurid .\0031\0031\002F\0031\0031,
+.flurid .\0031\0030\002F\0031\0030,
+.flurid .\0039\002F\0039,
+.flurid .\0038\002F\0038,
+.flurid .\0037\002F\0037,
+.flurid .\0036\002F\0036,
+.flurid .\0035\002F\0035,
+.flurid .\0034\002F\0034,
+.flurid .\0033\002F\0033,
+.flurid .\0032\002F\0032,
+.flurid .\0031\002F\0031 {
+  width: 100%;
+  margin-left: 100%;
+  margin-right: 100%;
+  left: 100%;
+  right: 100%;
+}
+
+.flurid .row {
+  /* IE < 8 needs hasLayout on rows */
+  zoom: 1;
+}
+
+.flurid .row:before, .flurid .row:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+.flurid .row:after {
+  clear: both;
+}
+
+.flurid .column {
+  float: left;
+  position: relative;
+
+  /* overrides */
+  left: auto;
+  margin-left: 0;
+  margin-right: 0;
+  right: auto;
+}
+
+/* Nested columns */
+.flurid .column .column {
+  /* IE < 8 - fixes odd widths breaking nested columns */
+  *margin-right: -1px;
+}
+
+/* Fix last column in row */
+.flurid .row .column:last-child, .flurid .row .last {
+  float: none !important;
+  /* Gecko needs this */
+  overflow: hidden;
+  width: auto !important;
+  /* IE6 - 3 pixel gap bug fix */
+  _left: -3px;
+  _margin-right: -3px;
+}
+
+.flurid .append {
+  /* overrides */
+  left: auto;
+  margin-left: 0;
+  right: auto;
+  width: auto;
+}
+
+.flurid .prepend {
+  /* overrides */
+  left: auto;
+  margin-right: 0;
+  right: auto;
+  width: auto;
+}
+
+.flurid .append-prepend {
+  /* overrides */
+  left: auto;
+  right: auto;
+  width: auto;
+}
+
+.flurid .push {
+  position: relative;
+
+  /* overrides */
+  margin-left: 0;
+  margin-right: 0;
+  right: auto;
+  width: auto;
+}
+
+.flurid .pull {
+  position: relative;
+
+  /* overrides */
+  left: auto;
+  margin-left: 0;
+  margin-right: 0;
+  width: auto;
+}
