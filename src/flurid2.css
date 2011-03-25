@@ -712,7 +712,7 @@
 }
 
 .flurid .row {
-  /* IE < 8 needs hasLayout on rows */
+  /* Trigger hasLayout for IE < 8 */
   height: 1%;
   position: relative;
 }
@@ -739,21 +739,21 @@
   right: auto;
 }
 
-/* Nested columns */
 .flurid .column .column {
-  /* IE < 8 - fixes odd widths breaking nested columns */
   *margin-right: -1px;
 }
 
 /* Fix last column in row */
 .flurid .row .last {
   float: none;
-  /* Gecko needs this */
-  overflow: hidden;
+  height: 1%;
   width: auto;
-  /* IE6 - 3 pixel gap bug fix */
-  _left: -3px;
-  _margin-right: -3px;
+}
+
+/* Fix IE6 three pixel gap bug */
+* html .flurid .row .last {
+  left: -3px;
+  margin: 0 -3px 0 3px;
 }
 
 .flurid .append {
@@ -780,6 +780,7 @@
 }
 
 .flurid .push {
+  height: 1%;
   position: relative;
 
   /* overrides */
@@ -790,6 +791,7 @@
 }
 
 .flurid .pull {
+  height: 1%;
   position: relative;
 
   /* overrides */

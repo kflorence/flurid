@@ -2,109 +2,8 @@
 <html>
   <head>
     <title>Flurid - The Fluid CSS Grid Framework</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
     <link rel="stylesheet" type="text/css" href="src/flurid2.css" />
-    <style type="text/css">
-      body {
-        background-color: #eee;
-        font-family: monospace, sans-serif;
-        font-size: 62.5%;
-        margin: 0;
-        padding: 0;
-      }
-
-      a {
-        color: #666;
-        outline: none;
-        text-decoration: none;
-      }
-
-      a:hover {
-        text-decoration: underline;
-      }
-
-      p {
-        margin: 0;
-        padding: 0;
-      }
-
-      acronym {
-        border-bottom: #aaa 1px dashed;
-      }
-
-      #wrapper {
-        display: table;
-        height: 100%;
-        left: 0;
-        position: fixed;
-        top: 0;
-        width: 100%;
-      }
-
-      #container {
-        display: table-cell;
-        text-align: center;
-        vertical-align: middle;
-
-        /* For IE */
-        *position: absolute;
-        *top: 50%;
-        *margin-top: -150px;
-      }
-
-      #content {
-        font-size: 1.2em;
-        line-height: 1.6em;
-        margin: 0 auto;
-        width: 40em;
-        height: 30em;
-      }
-
-      #information ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
-
-      #information li {
-        text-align: center;
-      }
-
-      #information li a:hover {
-        color: #333;
-      }
-
-      #flurid {
-        background: #fff;
-        margin: 10px 0;
-        padding: 5px;
-      }
-
-      #flurid .content {
-        font-size: 6.66em;
-        line-height: 1.4em;
-        margin: 5px;
-        text-align: center;
-      }
-
-      #flurid .odd {
-        color: #80ADDA;
-        background-color: #f4f4f4;
-      }
-
-      #flurid .even {
-        color: #E88798;
-        background-color: #f1f1f1;
-      }
-
-      #description {
-        color: #666;
-        text-align: center;
-      }
-
-      #description p {
-        padding: 0 10px;
-      }
-    </style>
   </head>
   <body>
     <div id="wrapper">
@@ -127,24 +26,24 @@
           <div id="flurid" class="flurid">
             <div class="row">
               <div class="column 1/3">
-                <p class="content odd">f</p>
+                <p class="content blue">f</p>
               </div>
               <div class="column 1/3">
-                <p class="content even">l</p>
+                <p class="content pink">l</p>
               </div>
-              <div class="column last 1/3">
-                <p class="content odd">u</p>
+              <div class="column 1/3 last">
+                <p class="content blue">u</p>
               </div>
             </div>
             <div class="row">
               <div class="column 1/3">
-                <p class="content even">r</p>
+                <p class="content pink">r</p>
               </div>
               <div class="column 1/3">
-                <p class="content odd">i</p>
+                <p class="content blue">i</p>
               </div>
-              <div class="column last 1/3">
-                <p class="content even">d</p>
+              <div class="column 1/3 last">
+                <p class="content pink">d</p>
               </div>
             </div>
           </div>

@@ -2,766 +2,820 @@
 <html>
   <head>
     <title>Flurid - The Fluid CSS Grid</title>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/examples.css" />
     <link rel="stylesheet" type="text/css" href="../src/flurid2.css" />
+
+    <script type="text/javascript"
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../src/jquery.flurid.js"></script>
+    <script type="text/javascript">
+      jQuery(function($) {
+        $(".flurid").flurid();
+      });
+    </script>
   </head>
   <body>
-    <h1>Flurid <span>The Fluid CSS Grid</span></h1>
-
-    <a href="https://github.com/kflorence/flurid" title="Source">Source</a> |
-    <a href="https://github.com/kflorence/flurid/wiki" title="Documentation">Docs</a>
-
-    <h2><a name="contents">Contents</a></h2>
-    <ul>
-      <li><a href="#grid">The Grid</a></li>
-      <li><a href="#mixed">Mixed Columns</a></li>
-      <li><a href="#nested">Nested Columns</a></li>
-      <li><a href="#padded">Padded Columns</a></li>
-      <li><a href="#shifted">Shifted Columns</a></li>
-    </ul>
-
-    <h2><a name="grid">The Grid</a></h2>
-
-    <div class="example">
-      <div class="flurid">
-        <div class="row">
-          <div class="column odd 1/16">
-            <p>1/16</p>
-          </div>
-          <div class="column even 1/16">
-            <p>1/16</p>
-          </div>
-          <div class="column odd 1/16">
-            <p>1/16</p>
-          </div>
-          <div class="column even 1/16">
-            <p>1/16</p>
-          </div>
-          <div class="column odd 1/16">
-            <p>1/16</p>
-          </div>
-          <div class="column even 1/16">
-            <p>1/16</p>
-          </div>
-          <div class="column odd 1/16">
-            <p>1/16</p>
-          </div>
-          <div class="column even 1/16">
-            <p>1/16</p>
-          </div>
-          <div class="column odd 1/16">
-            <p>1/16</p>
-          </div>
-          <div class="column even 1/16">
-            <p>1/16</p>
-          </div>
-          <div class="column odd 1/16">
-            <p>1/16</p>
-          </div>
-          <div class="column even 1/16">
-            <p>1/16</p>
-          </div>
-          <div class="column odd 1/16">
-            <p>1/16</p>
-          </div>
-          <div class="column even 1/16">
-            <p>1/16</p>
-          </div>
-          <div class="column odd 1/16">
-            <p>1/16</p>
-          </div>
-          <div class="column even 1/16">
-            <p>1/16</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column odd 1/15">
-            <p>1/15</p>
-          </div>
-          <div class="column even 1/15">
-            <p>1/15</p>
-          </div>
-          <div class="column odd 1/15">
-            <p>1/15</p>
-          </div>
-          <div class="column even 1/15">
-            <p>1/15</p>
-          </div>
-          <div class="column odd 1/15">
-            <p>1/15</p>
-          </div>
-          <div class="column even 1/15">
-            <p>1/15</p>
-          </div>
-          <div class="column odd 1/15">
-            <p>1/15</p>
-          </div>
-          <div class="column even 1/15">
-            <p>1/15</p>
-          </div>
-          <div class="column odd 1/15">
-            <p>1/15</p>
-          </div>
-          <div class="column even 1/15">
-            <p>1/15</p>
-          </div>
-          <div class="column odd 1/15">
-            <p>1/15</p>
-          </div>
-          <div class="column even 1/15">
-            <p>1/15</p>
-          </div>
-          <div class="column odd 1/15">
-            <p>1/15</p>
-          </div>
-          <div class="column even 1/15">
-            <p>1/15</p>
-          </div>
-          <div class="column odd 1/15">
-            <p>1/15</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column 1/14">
-            <p>1/14</p>
-          </div>
-          <div class="column 1/14">
-            <p>1/14</p>
-          </div>
-          <div class="column 1/14">
-            <p>1/14</p>
-          </div>
-          <div class="column 1/14">
-            <p>1/14</p>
-          </div>
-          <div class="column 1/14">
-            <p>1/14</p>
-          </div>
-          <div class="column 1/14">
-            <p>1/14</p>
-          </div>
-          <div class="column 1/14">
-            <p>1/14</p>
-          </div>
-          <div class="column 1/14">
-            <p>1/14</p>
-          </div>
-          <div class="column 1/14">
-            <p>1/14</p>
-          </div>
-          <div class="column 1/14">
-            <p>1/14</p>
-          </div>
-          <div class="column 1/14">
-            <p>1/14</p>
-          </div>
-          <div class="column 1/14">
-            <p>1/14</p>
-          </div>
-          <div class="column 1/14">
-            <p>1/14</p>
-          </div>
-          <div class="column 1/14">
-            <p>1/14</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column 1/13">
-            <p>1/13</p>
-          </div>
-          <div class="column 1/13">
-            <p>1/13</p>
-          </div>
-          <div class="column 1/13">
-            <p>1/13</p>
-          </div>
-          <div class="column 1/13">
-            <p>1/13</p>
-          </div>
-          <div class="column 1/13">
-            <p>1/13</p>
-          </div>
-          <div class="column 1/13">
-            <p>1/13</p>
-          </div>
-          <div class="column 1/13">
-            <p>1/13</p>
-          </div>
-          <div class="column 1/13">
-            <p>1/13</p>
-          </div>
-          <div class="column 1/13">
-            <p>1/13</p>
-          </div>
-          <div class="column 1/13">
-            <p>1/13</p>
-          </div>
-          <div class="column 1/13">
-            <p>1/13</p>
-          </div>
-          <div class="column 1/13">
-            <p>1/13</p>
-          </div>
-          <div class="column 1/13">
-            <p>1/13</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column 1/12">
-            <p>1/12</p>
-          </div>
-          <div class="column 1/12">
-            <p>1/12</p>
-          </div>
-          <div class="column 1/12">
-            <p>1/12</p>
-          </div>
-          <div class="column 1/12">
-            <p>1/12</p>
-          </div>
-          <div class="column 1/12">
-            <p>1/12</p>
-          </div>
-          <div class="column 1/12">
-            <p>1/12</p>
-          </div>
-          <div class="column 1/12">
-            <p>1/12</p>
-          </div>
-          <div class="column 1/12">
-            <p>1/12</p>
-          </div>
-          <div class="column 1/12">
-            <p>1/12</p>
-          </div>
-          <div class="column 1/12">
-            <p>1/12</p>
-          </div>
-          <div class="column 1/12">
-            <p>1/12</p>
-          </div>
-          <div class="column 1/12">
-            <p>1/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column 1/11">
-            <p>1/11</p>
-          </div>
-          <div class="column 1/11">
-            <p>1/11</p>
-          </div>
-          <div class="column 1/11">
-            <p>1/11</p>
-          </div>
-          <div class="column 1/11">
-            <p>1/11</p>
-          </div>
-          <div class="column 1/11">
-            <p>1/11</p>
-          </div>
-          <div class="column 1/11">
-            <p>1/11</p>
-          </div>
-          <div class="column 1/11">
-            <p>1/11</p>
-          </div>
-          <div class="column 1/11">
-            <p>1/11</p>
-          </div>
-          <div class="column 1/11">
-            <p>1/11</p>
-          </div>
-          <div class="column 1/11">
-            <p>1/11</p>
-          </div>
-          <div class="column 1/11">
-            <p>1/11</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column 1/10">
-            <p>1/10</p>
-          </div>
-          <div class="column 1/10">
-            <p>1/10</p>
-          </div>
-          <div class="column 1/10">
-            <p>1/10</p>
-          </div>
-          <div class="column 1/10">
-            <p>1/10</p>
-          </div>
-          <div class="column 1/10">
-            <p>1/10</p>
-          </div>
-          <div class="column 1/10">
-            <p>1/10</p>
-          </div>
-          <div class="column 1/10">
-            <p>1/10</p>
-          </div>
-          <div class="column 1/10">
-            <p>1/10</p>
-          </div>
-          <div class="column 1/10">
-            <p>1/10</p>
-          </div>
-          <div class="column 1/10">
-            <p>1/10</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column 1/9">
-            <p>1/9</p>
-          </div>
-          <div class="column 1/9">
-            <p>1/9</p>
-          </div>
-          <div class="column 1/9">
-            <p>1/9</p>
-          </div>
-          <div class="column 1/9">
-            <p>1/9</p>
-          </div>
-          <div class="column 1/9">
-            <p>1/9</p>
-          </div>
-          <div class="column 1/9">
-            <p>1/9</p>
-          </div>
-          <div class="column 1/9">
-            <p>1/9</p>
-          </div>
-          <div class="column 1/9">
-            <p>1/9</p>
-          </div>
-          <div class="column 1/9">
-            <p>1/9</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column 1/8">
-            <p>1/8</p>
-          </div>
-          <div class="column 1/8">
-            <p>1/8</p>
-          </div>
-          <div class="column 1/8">
-            <p>1/8</p>
-          </div>
-          <div class="column 1/8">
-            <p>1/8</p>
-          </div>
-          <div class="column 1/8">
-            <p>1/8</p>
-          </div>
-          <div class="column 1/8">
-            <p>1/8</p>
-          </div>
-          <div class="column 1/8">
-            <p>1/8</p>
-          </div>
-          <div class="column 1/8">
-            <p>1/8</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column 1/7">
-            <p>1/7</p>
-          </div>
-          <div class="column 1/7">
-            <p>1/7</p>
-          </div>
-          <div class="column 1/7">
-            <p>1/7</p>
-          </div>
-          <div class="column 1/7">
-            <p>1/7</p>
-          </div>
-          <div class="column 1/7">
-            <p>1/7</p>
-          </div>
-          <div class="column 1/7">
-            <p>1/7</p>
-          </div>
-          <div class="column 1/7">
-            <p>1/7</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column 1/6">
-            <p>1/6</p>
-          </div>
-          <div class="column 1/6">
-            <p>1/6</p>
-          </div>
-          <div class="column 1/6">
-            <p>1/6</p>
-          </div>
-          <div class="column 1/6">
-            <p>1/6</p>
-          </div>
-          <div class="column 1/6">
-            <p>1/6</p>
-          </div>
-          <div class="column 1/6">
-            <p>1/6</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column 1/5">
-            <p>1/5</p>
-          </div>
-          <div class="column 1/5">
-            <p>1/5</p>
-          </div>
-          <div class="column 1/5">
-            <p>1/5</p>
-          </div>
-          <div class="column 1/5">
-            <p>1/5</p>
-          </div>
-          <div class="column 1/5">
-            <p>1/5</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column 1/4">
-            <p>1/4</p>
-          </div>
-          <div class="column 1/4">
-            <p>1/4</p>
-          </div>
-          <div class="column 1/4">
-            <p>1/4</p>
-          </div>
-          <div class="column 1/4">
-            <p>1/4</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column 1/3">
-            <p>1/3</p>
-          </div>
-          <div class="column 1/3">
-            <p>1/3</p>
-          </div>
-          <div class="column 1/3">
-            <p>1/3</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column 1/2">
-            <p>1/2</p>
-          </div>
-          <div class="column 1/2">
-            <p>1/2</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column 1/1">
-            <p>1/1</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <h2><a name="mixed">Mixed Columns</a></h2>
-
-    <div class="example">
-      <div class="flurid">
-        <div class="row">
-          <div class="column 1/12">
-            <p>1/12</p>
-          </div>
-          <div class="column 5/12">
-            <p>5/12</p>
-          </div>
-          <div class="column 6/12">
-            <p>6/12 (1/2)</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column 1/4">
-            <p>4/16 (1/4)</p>
-          </div>
-          <div class="column 1/16">
-            <p>1/16</p>
-          </div>
-          <div class="column 1/2">
-            <p>8/16 (1/2)</p>
-          </div>
-          <div class="column 3/16">
-            <p>3/16</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <h2><a name="nested">Nested Columns</a></h2>
-
-    <div class="example">
-      <div class="flurid">
-        <div class="row">
-          <div class="column 1/2">
-            <div class="column 1/2">
-              <p>1/2 of 1/2 (1/4)</p>
+    <div id="wrapper">
+      <div id="header" class="clearfix">
+        <div id="flurid" class="flurid">
+          <div class="row">
+            <div class="column 1/3">
+              <p class="content blue">f</p>
             </div>
-            <div class="column 1/2">
-              <div class="column 1/2">
-                <p>1/2 of 1/2 of 1/2 (1/8)</p>
+            <div class="column 1/3">
+              <p class="content pink">l</p>
+            </div>
+            <div class="column 1/3 last">
+              <p class="content blue">u</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column 1/3">
+              <p class="content pink">r</p>
+            </div>
+            <div class="column 1/3">
+              <p class="content blue">i</p>
+            </div>
+            <div class="column 1/3 last">
+              <p class="content pink">d</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="description" class="flurid">
+          <div class="row">
+            <div class="column 1/1">
+              <p class="content pink">A cross-browser <acronym title="Cascading Style Sheets">CSS</acronym> grid
+              framework that doesn't hide pixels in margins!</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column 1/1">
+              <ul class="content clearfix">
+                <li><a href="https://github.com/kflorence/flurid/wiki" title="Documentation">docs</a></li>
+                <li><a href="https://github.com/kflorence/flurid">source</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="content">
+        <h2><a name="examples">Examples</a></h2>
+
+        <ul id="examples">
+          <li><a href="#columns">Columns</a></li>
+          <li><a href="#mixed">Mixed Columns</a></li>
+          <li><a href="#nested">Nested Columns</a></li>
+          <li><a href="#padded">Padded Columns</a></li>
+          <li><a href="#shifted">Shifted Columns</a></li>
+        </ul>
+
+        <h2><a name="columns">Columns</a></h2>
+
+        <div class="example">
+          <div class="flurid">
+            <div class="row">
+              <div class="column 1/16">
+                <p>1/16</p>
               </div>
-              <div class="column 1/2">
-                <p>1/2 of 1/2 of 1/2 (1/8)</p>
+              <div class="column 1/16">
+                <p>1/16</p>
+              </div>
+              <div class="column 1/16">
+                <p>1/16</p>
+              </div>
+              <div class="column 1/16">
+                <p>1/16</p>
+              </div>
+              <div class="column 1/16">
+                <p>1/16</p>
+              </div>
+              <div class="column 1/16">
+                <p>1/16</p>
+              </div>
+              <div class="column 1/16">
+                <p>1/16</p>
+              </div>
+              <div class="column 1/16">
+                <p>1/16</p>
+              </div>
+              <div class="column 1/16">
+                <p>1/16</p>
+              </div>
+              <div class="column 1/16">
+                <p>1/16</p>
+              </div>
+              <div class="column 1/16">
+                <p>1/16</p>
+              </div>
+              <div class="column 1/16">
+                <p>1/16</p>
+              </div>
+              <div class="column 1/16">
+                <p>1/16</p>
+              </div>
+              <div class="column 1/16">
+                <p>1/16</p>
+              </div>
+              <div class="column 1/16">
+                <p>1/16</p>
+              </div>
+              <div class="column 1/16 last">
+                <p>1/16</p>
               </div>
             </div>
-          </div>
-          <div class="column 1/2">
-            <p>1/2</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <h2><a name="padded">Padded Columns</a></h2>
-
-    <div class="example" id="padded">
-      <div class="flurid">
-        <div class="row">
-          <div class="append 1/16">
-            <p class="odd">15/16</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="prepend 1/16">
-            <p class="even">15/16</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="append-prepend 1/16">
-            <p class="odd">15/16</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="append 1/2">
-            <div class="prepend 1/2">
-              <p class="even">1/4</p>
+            <div class="row">
+              <div class="column 1/15">
+                <p>1/15</p>
+              </div>
+              <div class="column 1/15">
+                <p>1/15</p>
+              </div>
+              <div class="column 1/15">
+                <p>1/15</p>
+              </div>
+              <div class="column 1/15">
+                <p>1/15</p>
+              </div>
+              <div class="column 1/15">
+                <p>1/15</p>
+              </div>
+              <div class="column 1/15">
+                <p>1/15</p>
+              </div>
+              <div class="column 1/15">
+                <p>1/15</p>
+              </div>
+              <div class="column 1/15">
+                <p>1/15</p>
+              </div>
+              <div class="column 1/15">
+                <p>1/15</p>
+              </div>
+              <div class="column 1/15">
+                <p>1/15</p>
+              </div>
+              <div class="column 1/15">
+                <p>1/15</p>
+              </div>
+              <div class="column 1/15">
+                <p>1/15</p>
+              </div>
+              <div class="column 1/15">
+                <p>1/15</p>
+              </div>
+              <div class="column 1/15">
+                <p>1/15</p>
+              </div>
+              <div class="column 1/15 last">
+                <p>1/15</p>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column append-1/12">
-            <p>11/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column append-2/12">
-            <p>10/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column append-3/12">
-            <p>9/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column append-4/12">
-            <p>8/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column append-5/12">
-            <p>7/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column append-6/12">
-            <p>6/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column append-7/12">
-            <p>5/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column append-8/12">
-            <p>4/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column append-9/12">
-            <p>3/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column append-10/12">
-            <p>2/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column append-11/12">
-            <p>1/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column prepend-1/12">
-            <p>11/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column prepend-2/12">
-            <p>10/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column prepend-3/12">
-            <p>9/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column prepend-4/12">
-            <p>8/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column prepend-5/12">
-            <p>7/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column prepend-6/12">
-            <p>6/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column prepend-7/12">
-            <p>5/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column prepend-8/12">
-            <p>4/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column prepend-9/12">
-            <p>3/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column prepend-10/12">
-            <p>2/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column prepend-11/12">
-            <p>1/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column prepend-5/12 append-5/12">
-            <p>2/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column prepend-4/12 append-4/12">
-            <p>4/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column prepend-3/12 append-3/12">
-            <p>6/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column prepend-2/12 append-2/12">
-            <p>8/12</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column prepend-1/12 append-1/12">
-            <p>10/12</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <h2><a name="shifted">Shifted Columns</a></h2>
-
-    <div class="example">
-      <div class="flurid">
-        <div class="row">
-          <div class="push 1/2">
-            <div class="column 1/2">
-              <p>1/2 (push 1/2)</p>
+            <div class="row">
+              <div class="column 1/14">
+                <p>1/14</p>
+              </div>
+              <div class="column 1/14">
+                <p>1/14</p>
+              </div>
+              <div class="column 1/14">
+                <p>1/14</p>
+              </div>
+              <div class="column 1/14">
+                <p>1/14</p>
+              </div>
+              <div class="column 1/14">
+                <p>1/14</p>
+              </div>
+              <div class="column 1/14">
+                <p>1/14</p>
+              </div>
+              <div class="column 1/14">
+                <p>1/14</p>
+              </div>
+              <div class="column 1/14">
+                <p>1/14</p>
+              </div>
+              <div class="column 1/14">
+                <p>1/14</p>
+              </div>
+              <div class="column 1/14">
+                <p>1/14</p>
+              </div>
+              <div class="column 1/14">
+                <p>1/14</p>
+              </div>
+              <div class="column 1/14">
+                <p>1/14</p>
+              </div>
+              <div class="column 1/14">
+                <p>1/14</p>
+              </div>
+              <div class="column 1/14 last">
+                <p>1/14</p>
+              </div>
             </div>
-          </div>
-          <div class="pull 1/2">
-            <div class="column 1/4">
-              <p>1/4 (pull 1/2)</p>
+            <div class="row">
+              <div class="column 1/13">
+                <p>1/13</p>
+              </div>
+              <div class="column 1/13">
+                <p>1/13</p>
+              </div>
+              <div class="column 1/13">
+                <p>1/13</p>
+              </div>
+              <div class="column 1/13">
+                <p>1/13</p>
+              </div>
+              <div class="column 1/13">
+                <p>1/13</p>
+              </div>
+              <div class="column 1/13">
+                <p>1/13</p>
+              </div>
+              <div class="column 1/13">
+                <p>1/13</p>
+              </div>
+              <div class="column 1/13">
+                <p>1/13</p>
+              </div>
+              <div class="column 1/13">
+                <p>1/13</p>
+              </div>
+              <div class="column 1/13">
+                <p>1/13</p>
+              </div>
+              <div class="column 1/13">
+                <p>1/13</p>
+              </div>
+              <div class="column 1/13">
+                <p>1/13</p>
+              </div>
+              <div class="column 1/13 last">
+                <p>1/13</p>
+              </div>
             </div>
-            <div class="column 1/4 ">
-              <p>1/4 (pull 1/2)</p>
+            <div class="row">
+              <div class="column 1/12">
+                <p>1/12</p>
+              </div>
+              <div class="column 1/12">
+                <p>1/12</p>
+              </div>
+              <div class="column 1/12">
+                <p>1/12</p>
+              </div>
+              <div class="column 1/12">
+                <p>1/12</p>
+              </div>
+              <div class="column 1/12">
+                <p>1/12</p>
+              </div>
+              <div class="column 1/12">
+                <p>1/12</p>
+              </div>
+              <div class="column 1/12">
+                <p>1/12</p>
+              </div>
+              <div class="column 1/12">
+                <p>1/12</p>
+              </div>
+              <div class="column 1/12">
+                <p>1/12</p>
+              </div>
+              <div class="column 1/12">
+                <p>1/12</p>
+              </div>
+              <div class="column 1/12">
+                <p>1/12</p>
+              </div>
+              <div class="column 1/12 last">
+                <p>1/12</p>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column 1/4">
-            <p>1/4</p>
-          </div>
-          <div class="push-1/2">
-            <div class="column 1/4">
-              <p>1/4 (push 1/2)</p>
+            <div class="row">
+              <div class="column 1/11">
+                <p>1/11</p>
+              </div>
+              <div class="column 1/11">
+                <p>1/11</p>
+              </div>
+              <div class="column 1/11">
+                <p>1/11</p>
+              </div>
+              <div class="column 1/11">
+                <p>1/11</p>
+              </div>
+              <div class="column 1/11">
+                <p>1/11</p>
+              </div>
+              <div class="column 1/11">
+                <p>1/11</p>
+              </div>
+              <div class="column 1/11">
+                <p>1/11</p>
+              </div>
+              <div class="column 1/11">
+                <p>1/11</p>
+              </div>
+              <div class="column 1/11">
+                <p>1/11</p>
+              </div>
+              <div class="column 1/11">
+                <p>1/11</p>
+              </div>
+              <div class="column 1/11 last">
+                <p>1/11</p>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="push-1/8">
-            <div class="column 1/4">
-              <p>1/4 (push 1/8)</p>
+            <div class="row">
+              <div class="column 1/10">
+                <p>1/10</p>
+              </div>
+              <div class="column 1/10">
+                <p>1/10</p>
+              </div>
+              <div class="column 1/10">
+                <p>1/10</p>
+              </div>
+              <div class="column 1/10">
+                <p>1/10</p>
+              </div>
+              <div class="column 1/10">
+                <p>1/10</p>
+              </div>
+              <div class="column 1/10">
+                <p>1/10</p>
+              </div>
+              <div class="column 1/10">
+                <p>1/10</p>
+              </div>
+              <div class="column 1/10">
+                <p>1/10</p>
+              </div>
+              <div class="column 1/10">
+                <p>1/10</p>
+              </div>
+              <div class="column 1/10 last">
+                <p>1/10</p>
+              </div>
             </div>
-          </div>
-          <div class="push-3/8">
-            <div class="column 1/4">
-              <p>1/4 (push 3/8)</p>
+            <div class="row">
+              <div class="column 1/9">
+                <p>1/9</p>
+              </div>
+              <div class="column 1/9">
+                <p>1/9</p>
+              </div>
+              <div class="column 1/9">
+                <p>1/9</p>
+              </div>
+              <div class="column 1/9">
+                <p>1/9</p>
+              </div>
+              <div class="column 1/9">
+                <p>1/9</p>
+              </div>
+              <div class="column 1/9">
+                <p>1/9</p>
+              </div>
+              <div class="column 1/9">
+                <p>1/9</p>
+              </div>
+              <div class="column 1/9">
+                <p>1/9</p>
+              </div>
+              <div class="column 1/9 last">
+                <p>1/9</p>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="push-1/4">
-            <div class="column 1/4">
-              <p>1/4 (push 1/4)</p>
-            </div>
-          </div>
-          <div class="push-1/4">
-            <div class="column 1/4">
-              <p>1/4 (push 1/4)</p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column 1/8">
-            <p>1/8</p>
-          </div>
-          <div class="column 1/8">
-            <p>1/8</p>
-          </div>
-          <div class="push-1/8">
-            <div class="column 1/4">
-              <p>1/4 (push 1/8)</p>
-            </div>
-            <div class="push-1/8">
+            <div class="row">
               <div class="column 1/8">
-                <p>1/8 (push 1/8)</p>
+                <p>1/8</p>
               </div>
               <div class="column 1/8">
-                <p>1/8 (push 1/8)</p>
+                <p>1/8</p>
+              </div>
+              <div class="column 1/8">
+                <p>1/8</p>
+              </div>
+              <div class="column 1/8">
+                <p>1/8</p>
+              </div>
+              <div class="column 1/8">
+                <p>1/8</p>
+              </div>
+              <div class="column 1/8">
+                <p>1/8</p>
+              </div>
+              <div class="column 1/8">
+                <p>1/8</p>
+              </div>
+              <div class="column 1/8 last">
+                <p>1/8</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column 1/7">
+                <p>1/7</p>
+              </div>
+              <div class="column 1/7">
+                <p>1/7</p>
+              </div>
+              <div class="column 1/7">
+                <p>1/7</p>
+              </div>
+              <div class="column 1/7">
+                <p>1/7</p>
+              </div>
+              <div class="column 1/7">
+                <p>1/7</p>
+              </div>
+              <div class="column 1/7">
+                <p>1/7</p>
+              </div>
+              <div class="column 1/7 last">
+                <p>1/7</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column 1/6">
+                <p>1/6</p>
+              </div>
+              <div class="column 1/6">
+                <p>1/6</p>
+              </div>
+              <div class="column 1/6">
+                <p>1/6</p>
+              </div>
+              <div class="column 1/6">
+                <p>1/6</p>
+              </div>
+              <div class="column 1/6">
+                <p>1/6</p>
+              </div>
+              <div class="column 1/6 last">
+                <p>1/6</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column 1/5">
+                <p>1/5</p>
+              </div>
+              <div class="column 1/5">
+                <p>1/5</p>
+              </div>
+              <div class="column 1/5">
+                <p>1/5</p>
+              </div>
+              <div class="column 1/5">
+                <p>1/5</p>
+              </div>
+              <div class="column 1/5 last">
+                <p>1/5</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column 1/4">
+                <p>1/4</p>
+              </div>
+              <div class="column 1/4">
+                <p>1/4</p>
+              </div>
+              <div class="column 1/4">
+                <p>1/4</p>
+              </div>
+              <div class="column 1/4 last">
+                <p>1/4</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column 1/3">
+                <p>1/3</p>
+              </div>
+              <div class="column 1/3">
+                <p>1/3</p>
+              </div>
+              <div class="column 1/3 last">
+                <p>1/3</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column 1/2">
+                <p>1/2</p>
+              </div>
+              <div class="column 1/2 last">
+                <p>1/2</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column 1/1">
+                <p>1/1</p>
               </div>
             </div>
           </div>
         </div>
+
+        <h2><a name="mixed">Mixed Columns</a></h2>
+
+        <div class="example">
+          <div class="flurid">
+            <div class="row">
+              <div class="column 1/12">
+                <p>1/12</p>
+              </div>
+              <div class="column 5/12">
+                <p>5/12</p>
+              </div>
+              <div class="column 6/12">
+                <p>6/12 (1/2)</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column 1/4">
+                <p>4/16 (1/4)</p>
+              </div>
+              <div class="column 1/16">
+                <p>1/16</p>
+              </div>
+              <div class="column 1/2">
+                <p>8/16 (1/2)</p>
+              </div>
+              <div class="column 3/16">
+                <p>3/16</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h2><a name="nested">Nested Columns</a></h2>
+
+        <div class="example">
+          <div class="flurid">
+            <div class="row">
+              <div class="column 1/2">
+                <div class="column 1/2">
+                  <p>1/2 of 1/2 (1/4)</p>
+                </div>
+                <div class="column 1/2">
+                  <div class="column 1/2">
+                    <p>1/2 of 1/2 of 1/2 (1/8)</p>
+                  </div>
+                  <div class="column 1/2">
+                    <p>1/2 of 1/2 of 1/2 (1/8)</p>
+                  </div>
+                </div>
+              </div>
+              <div class="column 1/2">
+                <p>1/2</p>
+              </div>
+            </div>
+          </div>
+        </div>
+  <!--
+        <h2><a name="padded">Padded Columns</a></h2>
+
+        <div class="example" id="padded">
+          <div class="flurid">
+            <div class="row">
+              <div class="append 1/16">
+                <p class="odd">15/16</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="prepend 1/16">
+                <p class="even">15/16</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="append-prepend 1/16">
+                <p class="odd">15/16</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="append 1/2">
+                <div class="prepend 1/2">
+                  <p class="even">1/4</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column append-1/12">
+                <p>11/12</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column append-2/12">
+                <p>10/12</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column append-3/12">
+                <p>9/12</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column append-4/12">
+                <p>8/12</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column append-5/12">
+                <p>7/12</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column append-6/12">
+                <p>6/12</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column append-7/12">
+                <p>5/12</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column append-8/12">
+                <p>4/12</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column append-9/12">
+                <p>3/12</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column append-10/12">
+                <p>2/12</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column append-11/12">
+                <p>1/12</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column prepend-1/12">
+                <p>11/12</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column prepend-2/12">
+                <p>10/12</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column prepend-3/12">
+                <p>9/12</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column prepend-4/12">
+                <p>8/12</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column prepend-5/12">
+                <p>7/12</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column prepend-6/12">
+                <p>6/12</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column prepend-7/12">
+                <p>5/12</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column prepend-8/12">
+                <p>4/12</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column prepend-9/12">
+                <p>3/12</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column prepend-10/12">
+                <p>2/12</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column prepend-11/12">
+                <p>1/12</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column prepend-5/12 append-5/12">
+                <p>2/12</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column prepend-4/12 append-4/12">
+                <p>4/12</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column prepend-3/12 append-3/12">
+                <p>6/12</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column prepend-2/12 append-2/12">
+                <p>8/12</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column prepend-1/12 append-1/12">
+                <p>10/12</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h2><a name="shifted">Shifted Columns</a></h2>
+
+        <div class="example">
+          <div class="flurid">
+            <div class="row">
+              <div class="push 1/2">
+                <div class="column 1/2">
+                  <p>1/2 (push 1/2)</p>
+                </div>
+              </div>
+              <div class="pull 1/2">
+                <div class="column 1/4">
+                  <p>1/4 (pull 1/2)</p>
+                </div>
+                <div class="column 1/4 ">
+                  <p>1/4 (pull 1/2)</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column 1/4">
+                <p>1/4</p>
+              </div>
+              <div class="push-1/2">
+                <div class="column 1/4">
+                  <p>1/4 (push 1/2)</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="push-1/8">
+                <div class="column 1/4">
+                  <p>1/4 (push 1/8)</p>
+                </div>
+              </div>
+              <div class="push-3/8">
+                <div class="column 1/4">
+                  <p>1/4 (push 3/8)</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="push-1/4">
+                <div class="column 1/4">
+                  <p>1/4 (push 1/4)</p>
+                </div>
+              </div>
+              <div class="push-1/4">
+                <div class="column 1/4">
+                  <p>1/4 (push 1/4)</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column 1/8">
+                <p>1/8</p>
+              </div>
+              <div class="column 1/8">
+                <p>1/8</p>
+              </div>
+              <div class="push-1/8">
+                <div class="column 1/4">
+                  <p>1/4 (push 1/8)</p>
+                </div>
+                <div class="push-1/8">
+                  <div class="column 1/8">
+                    <p>1/8 (push 1/8)</p>
+                  </div>
+                  <div class="column 1/8">
+                    <p>1/8 (push 1/8)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+-->
       </div>
     </div>
   </body>
