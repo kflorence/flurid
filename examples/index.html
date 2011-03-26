@@ -7,17 +7,18 @@
 
     <script type="text/javascript"
       src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <!--<script type="text/javascript" src="https://getfirebug.com/firebug-lite.js"></script>-->
     <script type="text/javascript" src="../src/jquery.flurid.js"></script>
     <script type="text/javascript">
       jQuery(function($) {
-          //$(".flurid").flurid();
-          $(".row .column:odd").addClass("odd");
-          $(".row .column:even").addClass("even");
+        //$(".flurid").flurid();
+        $(".row .column:odd").addClass("odd");
+        $(".row .column:even").addClass("even");
       });
     </script>
   </head>
   <body>
-    <div id="wrapper">
+    <div id="wrapper" class="clearfix">
       <div id="header" class="clearfix">
         <div id="flurid" class="flurid">
           <div class="row">
@@ -594,84 +595,28 @@
             </div>
           </div>
         </div>
-<!--
+
         <h2><a name="shifted">Shifted Columns</a></h2>
 
         <div class="example">
           <div class="flurid">
             <div class="row">
-              <div class="push 1/2">
-                <div class="column 1/2">
+              <div class="shift right_1/2">
+                <div class="column width_1/2">
                   <p>1/2 (push 1/2)</p>
                 </div>
               </div>
-              <div class="pull 1/2">
-                <div class="column 1/4">
+              <div class="shift left_1/2">
+                <div class="column width_1/4">
                   <p>1/4 (pull 1/2)</p>
                 </div>
-                <div class="column 1/4 ">
+                <div class="column width_1/4">
                   <p>1/4 (pull 1/2)</p>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="column 1/4">
-                <p>1/4</p>
-              </div>
-              <div class="push-1/2">
-                <div class="column 1/4">
-                  <p>1/4 (push 1/2)</p>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="push-1/8">
-                <div class="column 1/4">
-                  <p>1/4 (push 1/8)</p>
-                </div>
-              </div>
-              <div class="push-3/8">
-                <div class="column 1/4">
-                  <p>1/4 (push 3/8)</p>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="push-1/4">
-                <div class="column 1/4">
-                  <p>1/4 (push 1/4)</p>
-                </div>
-              </div>
-              <div class="push-1/4">
-                <div class="column 1/4">
-                  <p>1/4 (push 1/4)</p>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="column 1/8">
-                <p>1/8</p>
-              </div>
-              <div class="column 1/8">
-                <p>1/8</p>
-              </div>
-              <div class="push-1/8">
-                <div class="column 1/4">
-                  <p>1/4 (push 1/8)</p>
-                </div>
-                <div class="push-1/8">
-                  <div class="column 1/8">
-                    <p>1/8 (push 1/8)</p>
-                  </div>
-                  <div class="column 1/8">
-                    <p>1/8 (push 1/8)</p>
-                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
--->
       </div>
     </div>
   </body>
