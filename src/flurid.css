@@ -21,8 +21,6 @@
   display: block;
   height: 0;
   visibility: hidden;
-  line-height: 0;
-  font-size: 0;
 }
 
 .flurid .row:after {
@@ -32,7 +30,6 @@
 /* Columns */
 .flurid .column {
   float: left;
-  height: 1%; /* trigger hasLayout for IE < 8 */
   overflow: hidden;
   position: relative;
 }
