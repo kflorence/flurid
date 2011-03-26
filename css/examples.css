@@ -162,12 +162,12 @@ ul {
   border: 0;
 }
 
-#content .flurid .odd {
+#content .flurid .odd p {
   background-color: #ADD8E6;
   text-align: center;
 }
 
-#content .flurid .even {
+#content .flurid .even p {
   background-color: #FFC0CB;
   text-align: center;
 }
