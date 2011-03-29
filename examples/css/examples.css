@@ -1,0 +1,187 @@
+body {
+  margin: 10px;
+  padding: 0;
+  font-family: monospace, sans-serif;
+  font-size: 62.5%; /* 10px */
+  line-height: 1.4em;
+  background-color: #ddd;
+}
+
+a:link, a:active {
+  color: #80ADDA;
+}
+
+a:hover, a:visited {
+  color: #E88798;
+}
+
+a.note, .note {
+  color:  #80ADDA;
+  font-size: 1.6em;
+  font-weight: bold;
+  text-decoration: none;
+  vertical-align: bottom;
+}
+
+h1 {
+  margin: 0;
+  padding: 5px 10px;
+  color: #80ADDA;
+  font-size: 3.2em;
+  line-height: 1.8em;
+}
+
+h1 span {
+  color: #E88798;
+  font-size: small;
+  vertical-align: super;
+}
+
+h2 {
+  margin: 0;
+  padding: 10px;
+  color: #444;
+  font-size: 1.6em;
+  background-color: #ddd;
+  border-top: 3px solid #aaa;
+}
+
+h2 a:hover {
+  color: #000;
+}
+
+h3 {
+  margin: 0;
+  color: #444;
+  padding: 5px 10px;
+  border-bottom: #eee 3px solid;
+}
+
+p {
+  margin: 0;
+  padding: 10px;
+  color: #333;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.blue, .blue a {
+  color: #80ADDA;
+}
+
+.pink, .pink a {
+  color: #E88798;
+}
+
+#wrapper {
+  font-size: 1.2em;
+  line-height: 1.6em;
+  background-color: #fff;
+}
+
+#header {
+  background-color: #fff;
+}
+
+#flurid {
+  background: #fff;
+  float: left;
+  padding: 5px;
+  width: 200px;
+}
+
+#flurid .content {
+  font-size: 2.42em;
+  line-height: 1.2em;
+  margin: 5px;
+  text-align: center;
+}
+
+#flurid .blue {
+  background-color: #f4f4f4;
+}
+
+#flurid .pink {
+  background-color: #f1f1f1;
+}
+
+#description {
+  background: #fff;
+  float: left;
+  padding: 5px 0;
+}
+
+#description .content {
+  font-size: 1.2em;
+  line-height: 2.42em;
+  margin: 5px 0;
+  text-align: left;
+}
+
+#description li {
+  float: left;
+  padding: 10px;
+}
+
+#description li a {
+  color: #666;
+  text-decoration: none;
+}
+
+#description li a:hover {
+  color: #333;
+  text-decoration: underline;
+}
+
+#examples {
+  list-style: circle;
+  margin: 10px 0;
+  padding-left: 30px;
+}
+
+.example {
+  background-color: #fff;
+  padding: 10px;
+}
+
+.flurid {
+  border: #fff 1px solid;
+  background-color: #eee;
+}
+
+.flurid .row {
+  border-bottom: #fff 1px solid;
+}
+
+.flurid .last {
+  border: 0;
+}
+
+#content .flurid .odd p {
+  background-color: #ADD8E6;
+  text-align: center;
+}
+
+#content .flurid .even p {
+  background-color: #FFC0CB;
+  text-align: center;
+}
+
+.clearfix {
+  height: 1%;
+}
+
+.clearfix:before, .clearfix:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+.clearfix:after {
+  clear: both;
+}
