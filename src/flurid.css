@@ -3,7 +3,7 @@
  *
  * @author Kyle Florence <kyle[dot]florence[at]gmail[dot]com>
  * @website https://github.com/kflorence/flurid
- * @version 2.0.20110326
+ * @version 2.0.20110329
  */
 
 /* Grid */
@@ -41,7 +41,7 @@
 }
 
 /* Append/prepend */
-.flurid .pad {
+* html .flurid .pad {
   display: inline; /* Fixes IE6 double margin bug */
 }
 
