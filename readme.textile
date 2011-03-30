@@ -16,7 +16,7 @@ bc. <div class="flurid">
 h2. Resources
 
 * Learn more about Flurid by reading "the wiki":https://github.com/kflorence/flurid/wiki
-* Check out some "usage examples":http://kflorence.github.com/flurid.
+* Check out some "usage examples":http://kflorence.github.com/flurid/examples.
 * Find out about the "known bugs and caveats":https://github.com/kflorence/flurid/wiki/Caveats
 * Questions? Problems? "Submit an issue":https://github.com/kflorence/flurid/issues
 
