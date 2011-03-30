@@ -2,16 +2,14 @@
 <html>
   <head>
     <title>Flurid - The Fluid CSS Grid</title>
-    <link rel="stylesheet" type="text/css" href=".css/examples.css" />
-    <link rel="stylesheet" type="text/css" href="../src/flurid.css" />
+    <link rel="stylesheet" type="text/css" href="css/examples.css" />
+    <link rel="stylesheet" type="text/css" href="../dist/flurid.min.css" />
 
     <script type="text/javascript"
       src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
     <!--<script type="text/javascript" src="https://getfirebug.com/firebug-lite.js"></script>-->
-    <script type="text/javascript" src="../src/jquery.flurid.js"></script>
     <script type="text/javascript">
       jQuery(function($) {
-        //$(".flurid").flurid();
         $(".row .column:odd").addClass("odd");
         $(".row .column:even").addClass("even");
       });
