@@ -1,4 +1,4 @@
-h1. "Flurid":http://comato.se/flurid/ - The Fluid CSS Grid Framework
+h1. "Flurid":http://kflorence.github.com/flurid/ - The Fluid CSS Grid Framework
 
 bc. <div class="flurid">
   <div class="row">
@@ -15,7 +15,10 @@ bc. <div class="flurid">
 
 h2. Resources
 
-You can find out more about Flurid by "reading the wiki":https://github.com/kflorence/flurid/wiki or "looking at examples":https://kflorence.github.com/flurid. Have questions? Take a look at the "known bugs and caveats":https://github.com/kflorence/flurid/wiki/Caveats or "submit an issue":https://github.com/kflorence/flurid/issues.
+* Learn more about Flurid by reading "the wiki":https://github.com/kflorence/flurid/wiki
+* Check out some "usage examples":http://kflorence.github.com/flurid.
+* Find out about the "known bugs and caveats":https://github.com/kflorence/flurid/wiki/Caveats
+* Questions? Problems? "Submit an issue":https://github.com/kflorence/flurid/issues
 
 h2. License
 
