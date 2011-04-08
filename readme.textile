@@ -11,7 +11,9 @@ bc. <div class="flurid">
   </div>
 </div>
 
-*Flurid* is a _cross-browser *"fluid width grid system":http://www.alistapart.com/articles/fluidgrids*_ optimized for flexibility (fluidity) and one of the only fluid width grid systems to work in Internet Explorer versions 5.0 and newer* without hiding pixels in margins. Like any "grid system":http://en.wikipedia.org/wiki/Grid_(page_layout), the basic purpose is to break the page into a series of _rows_ and _columns_, giving the designer an easy, rational way to organize and present content to the user.
+*Flurid* is a _cross-browser *"fluid width grid system":http://www.alistapart.com/articles/fluidgrids*_ optimized for flexibility (fluidity) and one of the only fluid width grid systems to work in Internet Explorer versions 5.0 and newer[1] without hiding pixels in margins. Like any "grid system":http://en.wikipedia.org/wiki/Grid_(page_layout), the basic purpose is to break the page into a series of _rows_ and _columns_, giving the designer an easy, rational way to organize and present content to the user.
+
+fn1. See "known bugs and caveats":https://github.com/kflorence/flurid/wiki/Caveats
 
 h2. Resources
 
