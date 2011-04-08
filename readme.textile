@@ -1,0 +1,27 @@
+h1. "Flurid":http://kflorence.github.com/flurid/ - The Fluid CSS Grid Framework
+
+bc. <div class="flurid">
+  <div class="row">
+    <div class="column width_1/2">
+      <p>Left column, 50% width</p>
+    </div>
+    <div class="column width_1/2 last">
+      <p>Right column, 50% width</p>
+    </div>
+  </div>
+</div>
+
+*Flurid* is a _cross-browser *"fluid width grid system":http://www.alistapart.com/articles/fluidgrids*_ optimized for flexibility (fluidity) and one of the only fluid width grid systems to work in Internet Explorer versions 5.0 and newer[1] without hiding pixels in margins. Like any "grid system":http://en.wikipedia.org/wiki/Grid_(page_layout), the basic purpose is to break the page into a series of _rows_ and _columns_, giving the designer an easy, rational way to organize and present content to the user.
+
+fn1. See "known bugs and caveats":https://github.com/kflorence/flurid/wiki/Caveats
+
+h2. Resources
+
+* Learn more about Flurid by reading "the wiki":https://github.com/kflorence/flurid/wiki
+* Check out some "usage examples":http://kflorence.github.com/flurid/examples.
+* Find out about the "known bugs and caveats":https://github.com/kflorence/flurid/wiki/Caveats
+* Questions? Problems? "Submit an issue":https://github.com/kflorence/flurid/issues
+
+h2. License
+
+Flurid is dual licensed under the MIT and GPL licenses.
