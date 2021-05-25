@@ -1,4 +1,4 @@
-h1. "Flurid":http://kflorence.github.com/flurid/ - The Fluid CSS Grid Framework
+h1. "Flurid":http://kflorence.github.io/flurid/ - The Fluid CSS Grid Framework
 
 bc. <div class="flurid">
   <div class="row">
@@ -18,7 +18,7 @@ fn1. See "known bugs and caveats":https://github.com/kflorence/flurid/wiki/Cavea
 h2. Resources
 
 * Learn more about Flurid by reading "the wiki":https://github.com/kflorence/flurid/wiki
-* Check out some "usage examples":http://kflorence.github.com/flurid/examples.
+* Check out some "usage examples":http://kflorence.github.io/flurid/examples.
 * Find out about the "known bugs and caveats":https://github.com/kflorence/flurid/wiki/Caveats
 * Questions? Problems? "Submit an issue":https://github.com/kflorence/flurid/issues
 
